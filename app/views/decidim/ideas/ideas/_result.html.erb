@@ -1,0 +1,26 @@
+<% if idea.answered? && translated_attribute(idea.answer).present? %>
+  <br>
+  <div class="row column">
+    <div class="callout success">
+      <h5><%= t("decidim.ideas.ideas.result.answer_title") %>:</h5>
+      <p>
+        <% if idea.answer_url.present? %>
+          <a href="<%= idea.answer_url %>" target="_blank">
+            <%= decidim_sanitize_editor translated_attribute idea.answer %>
+          </a>
+        <% else %>
+          <%= decidim_sanitize_editor translated_attribute idea.answer %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<% if idea.rejected? %>
+  <br>
+  <div class="row column">
+    <div class="callout warning">
+      <h5><%= t(".idea_rejected_reason") %></h5>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="row column">
+  <div class="columns xlarge-12">
+    <% if current_idea.documents.any? %>
+      <div class="row column">
+        <strong><%= t ".documents" %>:</strong>
+        <ul id="documents">
+          <% current_idea.documents.each do |document| %>
+            <li>
+              <%= link_to translated_attribute(document.title), document.url %>
+              <small><%= document.file_type %> <%= number_to_human_size(document.file_size) %></small>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if current_idea.photos.any? %>
+      <div class="row column">
+        <strong><%= t(".photos") %>:</strong>
+        <div id="photos" class="gallery row">
+          <% current_idea.photos.each do |photo| %>
+            <%= link_to photo.big_url, target: "_blank", rel: "noopener" do %>
+              <%= image_tag photo.thumbnail_url, class: "thumbnail", alt: strip_tags(translated_attribute(photo.title)) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="columns xlarge-12">
+    <% if allowed_to?(:update, :idea, idea: current_idea) %>
+      <%= aria_selected_link_to t(".edit"),
+                                decidim_admin_ideas.idea_attachments_path(current_participatory_space),
+                                class: "button" %>
+      <%= aria_selected_link_to t(".new"),
+                                decidim_admin_ideas.new_idea_attachment_path(current_participatory_space),
+                                class: "button" %>
+    <% else %>
+      <%= link_to t(".edit"), "#", class: "button muted disabled" %>
+      <%= link_to t(".new"), "#", class: "button muted disabled" %>
+    <% end %>
+  </div>
+</div>

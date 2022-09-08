@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title"><%= t ".title" %></h2>
+  </div>
+
+  <div class="card-section">
+    <div class="row column">
+      <%= decidim_form_for @form,
+                           url: ideas_type_ideas_type_scopes_path(params[:ideas_type_id]),
+                           html: { class: "form new_ideas_type_scopes" } do |f| %>
+        <%= render partial: "form", object: f %>
+
+        <div class="button--double form-general-submit">
+          <%= f.submit t(".create") %>
+          <%= link_to t(".back"), edit_ideas_type_path(params[:ideas_type_id]), class: "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

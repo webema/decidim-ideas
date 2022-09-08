@@ -1,0 +1,24 @@
+<% if @forced_closed_ideas %>
+  <div class="callout warning">
+    <%= t ".closed_ideas_warning" %>
+  </div>
+<% elsif ideas.blank? %>
+  <div class="callout warning">
+    <%= t ".no_ideas_warning" %>
+  </div>
+<% end %>
+
+<div class="collection-sort-controls row small-up-1 medium-up-2 card-grid">
+  <div class="column">
+    <%= order_selector available_orders, i18n_scope: "decidim.ideas.ideas.orders" %>
+  </div>
+
+  <div class="column">
+    <%= render partial: "decidim/shared/results_per_page" %>
+  </div>
+</div>
+
+<div class="row small-up-1 medium-up-2 card-grid">
+  <%= render ideas %>
+</div>
+<%= decidim_paginate ideas %>

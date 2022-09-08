@@ -1,0 +1,15 @@
+<%= decidim_form_for(@form, html: { class: "form edit_idea_type" }) do |f| %>
+  <%= render partial: "form", object: f %>
+  <div class="button--double form-general-submit">
+    <%= f.submit t(".update"), class: "button" %>
+
+    <% if allowed_to? :destroy, :idea_type, idea_type: current_idea_type %>
+      <%= link_to t(".destroy"), current_idea_type,
+                  method: :delete,
+                  class: "alert button",
+                  data: { confirm: t(".confirm_destroy") } %>
+    <% end %>
+  </div>
+  <br>
+  <%= render partial: "idea_type_scopes", locals: { idea_type: current_idea_type } %>
+<% end %>

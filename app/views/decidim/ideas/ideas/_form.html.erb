@@ -1,0 +1,79 @@
+<%= form_required_explanation %>
+
+<%- if current_idea.persisted? %>
+
+  <div class="field">
+    <%= form.translated :text_field, :title, autofocus: true, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.title) %>
+  </div>
+
+  <div class="field">
+    <%= form.translated :editor, :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.description) %>
+  </div>
+
+<%- else %>
+
+  <div class="field">
+    <%= form.text_field :title, autofocus: true, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.title) %>
+  </div>
+
+  <div class="field">
+    <%= form.editor :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.description) %>
+  </div>
+
+<%- end %>
+
+<div class="field">
+  <%= form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea) %>
+</div>
+
+<div class="field">
+  <%= form.select :scope_id,
+                @form.available_scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id] },
+                { disabled: !@form.state_updatable? } %>
+</div>
+
+<% if current_idea.type.attachments_enabled? %>
+  <fieldset class="attachments_container">
+    <legend><%= t("attachment_legend", scope: "decidim.ideas.form") %></legend>
+
+    <% if @form.photos.any? %>
+      <% @form.photos.each do |photo| %>
+        <div class="callout gallery__item" data-closable>
+          <%= image_tag photo.thumbnail_url, class: "thumbnail", alt: photo.file.filename %>
+          <%= form.hidden_field :photos, multiple: true, value: photo.id, id: "photo-#{photo.id}" %>
+          <button class="close-button"
+                  aria-label="<%= t("delete_attachment", scope: "decidim.ideas.form") %>"
+                  title="<%= t("delete_attachment", scope: "decidim.ideas.form") %>"
+                  type="button"
+                  data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @form.documents.any? %>
+      <% @form.documents.each do |document| %>
+        <div class="callout" data-closable>
+          <%= link_to translated_attribute(document.title), document.url %>
+          <small><%= document.file_type %> <%= number_to_human_size(document.file_size) %></small>
+          <%= form.hidden_field :documents, multiple: true, value: document.id, id: "document-#{document.id}" %>
+          <button class="close-button"
+                  aria-label="<%= t("delete_attachment", scope: "decidim.ideas.form") %>"
+                  title="<%= t("delete_attachment", scope: "decidim.ideas.form") %>"
+                  type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="row column">
+      <%= form.file_field :add_documents, multiple: true, label: t("add_attachments", scope: "decidim.ideas.form") %>
+    </div>
+  </fieldset>
+<% end %>
+
+<% content_for :js_content do %>
+  <%= javascript_pack_tag "decidim_ideas" %>
+<% end %>

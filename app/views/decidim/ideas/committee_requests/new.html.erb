@@ -1,0 +1,31 @@
+<% add_decidim_meta_tags({
+                             image_url: current_idea.type.attached_uploader(:banner_image).path,
+                             description: translated_attribute(current_idea.description),
+                             title: translated_attribute(current_idea.title),
+                             url: idea_url(current_idea.id),
+                             twitter_handler: current_organization.twitter_handler
+                         }) %>
+
+<% add_decidim_page_title(translated_attribute(current_idea.title)) %>
+<% provide :meta_image_url, current_idea.type.attached_uploader(:banner_image).path %>
+
+<br><br>
+<div class="row column">
+  <h2 class="heading2"><%= translated_attribute(current_idea.title) %></h2>
+  <%= render partial: "decidim/ideas/ideas/author", locals: { idea: current_idea } %>
+</div>
+
+<div class="row">
+  <div class="columns large-12">
+    <div class="section">
+      <%= decidim_sanitize_editor translated_attribute(current_idea.description) %>
+    </div>
+
+    <div class="section">
+      <p><%= t ".help_text" %></p>
+      <%= logged_link_to t(".continue"),
+                         spawn_idea_committee_requests_path(current_idea),
+                         class: "title-action__action button small hollow" %>
+    </div>
+  </div>
+</div>

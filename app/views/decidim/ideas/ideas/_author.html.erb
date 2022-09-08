@@ -1,0 +1,22 @@
+<div class="author-data idea-authors">
+  <div class="author-data__main ">
+    <div class="author author--inline">
+      <span class="author__avatar author__avatar--small">
+        <%= image_tag present(idea.author).avatar_url, alt: t("decidim.author.avatar", name: decidim_sanitize(idea.author_name)) %>
+      </span>
+      <span class="author__name">
+        <% if idea.author.deleted? %>
+          <span class="label label--small label--basic">
+            <%= t(".deleted") %>
+          </span>
+        <% else %>
+          <%= decidim_sanitize(idea.author_name) %>
+        <% end %>
+      </span>
+    </div>
+
+    <div class="publish-date">
+      <%= l idea.published_at || idea.created_at, format: "%d/%m/%Y" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<% add_decidim_page_title(action_name) %>
+
+<div class="row columns">
+  <%= link_to :back, class: "muted-link" do %>
+    <%= icon "chevron-left", class: "icon--small", role: "img", "aria-hidden": true %>
+    <%= t("back", scope: "decidim.ideas.edit") %>
+  <% end %>
+  <h2 class="section-heading"><%= t("title", scope: "decidim.ideas.edit") %></h2>
+</div>
+
+<div class="row">
+  <div class="columns large-6 medium-centered">
+    <div class="card">
+      <div class="card__content">
+        <%= decidim_form_for @form, html: { class: "form edit_idea" } do |f| %>
+          <%= render partial: "form", object: f %>
+          <div class="actions">
+            <%= f.submit t("update", scope: "decidim.ideas.edit"), class: "button expanded" if allowed_to? :update, :idea, idea: current_idea %>
+
+            <% if allowed_to? :publish, :idea, idea: current_idea %>
+              <%= link_to t("actions.publish", scope: "decidim.admin"),
+                          publish_idea_path(current_idea),
+                          method: :post,
+                          class: "button hollow expanded",
+                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :unpublish, :idea, idea: current_idea %>
+              <%= link_to t("actions.unpublish", scope: "decidim.admin"),
+                          unpublish_idea_path(current_idea),
+                          method: :delete,
+                          class: "button alert expanded",
+                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :accept, :idea, idea: current_idea %>
+                <%= link_to t("accept", scope: "decidim.ideas.edit"),
+                            accept_idea_path(current_idea),
+                            method: :post,
+                            class: "button hollow expanded",
+                            data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :reject, :idea, idea: current_idea %>
+                <%= link_to t("reject", scope: "decidim.ideas.edit"),
+                            reject_idea_path(current_idea),
+                            method: :delete,
+                            class: "button alert expanded",
+                            data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :discard, :idea, idea: current_idea %>
+              <%= link_to t("discard", scope: "decidim.ideas.edit"),
+                          discard_idea_path(current_idea),
+                          method: :delete,
+                          class: "button alert expanded",
+                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :export_votes, :idea, idea: current_idea %>
+              <%= link_to t("export_votes", scope: "decidim.ideas.edit"),
+                          export_votes_idea_path(current_idea, format: :csv),
+                          class: "button alert expanded",
+                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+
+            <% if allowed_to? :export_pdf_signatures, :idea, idea: current_idea %>
+              <%= link_to t("export_pdf_signatures", scope: "decidim.ideas.edit"),
+                          export_pdf_signatures_idea_path(current_idea, format: :pdf),
+                          class: "button alert expanded",
+                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

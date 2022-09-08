@@ -1,0 +1,205 @@
+---
+ga:
+  activemodel:
+    attributes:
+      idea:
+        decidim_user_group_id: Údar
+        scope_id: Scóip
+        signature_type_values:
+          any: Measctha
+          online: Ar líne
+        state: Stádas
+        title: Teideal
+      ideas_type:
+        title: Teideal
+      ideas_vote:
+        postal_code: Cód poist
+      organization_data:
+        address: Seoladh
+  activerecord:
+    models:
+      decidim/idea_comittee:
+        one: Coiste
+        two: Coistí
+        few: Coistí
+        many: Coistí
+        other: Coistí
+  decidim:
+    admin:
+      filters:
+        ideas:
+          decidim_area_id_eq:
+            label: Ceantar
+          state_eq:
+            label: Staid
+            values:
+              created: Cruthaithe
+          type_id_eq:
+            label: Cineál
+      menu:
+        attachments: Ceangaltáin
+      models:
+        ideas:
+          fields:
+            id: ID
+            state: Stádas
+        ideas_type_scope:
+          fields:
+            scope: Scóip
+        ideas_votes:
+          fields:
+            hash: Hais
+            idea_end_date: Dáta deiridh
+            postal_code: Cód poist
+            scope: Scóip
+    ideas:
+      actions:
+        answer: Freagair
+      admin:
+        answers:
+          edit:
+            answer: Freagair
+          info_idea:
+            state: Staid
+        committee_requests:
+          index:
+            approve: Ceadaigh
+            revoke: Cúlghairm
+        ideas:
+          edit:
+            update: Nuashonraigh
+          form:
+            attachments: Ceangaltáin
+            settings: Socruithe
+          index:
+            actions_title: Gníomh
+            preview: Réamhamharc
+            print: Clóbhuail
+          idea_attachments:
+            edit: Eagar
+            new: Nua
+            photos: Grianghraif
+        ideas_type_scopes:
+          edit:
+            back: Ar Ais
+            destroy: Scrios
+            update: Nuashonraigh
+          new:
+            back: Ar Ais
+            create: Cruthaigh
+        ideas_types:
+          edit:
+            destroy: Scrios
+            update: Nuashonraigh
+          form:
+            options: Roghanna
+          new:
+            create: Cruthaigh
+      admin_states:
+        created: Cruthaithe
+      application_helper:
+        filter_area_values:
+          all: Uile
+        filter_scope_values:
+          all: Uile
+        filter_state_values:
+          all: Uile
+          closed: Dúnta
+          open: Oscail
+        filter_type_values:
+          all: Uile
+      committee_requests:
+        new:
+          continue: Lean ar aghaidh
+      create_idea:
+        fill_data:
+          back: Ar Ais
+          continue: Lean ar aghaidh
+        finish:
+          back: Ar Ais
+        previous_form:
+          back: Ar Ais
+          continue: Lean ar aghaidh
+        promotal_committee:
+          back: Ar Ais
+        select_idea_type:
+          back: Ar Ais
+        share_committee_link:
+          continue: Lean ar aghaidh
+        show_similar_ideas:
+          back: Ar Ais
+      edit:
+        back: Ar Ais
+        update: Nuashonraigh
+      form:
+        delete_attachment: Scrios
+      idea_signatures:
+        fill_personal_data:
+          continue: Lean ar aghaidh
+          date_select:
+            day: Lá
+            month: Mí
+            year: Bliain
+      ideas:
+        author:
+          deleted: Scriosta
+        committee_members:
+          approve: Ceadaigh
+          revoke: Cúlghairm
+        filters:
+          any: Ar Bith
+          area: Ceantar
+          author: Údar
+          scope: Scóip
+          search: Cuardaigh
+          state: Stádas
+          type: Cineál
+        filters_small_view:
+          filter: Scag
+          unfold: Oscail
+        index_header:
+          not_authorized:
+            close: Dún
+        orders:
+          random: Randamach
+        print:
+          address: Seoladh
+          city: Cathair
+          email: Seoladh ríomhphoist
+          idea:
+            title: 'Teideal:'
+          postal_code: Cód poist
+          print: Clóbhuail
+        show:
+          edit: Eagar
+        vote_cabin:
+          vote: Sínigh
+      ideas_mailer:
+        idea_link:
+          here: anseo
+      show:
+        badge_name:
+          created: Cruthaithe
+      states:
+        accepted: Glactha
+        expired: Éagtha
+    resources:
+      idea:
+        actions:
+          comment: Tabhair Trácht
+      ideas_type:
+        actions:
+          title: Gníomhartha
+          vote: Sínigh
+  layouts:
+    decidim:
+      idea_creation_header:
+        back: Ar Ais
+        fill_data: Cruthaigh
+        finish: Críochnaigh
+        previous_form: Tosaigh
+        select_idea_type: Roghnaigh
+        show_similar_ideas: Cuir i gcomparáid
+      idea_signature_creation_header:
+        back: Ar Ais
+        finish: Críochnaigh

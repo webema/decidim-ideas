@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title"><%= t ".title" %></h2>
+  </div>
+
+  <div class="card-section">
+    <div class="row column">
+
+      <%= decidim_form_for @form,
+                           url: ideas_type_ideas_type_scope_path(params[:ideas_type_id], current_idea_type_scope),
+                           html: { class: "form edit_idea_type_scope" } do |f| %>
+        <%= render partial: "form", object: f %>
+        <div class="button--double form-general-submit">
+          <%= f.submit t(".update"), class: "button" %>
+
+          <% if allowed_to? :destroy, :idea_type_scope, idea_type_scope: current_idea_type_scope %>
+              <%= link_to t(".destroy"), ideas_type_ideas_type_scope_path(params[:ideas_type_id], current_idea_type_scope),
+                          method: :delete,
+                          class: "alert button",
+                          data: { confirm: t(".confirm_destroy") } %>
+          <% end %>
+
+          <%= link_to t(".back"), edit_ideas_type_path(params[:ideas_type_id]), class: "button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<p>
+<%= t "decidim.ideas.ideas_mailer.creation_subject", title: translated_attribute(@idea.title) %>.
+<%= link_to t("decidim.ideas.ideas_mailer.more_information"), decidim.page_url("ideas", host: @organization.host) %>
+</p>
+
+<br><br>
+
+<p>
+  <%= t("check_idea_details", scope: "decidim.ideas.ideas_mailer.idea_link") %>
+  <%= link_to t("here",  scope: "decidim.ideas.ideas_mailer.idea_link"),
+              decidim_admin_ideas.idea_url(@idea, host: @organization.host) %>
+</p>

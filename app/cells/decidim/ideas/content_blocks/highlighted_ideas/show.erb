@@ -1,0 +1,28 @@
+<section id="highlighted_ideas" class="wrapper-home home-section">
+  <div class="row" id="highlighted-ideas">
+    <h3 class="section-heading"><%= t("active_ideas", scope: i18n_scope) %></h3>
+    <div class="row collapse">
+      <div class="row small-up-1 smallmedium-up-2 mediumlarge-up-3 large-up-4 card-grid">
+        <% highlighted_ideas.each do |idea| %>
+          <div class="column">
+            <%= link_to decidim_ideas.idea_path(idea), class: "card card--idea card--mini" do %>
+              <div aria-hidden="true" class="card__image-top"
+                style="background-image:url('<%= idea.banner_image.path %>')"></div>
+              <span class="show-for-sr"><%= translated_attribute idea.title %></span>
+              <div class="card__content">
+                <span class="card__title card__link"><%= decidim_html_escape(translated_attribute(idea.title)) %></span>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="see-all-ideas">
+    <div class="columns small-centered small-12 smallmedium-8 medium-6 large-4">
+      <%= link_to t("see_all_ideas", scope: i18n_scope), decidim_ideas.ideas_path,
+                  class: "button expanded hollow button--sc home-section__cta" %>
+    </div>
+  </div>
+</section>
