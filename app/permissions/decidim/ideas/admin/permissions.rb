@@ -16,7 +16,6 @@ module Decidim
           user_can_read_participatory_space?
 
           if !user.admin? && idea&.has_authorship?(user)
-            # idea_committee_action?
             idea_user_action?
             attachment_action?
             ideas_settings_action?
@@ -34,7 +33,6 @@ module Decidim
 
           idea_type_action?
           idea_type_scope_action?
-          # idea_committee_action?
           idea_admin_user_action?
           idea_export_action?
           ideas_settings_action?
@@ -115,21 +113,6 @@ module Decidim
           end
         end
 
-        # def idea_committee_action?
-        #   return unless permission_action.subject == :idea_committee_member
-
-        #   request = context.fetch(:request, nil)
-
-        #   case permission_action.action
-        #   when :index
-        #     allow!
-        #   when :approve
-        #     toggle_allow(!request&.accepted?)
-        #   when :revoke
-        #     toggle_allow(!request&.rejected?)
-        #   end
-        # end
-
         def idea_admin_user_action?
           return unless permission_action.subject == :idea
 
@@ -197,8 +180,6 @@ module Decidim
             toggle_allow(idea.created?)
           when :send_to_technical_validation
             toggle_allow(allowed_to_send_to_technical_validation?)
-          # when :manage_membership
-          #   toggle_allow(idea.promoting_committee_enabled?)
           else
             disallow!
           end
@@ -206,10 +187,6 @@ module Decidim
 
         def allowed_to_send_to_technical_validation?
           idea.discarded? || idea.created?
-            # (idea.created? && (
-            #   !idea.created_by_individual? ||
-            #   idea.enough_committee_members?
-            # ))
         end
       end
     end

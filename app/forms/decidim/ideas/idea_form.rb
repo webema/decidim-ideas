@@ -4,15 +4,9 @@ module Decidim
   module Ideas
     # A form object used to collect the data for a new idea.
     class IdeaForm < Form
-      include TranslatableAttributes
       include AttachmentAttributes
 
       mimic :idea
-
-      # translatable_attribute :title, String if lambda { |form| form.context.idea.persisted? }
-      # translatable_attribute :description, String if lambda { |form| form.context.idea.persisted? }
-      # attribute :title, String unless lambda { |form| form.context.idea.persisted? }
-      # attribute :description, String unless lambda { |form| form.context.idea.persisted? }
 
       attribute :title, String
       attribute :description, String
@@ -20,8 +14,6 @@ module Decidim
       attribute :scope_id, Integer
       attribute :area_id, Integer
       attribute :decidim_user_group_id, Integer
-      # attribute :signature_type, String
-      # attribute :signature_end_date, Date
       attribute :state, String
       attribute :attachment, AttachmentForm
       attribute :hashtag, String
@@ -29,45 +21,27 @@ module Decidim
       attachments_attribute :photos
       attachments_attribute :documents
 
-      # validates :title, :description, translatable_presence: true if lambda { |form| form.context.idea.persisted? }
+
       validates :title, :description, presence: true
-      
       validates :title, length: { maximum: 150 }
-      # validates :signature_type, presence: true
-      validates :type_id, presence: true unless lambda { |form| form.context.idea.persisted? }
-      # validates :area, presence: true, if: ->(form) { form.area_id.present? }
+      validates :type_id, presence: true
       validate :scope_exists
       validate :notify_missing_attachment_if_errored
       validate :trigger_attachment_errors
-      # validates :signature_end_date, date: { after: Date.current }, if: lambda { |form|
-      #   form.context.idea_type.custom_signature_end_date_enabled? && form.signature_end_date.present?
-      # }
 
       def map_model(model)
         self.type_id = model.type.id
         self.scope_id = model.scope&.id
       end
 
-      # def signature_type_updatable?
-      #   state == "created" || state.nil?
-      # end
-
       def state_updatable?
         false
-      end
-
-      def area_updatable?
-        @area_updatable ||= current_user.admin? || context.idea.created?
       end
 
       def scope_id
         return nil if idea_type.only_global_scope_enabled?
 
         super.presence
-      end
-
-      def area
-        @area ||= current_organization.areas.find_by(id: area_id)
       end
 
       def idea_type

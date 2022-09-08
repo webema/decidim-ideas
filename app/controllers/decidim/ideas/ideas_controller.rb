@@ -102,10 +102,6 @@ module Decidim
         end
       end
 
-      def print
-        enforce_permission_to :read, :idea, idea: current_idea
-      end
-
       private
 
       alias current_idea current_participatory_space

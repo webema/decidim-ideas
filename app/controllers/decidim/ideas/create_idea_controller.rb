@@ -44,7 +44,7 @@ module Decidim
         session[:idea] = {}
 
         return redirect_to next_wizard_path if single_idea_type?
-        # @form = form(Decidim::Ideas::SelectIdeaTypeForm).instance
+
         render_wizard unless performed?
       end
 
@@ -78,11 +78,6 @@ module Decidim
           on(:ok) do |idea|
             session[:idea][:id] = idea.id
             render_wizard
-            # if current_idea.created_by_individual?
-            #   render_wizard
-            # else
-            #   redirect_to wizard_path(:finish)
-            # end
           end
 
           on(:invalid) do |idea|
@@ -91,10 +86,6 @@ module Decidim
           end
         end
       end
-
-      # def finish_step(_parameters)
-      #   render_wizard
-      # end
 
       def similar_ideas
         @similar_ideas ||= Decidim::Ideas::SimilarIdeas.for(current_organization, @form).all

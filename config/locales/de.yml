@@ -364,7 +364,7 @@ de:
           back: Zurück
           back_to_ideas: Alle Inspirationen anzeigen
           callout_text: Herzlichen Glückwunsch! Deine Inspiration wurde erfolgreich erstellt.
-          confirm: Hiermit sendest du die Inspiration an einen Administrator, welcher sie überprüft und veröffentlicht. Sobald die Inspiration veröffentlicht ist, kannst du sie nicht bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit_my_idea: Inspirationen bearbeiten
           go_to_my_ideas: Meine Inspirationen anzeigen
           more_information: "(Weitere Informationen)"
@@ -511,37 +511,15 @@ de:
           random: Zufällig
           recent: Neueste zuerst
           recently_published: Zuletzt veröffentlicht
-        print:
-          address: Adresse
-          author_title: Autor:in der Inspiration
-          city: Stadt
-          email: E-Mail
-          full_name: Vollständiger Name
-          general_title: Antrag auf Aufnahme einer Inspiration
-          id_number: ID Nummer
-          idea:
-            attachments: Angehängte Dokumentation (bitte gib den Namen jedes Dokuments unten ein)
-            description: 'Beschreibung:'
-            title: 'Titel:'
-            type: Art der Inspiration
-          legal_text: Die erhobenen personenbezogenen Daten werden von der Organisation entsprechend der geltenden Gesetzgebung vertraulich behandelt und aufgenommen.
-          phone_number: Telefonnummer
-          place_date: Ort, Datum
-          postal_code: Postleitzahl
-          print: Drucken
-          province: Bundesland
-          section: 'Falls von der Organisation angefragt, drucke bitte dieses Formular aus und fülle es aus, um es dort einzureichen, wo angegeben wurde:'
-          signature: Unterschrift
         result:
           answer_title: Diese Inspiration wurde beantwortet
           idea_rejected_reason: Diese Inspiration wurde wegen fehlender Unterstützung abgelehnt.
         show:
           any_vote_method: Diese Inspiration sammelt sowohl online als auch persönlich Unterschriften.
-          confirm: Hiermit sendest du die Inspiration an einen Administrator, welcher sie überprüft und veröffentlicht. Sobald die Inspiration veröffentlicht ist, kannst du sie nicht bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit: Bearbeiten
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
           offline_method: Diese Inspiration sammelt nur persönliche Unterschriften.
-          print: Inspiration ausdrucken
           send_to_technical_validation: Veröffentlichen
         signatures_count:
           one: " Unterschrift"

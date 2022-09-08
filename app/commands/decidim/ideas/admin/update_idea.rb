@@ -78,22 +78,13 @@ module Decidim
           # attrs[:signature_end_date] = form.signature_end_date
           # attrs[:offline_votes] = form.offline_votes if form.offline_votes
           attrs[:state] = form.state if form.state
-          attrs[:decidim_area_id] = form.area_id
+          # attrs[:decidim_area_id] = form.area_id
 
           # if idea.published? && form.signature_end_date != idea.signature_end_date &&
           #    form.signature_end_date > idea.signature_end_date
           #   @notify_extended = true
           # end
         end
-
-        # def notify_idea_is_extended
-        #   Decidim::EventsManager.publish(
-        #     event: "decidim.events.ideas.idea_extended",
-        #     event_class: Decidim::Ideas::ExtendIdeaEvent,
-        #     resource: idea,
-        #     followers: idea.followers - [idea.author]
-        #   )
-        # end
       end
     end
   end

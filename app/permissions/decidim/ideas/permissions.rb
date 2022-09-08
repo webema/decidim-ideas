@@ -12,7 +12,6 @@ module Decidim
         list_public_ideas?
         read_public_idea?
         search_idea_types_and_scopes?
-        request_membership?
 
         return permission_action unless user
 
@@ -20,13 +19,8 @@ module Decidim
         edit_public_idea?
         update_public_idea?
 
-        # vote_idea?
-        # sign_idea?
-        # unvote_idea?
-
         idea_attachment?
 
-        # idea_committee_action?
         send_to_technical_validation?
 
         permission_action
@@ -93,58 +87,15 @@ module Decidim
       )
       end
 
-      def request_membership?
-        return unless permission_action.subject == :idea &&
-                      permission_action.action == :request_membership
-
-        toggle_allow(can_request_membership?)
-      end
-
-      def can_request_membership?
-        return access_request_without_user? if user.blank?
-
-        access_request_membership?
-      end
-
       def access_request_without_user?
         Decidim::Ideas.do_not_require_authorization # (!idea.published? && idea.promoting_committee_enabled?) || 
       end
-
-      # def access_request_membership?
-      #   !idea.published? &&
-      #     idea.promoting_committee_enabled? &&
-      #     !idea.has_authorship?(user) &&
-      #     (
-      #     Decidim::Ideas.do_not_require_authorization ||
-      #         UserAuthorizations.for(user).any? ||
-      #         Decidim::UserGroups::ManageableUserGroups.for(user).verified.any?
-      #   )
-      # end
-
-      # def vote_idea?
-      #   return unless permission_action.action == :vote &&
-      #                 permission_action.subject == :idea
-
-      #   toggle_allow(can_vote?)
-      # end
 
       def authorized?(permission_action, resource: nil, permissions_holder: nil)
         return unless resource || permissions_holder
 
         ActionAuthorizer.new(user, permission_action, permissions_holder, resource).authorize.ok?
       end
-
-      # def unvote_idea?
-      #   return unless permission_action.action == :unvote &&
-      #                 permission_action.subject == :idea
-
-      #   can_unvote = idea.accepts_online_unvotes? &&
-      #                idea.organization&.id == user.organization&.id &&
-      #                idea.votes.where(author: user).any? &&
-      #                authorized?(:vote, resource: idea, permissions_holder: idea.type)
-
-      #   toggle_allow(can_unvote)
-      # end
 
       def idea_attachment?
         return unless permission_action.action == :add_attachment &&
@@ -153,49 +104,9 @@ module Decidim
         toggle_allow(idea_type.attachments_enabled?)
       end
 
-      # def sign_idea?
-      #   return unless permission_action.action == :sign_idea &&
-      #                 permission_action.subject == :idea
-
-      #   can_sign = can_vote? &&
-      #              context.fetch(:signature_has_steps, false)
-
-      #   toggle_allow(can_sign)
-      # end
-
       def decidim_user_group_id
         context.fetch(:group_id, nil)
       end
-
-      # def can_vote?
-      #   idea.votes_enabled? &&
-      #     idea.organization&.id == user.organization&.id &&
-      #     idea.votes.where(author: user).empty? &&
-      #     authorized?(:vote, resource: idea, permissions_holder: idea.type)
-      # end
-
-      # def can_user_support?(idea)
-      #   !idea.offline_signature_type? && (
-      #   Decidim::Ideas.do_not_require_authorization ||
-      #       UserAuthorizations.for(user).any?
-      # )
-      # end
-
-      # def idea_committee_action?
-      #   return unless permission_action.subject == :idea_committee_member
-
-      #   request = context.fetch(:request, nil)
-      #   return unless user.admin? || idea&.has_authorship?(user)
-
-      #   case permission_action.action
-      #   when :index
-      #     allow!
-      #   when :approve
-      #     toggle_allow(!request&.accepted?)
-      #   when :revoke
-      #     toggle_allow(!request&.rejected?)
-      #   end
-      # end
 
       def send_to_technical_validation?
         return unless permission_action.action == :send_to_technical_validation &&
@@ -205,7 +116,7 @@ module Decidim
       end
 
       def allowed_to_send_to_technical_validation?
-        idea.created? #&&  (!idea.created_by_individual? || idea.enough_committee_members?)
+        idea.created?
       end
 
       def authorship_or_admin?

@@ -14,7 +14,6 @@ module Decidim
 
         helper ::Decidim::Admin::ResourcePermissionsHelper
         helper Decidim::Ideas::IdeaHelper
-        helper Decidim::Ideas::CreateIdeaHelper
 
         # GET /admin/ideas
         def index

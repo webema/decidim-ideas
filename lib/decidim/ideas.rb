@@ -29,35 +29,11 @@ module Decidim
       5
     end
 
-    # Minimum number of committee members required to pass the idea to
-    # technical validation phase. Only applies to ideas created by
-    # individuals.
-    config_accessor :minimum_committee_members do
-      2
-    end
-
-    # Number of days available to collect supports after an idea has been
-    # published.
-    config_accessor :default_signature_time_period_length do
-      120
-    end
-
     # Components enabled for a new idea
     config_accessor :default_components do
-      [:pages, :meetings]
+      []
     end
 
-    # Notifies when the given percentage of supports is reached for an
-    # idea.
-    config_accessor :first_notification_percentage do
-      33
-    end
-
-    # Notifies when the given percentage of supports is reached for an
-    # idea.
-    config_accessor :second_notification_percentage do
-      66
-    end
 
     # Sets the expiration time for the statistic data.
     config_accessor :stats_cache_expiration_time do
@@ -77,18 +53,6 @@ module Decidim
     config_accessor :print_enabled do
       true
     end
-
-    # Set a service to generate a timestamp on each vote. The
-    # attribute is the name of a class whose instances are
-    # initialized with a string containing the data to be
-    # timestamped and respond to a timestamp method
-    config_accessor :timestamp_service
-
-    # Set a service to add a signature to pdf of signatures.
-    # The attribute is the name of a class whose instances are
-    # initialized with the document to be signed and respond to a
-    # signed_pdf method with the signature added
-    config_accessor :pdf_signature_service
 
     # This flag allows creating authorizations to unauthorized users.
     config_accessor :do_not_require_authorization do
