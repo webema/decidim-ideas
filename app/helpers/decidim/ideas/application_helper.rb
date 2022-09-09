@@ -34,7 +34,7 @@ module Decidim
           )
         end
 
-        scopes_values.prepend(TreePoint.new("global", t("decidim.scopes.global")))
+        # scopes_values.prepend(TreePoint.new("global", t("decidim.scopes.global")))
 
         TreeNode.new(
           TreePoint.new("", t("decidim.ideas.application_helper.filter_scope_values.all")),
