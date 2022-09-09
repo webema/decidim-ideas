@@ -3,8 +3,7 @@
 module Decidim
   # This holds the decidim-ideas version.
   module Ideas
-    def self.version
-      "0.27.0.rc1"
-    end
+    VERSION = '0.27.0'
+    DECIDIM_VERSION = '0.27.0.rc1'
   end
 end
