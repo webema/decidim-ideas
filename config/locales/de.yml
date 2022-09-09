@@ -17,7 +17,7 @@ de:
           online: Online
         state: Status
         type_id: Typ
-        decidim_scope_id: Bereich
+        decidim_scope_id: Thema
         title: Titel
       ideas_committee_member:
         user: Ausschussmitglied

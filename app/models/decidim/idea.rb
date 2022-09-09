@@ -64,9 +64,10 @@ module Decidim
     # enum signature_type: [:online, :offline, :any], _suffix: true
     enum state: [:created, :validating, :discarded, :published, :rejected, :accepted]
 
+    # enum state: [:created, :validating, :discarded, :published]
+
     validates :title, :description, :state, presence: true
-    validates :hashtag,
-              uniqueness: { allow_blank: true, case_sensitive: false }
+    validates :hashtag, uniqueness: { allow_blank: true, case_sensitive: false }
 
     scope :open, lambda {
       where.not(state: [:discarded, :rejected, :accepted, :created])

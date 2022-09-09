@@ -21,7 +21,6 @@ module Decidim
       attachments_attribute :photos
       attachments_attribute :documents
 
-
       validates :title, :description, presence: true
       validates :title, length: { maximum: 150 }
       validates :type_id, presence: true

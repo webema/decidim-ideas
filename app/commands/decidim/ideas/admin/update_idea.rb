@@ -41,7 +41,6 @@ module Decidim
             attributes
           )
           create_attachment if process_attachments?
-          # notify_idea_is_extended if @notify_extended
           broadcast(:ok, idea)
         rescue ActiveRecord::RecordInvalid
           broadcast(:invalid, idea)
@@ -57,33 +56,15 @@ module Decidim
             description: form.description,
             hashtag: form.hashtag
           }
-
-          # if form.signature_type_updatable?
-          #   attrs[:signature_type] = form.signature_type
-          #   attrs[:scoped_type_id] = form.scoped_type_id if form.scoped_type_id
-          # end
-
-          if current_user.admin?
-            add_admin_accessible_attrs(attrs)
-          # elsif idea.created?
-          #   # attrs[:signature_end_date] = form.signature_end_date if idea.custom_signature_end_date_enabled?
-          #   attrs[:decidim_area_id] = form.area_id if idea.area_enabled?
-          end
+          
+          add_admin_accessible_attrs(attrs) if current_user.admin?
 
           attrs
         end
 
         def add_admin_accessible_attrs(attrs)
-          # attrs[:signature_start_date] = form.signature_start_date
-          # attrs[:signature_end_date] = form.signature_end_date
-          # attrs[:offline_votes] = form.offline_votes if form.offline_votes
           attrs[:state] = form.state if form.state
-          # attrs[:decidim_area_id] = form.area_id
-
-          # if idea.published? && form.signature_end_date != idea.signature_end_date &&
-          #    form.signature_end_date > idea.signature_end_date
-          #   @notify_extended = true
-          # end
+          attrs[:scoped_type_id] = form.scoped_type_id if form.scoped_type_id
         end
       end
     end

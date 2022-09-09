@@ -54,11 +54,17 @@ module Decidim
       attr_reader :form, :idea, :current_user
 
       def attributes
-        {
+        attrs = {
           title: form.title,
           description: form.description,
           hashtag: form.hashtag
         }
+        
+        if idea.created?
+          attrs[:scoped_type_id] = form.scoped_type_id if form.scoped_type_id
+        end
+
+        attrs
       end
     end
   end
