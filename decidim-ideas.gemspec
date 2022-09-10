@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
 
   s.name = "decidim-ideas"
   s.summary = "Decidim participatory space to collect ideas from participants"
-  s.description = "Like initiatives but without signatures and promoter committee"
+  s.description = "Like initiatives but without signatures and promoter committee. Meant for idea collection in less formal participatory contexts."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*", "Rakefile", "README.md"]
 
