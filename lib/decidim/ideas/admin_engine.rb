@@ -27,8 +27,6 @@ module Decidim
             post :publish
             delete :unpublish
             delete :discard
-            get :export_votes
-            get :export_pdf_signatures
             post :accept
             delete :reject
           end

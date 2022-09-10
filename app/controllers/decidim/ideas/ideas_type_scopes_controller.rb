@@ -15,11 +15,7 @@ module Decidim
       private
 
       def scoped_types
-        @scoped_types ||= if idea_type.only_global_scope_enabled?
-                            idea_type.scopes.where(scope: nil)
-                          else
-                            idea_type.scopes
-                          end
+        @scoped_types ||= idea_type.scopes
       end
 
       def idea_type

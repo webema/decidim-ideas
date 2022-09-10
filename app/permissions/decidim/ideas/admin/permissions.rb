@@ -123,10 +123,6 @@ module Decidim
             toggle_allow(idea.validating?)
           when :unpublish
             toggle_allow(idea.published?)
-          when :export_pdf_signatures
-            toggle_allow(idea.published? || idea.accepted? || idea.rejected?)
-          when :export_votes
-            # toggle_allow(idea.offline_signature_type? || idea.any_signature_type?)
           when :accept
             # allowed = idea.published? &&
             #           idea.signature_end_date < Date.current &&

@@ -56,20 +56,6 @@
                           class: "button alert expanded",
                           data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
             <% end %>
-
-            <% if allowed_to? :export_votes, :idea, idea: current_idea %>
-              <%= link_to t("export_votes", scope: "decidim.ideas.edit"),
-                          export_votes_idea_path(current_idea, format: :csv),
-                          class: "button alert expanded",
-                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
-            <% end %>
-
-            <% if allowed_to? :export_pdf_signatures, :idea, idea: current_idea %>
-              <%= link_to t("export_pdf_signatures", scope: "decidim.ideas.edit"),
-                          export_pdf_signatures_idea_path(current_idea, format: :pdf),
-                          class: "button alert expanded",
-                          data: { confirm: t("confirm", scope: "decidim.ideas.edit") } %>
-            <% end %>
           </div>
         <% end %>
       </div>

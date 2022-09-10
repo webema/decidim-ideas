@@ -148,27 +148,6 @@ module Decidim
           end
         end
 
-        # GET /admin/ideas/:id/export_pdf_signatures.pdf
-        def export_pdf_signatures
-          enforce_permission_to :export_pdf_signatures, :idea, idea: current_idea
-
-          @votes = current_idea.votes
-
-          output = render_to_string(
-            pdf: "votes_#{current_idea.id}",
-            layout: "decidim/admin/ideas_votes",
-            template: "decidim/ideas/admin/ideas/export_pdf_signatures",
-            format: [:pdf]
-          )
-          output = pdf_signature_service.new(pdf: output).signed_pdf if pdf_signature_service
-
-          respond_to do |format|
-            format.pdf do
-              send_data(output, filename: "votes_#{current_idea.id}.pdf", type: "application/pdf")
-            end
-          end
-        end
-
         private
 
         def collection

@@ -11,12 +11,10 @@ module Decidim
 
         translatable_attribute :title, String
         translatable_attribute :description, String
-        
+
         attribute :banner_image
         attribute :attachments_enabled, Boolean
         attribute :comments_enabled, Boolean
-        attribute :only_global_scope_enabled, Boolean
-
 
         validates :title, :description, translatable_presence: true
         validates :attachments_enabled, inclusion: { in: [true, false] }

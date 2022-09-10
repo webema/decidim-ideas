@@ -5,49 +5,16 @@ de:
       idea:
         decidim_user_group_id: Autor:in
         description: Beschreibung
-        offline_votes: Face-to-Face-Unterstützung
-        offline_votes_for_scope: Persönliche Unterschriften für %{scope_name}
         scope_id: Thema
-        signature_end_date: Ende der Unterschriftensammlung
-        signature_start_date: Beginn der Unterschriftensammlung
-        signature_type: Signatursammeltyp
-        signature_type_values:
-          any: Gemischt
-          offline: Angesicht zu Angesicht
-          online: Online
         state: Status
         type_id: Typ
         decidim_scope_id: Thema
         title: Titel
-      ideas_committee_member:
-        user: Ausschussmitglied
       ideas_type:
-        area_enabled: Die Auswahl des Bereichs von Inspirationen für Autoren bzw. Autorinnen freigeben
-        attachments_enabled: Anhänge freigeben
+        attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
-        child_scope_threshold_enabled: Unterschriften von Unterbereichen aktivieren
-        collect_user_extra_fields: Persönliche Daten von Benutzer:innen bei der Unterschrift sammeln
-        comments_enabled: Kommentare aktivieren
-        custom_signature_end_date_enabled: Die Auswahl des Enddatums der Unterschriftensammlung für Autoren bzw. Autorinnen freigeben
+        comments_enabled: Nutzer:innen können Inspirationen kommentieren
         description: Beschreibung
-        document_number_authorization_handler: Berechtigung zur Überprüfung der Belegnummer bei Abstimmungen
-        extra_fields_legal_information: Rechtliche Informationen zur Erhebung personenbezogener Daten
-        minimum_committee_members: Minimum der Ausschussmitglieder
-        online_signature_enabled: Online-Signatur aktiviert
-        only_global_scope_enabled: Nur die Erstellung globaler Inspirationen zulassen
-        promoting_committee_enabled: Förderkomitee freigeben
-        title: Titel
-        undo_online_signatures_enabled: Benutzer:innen ermöglichen, ihre Online-Signaturen rückgängig zu machen
-        validate_sms_code_on_votes: Dem Signaturprozess einen SMS-Validierungsschritt hinzufügen
-      ideas_vote:
-        date_of_birth: Geburtsdatum
-        document_number: Dokumentnummer
-        name_and_surname: Name und Nachname
-        postal_code: Postleitzahl
-      organization_data:
-        address: Adresse
-        id_document: ID-Dokument
-        name: Vollständiger Name
     errors:
       models:
         idea:
@@ -61,12 +28,6 @@ de:
       decidim/idea:
         one: Inspiration
         other: Inspirationen
-      decidim/idea_comittee:
-        one: Komitee
-        other: Ausschüsse
-      decidim/idea_vote:
-        one: Unterschrift
-        other: Unterschriften
   decidim:
     admin:
       actions:
@@ -83,7 +44,7 @@ de:
               discarded: Verworfen
               published: Veröffentlicht
               rejected: Zu wenige Unterschriften
-              validating: Technische Validierung
+              validating: Freigabe angefordert
           type_id_eq:
             label: Typ
         search_placeholder:
@@ -94,21 +55,19 @@ de:
           success: Die Einstellungen für Inspirationen wurden erfolgreich aktualisiert
       menu:
         attachments: Anhänge
-        committee_members: Ausschussmitglieder
         components: Komponenten
         information: Information
         ideas: Inspirationen
         ideas_settings: Einstellungen
         ideas_types: Arten von Inspirationen
-        moderations: Moderationen
+        moderations: Moderation
       models:
         ideas:
           fields:
-            created_at: Hergestellt in
+            created_at: Erstellt am
             id: ID
             published_at: Veröffentlicht am
             state: Status
-            supports_count: Unterschriften
             title: Inspirationen
         ideas_type_scope:
           fields:
@@ -119,22 +78,6 @@ de:
             created_at: Erstellt am
             title: Arten von Inspirationen
           name: Art der Inspiration
-
-        ideas_votes:
-          fields:
-            date_of_birth: Geburtsdatum
-            document_number: Dokumentnummer
-            hash: Hash
-            idea_end_date: Enddatum
-            idea_id: Inspirationen-ID
-            idea_signatures_count: Anzahl der Unterschriften
-            idea_start_date: Startdatum
-            idea_title: Inspirationentitel
-            name_and_surname: Name und Nachname
-            postal_code: Postleitzahl
-            scope: Thema
-            time_and_date: Zeit und Datum
-            timestamp: Zeitstempel
       titles:
         ideas: Inspirationen
         ideas_types: Arten von Inspirationen
@@ -146,39 +89,18 @@ de:
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
             email_subject: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet.
             notification_title: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
-        idea_extended:
-          email_intro: Das Enddatum der Unterschriftensammlung für die Inspiration %{resource_title} wurde verlängert!
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du %{resource_title} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
-          email_subject: Enddatum der Unterschriftensammlung verlängert!
-          notification_title: Das Enddatum der Unterschriftensammlung für die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde verlängert.
         idea_sent_to_technical_validation:
           email_intro: Die Inspiration „%{resource_title}“ wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
           email_subject: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet.
           notification_title: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
-        milestone_completed:
-          affected_user:
-            email_intro: Deine Inspiration %{resource_title} hat %{percentage}% der Unterschriften erreicht!
-            email_outro: Du hast diese Benachrichtigung erhalten, weil du der/die Autor:in der Inspiration %{resource_title} bist.
-            email_subject: Neuer Meilenstein abgeschlossen!
-            notification_title: Deine Inspiration <a href="%{resource_path}">%{resource_title}</a> hat %{percentage}% der Unterschriften erreicht.
-          follower:
-            email_intro: Die Inspiration %{resource_title} hat %{percentage}% der Unterschriften erreicht!
-            email_outro: Du hast diese Benachrichtigung erhalten, weil du %{resource_title} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
-            email_subject: Neuer Meilenstein abgeschlossen!
-            notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> hat %{percentage}% der Unterschriften erreicht.
-        support_threshold_reached:
-          email_intro: Die Inspiration %{resource_title} hat die Mindestanzahl an Unterschriften erreicht
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-          email_subject: Mindestanzahl an Unterschriften erreicht
-          notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> hat die Mindestanzahl an Unterschriften erreicht
     gamification:
       badges:
         ideas:
           conditions:
             - Gehe zum Teilnehmerbereich von Inspirationen
             - Folge diesen Schritten, um eine neue Inspiration zu erstellen
-          description: Dieses Abzeichen wird gewährt, wenn du neue Inspirationen erstellst und mit anderen zusammenarbeitest, um diese durchzuführen.
+          description: Dieses Abzeichen wird gewährt, wenn du neue Inspirationen erstellst.
           description_another: Diese/r Benutzer:in hat %{score} Inspirationen veröffentlicht.
           description_own: Du hast %{score} Inspirationen veröffentlicht.
           name: Veröffentlichte Inspirationen
@@ -188,7 +110,7 @@ de:
     help:
       participatory_spaces:
         ideas:
-          contextual: "<p>Eine Inspiration ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren einer Inspiration können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Eine Inspiration kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
+          contextual: "TODO<p>Eine Inspiration ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren einer Inspiration können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Eine Inspiration kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
           page: "<p>Eine Inspiration ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren einer Inspiration können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Eine Inspiration kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
           title: Was sind Inspirationen?
     ideas:
@@ -200,19 +122,10 @@ de:
             answer: Antworten
             title: Antwort für %{title}
           info_idea:
-            created_at: Hergestellt in
+            created_at: Erstellt am
             description: Beschreibung
-            idea_votes_count: Stimmen zählen
             ideas: Inspirationen
             state: Status
-        committee_requests:
-          index:
-            approve: Genehmigen
-            confirm_revoke: Bist du sicher?
-            invite_to_committee_help: Teile diesen Link, um andere Benutzer:innen zum Promotionskomitee einzuladen
-            no_members_yet: Es gibt keine Mitglieder im Promoter:innen-Ausschuss
-            revoke: Widerrufen
-            title: Ausschussmitglieder
         content_blocks:
           highlighted_ideas:
             max_results: Maximale Anzahl der Elemente, die angezeigt werden sollen
@@ -228,11 +141,10 @@ de:
             confirm: Bist du sicher?
             confirm_send_to_technical_validation: Bist du sicher?
             discard: Die Inspiration verwerfen
-            export_pdf_signatures: Exportieren von PDF-Signaturen
             export_votes: Export unterstützt
             reject: Inspiration ablehnen
-            send_to_technical_validation: An technische Validierung senden
-            success: Die Inspiration wurde an die technische Validierung gesendet
+            send_to_technical_validation: Freigabe beantragen
+            success: Die Inspiration wurde an die Moderation gesendet
             update: Aktualisieren
           form:
             attachments: Anhänge
@@ -243,7 +155,7 @@ de:
             preview: Vorschau
             print: Drucken
           idea_attachments:
-            documents: Unterlagen
+            documents: Dockumente
             edit: Bearbeiten
             new: Neu
             photos: Fotos
@@ -255,27 +167,26 @@ de:
             update: Aktualisieren
           form:
             comments: Am meisten kommentiert
-            date: Neuste
+            date: Neuste TODO
             publication_date: Zuletzt veröffentlicht
             random: Zufällig
-            signatures: Am häufigsten unterzeichnet
             title: Einstellungen für Inspirationen
         ideas_type_scopes:
           create:
             error: Ein Fehler ist aufgetreten
-            success: Ein neues Thema für den angegebenen Inspirationen-Typ wurde erstellt
+            success: Ein neues Thema für den Inspirationen-Typ wurde erstellt
           destroy:
             success: Das Thema wurde erfolgreich entfernt
           edit:
             back: Zurück
             confirm_destroy: Bist du sicher?
             destroy: Löschen
-            title: Inspirationen-Typ bearbeiten
+            title: Thema für Inspirationen-Typ bearbeiten
             update: Aktualisieren
           new:
             back: Zurück
             create: Erstellen
-            title: Inspirationen-Typbereich erstellen
+            title: Thema für Inspirationen-Typ erstellen
           update:
             error: Ein Fehler ist aufgetreten
             success: Der Bereich wurde erfolgreich aktualisiert
@@ -302,9 +213,8 @@ de:
             error: Ein Fehler ist aufgetreten
             success: Der Inspirationen-Typ wurde erfolgreich aktualisiert
           form:
-            title: sfdsgfsdf
-            options: dsfdsfdsfds
-            only_global_scope_enabled_help: only_global_scope_enabled_help
+            title: Inspirationen-Typ bearbeiten
+            options: Optionen
       admin_log:
         idea:
           publish: "%{user_name} hat die Inspiration %{resource_name} veröffentlicht"
@@ -323,7 +233,7 @@ de:
         discarded: Verworfen
         published: Veröffentlicht
         rejected: Zu wenige Unterschriften
-        validating: Technische Validierung
+        validating: Freigabe angefordert
       application_helper:
         filter_area_values:
           all: Alle
@@ -370,8 +280,7 @@ de:
           more_information: "(Weitere Informationen)"
           send_my_idea: Veröffentlichen
         finish_help:
-          access_reminder: Du kannst auf deine Inspirationen über den Filter %{link} auf der Seite Inspirationen zugreifen.
-          publish_helper_text: Denke daran, dass du für die Veröffentlichung deiner Inspiration die erforderlichen Informationen ausfüllen musst und <strong>diese an die technische Validierung</strong> senden must, damit ein/e Administrator:in diese prüfen kann.
+          publish_helper_text: "<strong>Bitte beachte:</strong> Noch ist deine Inspiration nicht öffentlich sichtbar. Klicke auf 'Veröffentlichen', um deine Inspiration durch eine/n Moderator:in überprüfen zu lassen. Wenn alles in Ordnung ist, wird er/sie deine Inspiration zeitnah veröffentlichen."
         initial_data:
           back: Zurück
           continue: Fortsetzen
@@ -393,8 +302,6 @@ de:
         back: Zurück
         confirm: Bist du dir sicher?
         discard: Inspiration verwerfen
-        export_pdf_signatures: PDF der Unterschriften exportieren
-        export_votes: Unterschriften exportieren
         reject: Inspiration ablehnen
         title: Inspirationen bearbeiten
         update: Aktualisieren
@@ -561,7 +468,7 @@ de:
           discarded: Verworfen
           published: Veröffentlicht
           rejected: Zu wenige Unterschriften
-          validating: Technische Validierung
+          validating: Freigabe angefordert
       signature_interval:
         title: Zeitraum der Unterschriftensammlung
       states:

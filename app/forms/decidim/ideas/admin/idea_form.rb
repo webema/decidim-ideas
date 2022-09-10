@@ -41,11 +41,7 @@ module Decidim
         end
 
         def available_scopes
-          @available_scopes ||= if idea_type.only_global_scope_enabled?
-                                  idea_type.scopes.where(scope: nil)
-                                else
-                                  idea_type.scopes
-                                end
+          @available_scopes ||= idea_type.scopes
         end
 
         private

@@ -14,7 +14,7 @@ module Decidim
 
       attribute :type_id, Integer
       attribute :scope_id, Integer
-      attribute :area_id, Integer
+      # attribute :area_id, Integer
       attribute :decidim_user_group_id, Integer
       attribute :state, String
       attribute :attachment, AttachmentForm
@@ -39,8 +39,6 @@ module Decidim
       end
 
       def scope_id
-        return nil if idea_type.only_global_scope_enabled?
-
         super.presence
       end
 
@@ -49,11 +47,7 @@ module Decidim
       end
 
       def available_scopes
-        @available_scopes ||= if idea_type.only_global_scope_enabled?
-                                idea_type.scopes.where(scope: nil)
-                              else
-                                idea_type.scopes
-                              end
+        @available_scopes ||= idea_type.scopes
       end
 
       def scope
