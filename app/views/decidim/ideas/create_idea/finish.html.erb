@@ -9,7 +9,7 @@
   <div class="medium-centered">
     <div class="callout secondary">
       <%= t ".callout_text" %>
-      
+
     </div>
   </div>
 </div>
@@ -27,7 +27,6 @@
                       data: { confirm: t(".confirm") } %>
           <%= link_to t(".edit_my_idea"), edit_idea_path(current_idea), class: "button expanded light secondary" %>
           <%= link_to t(".go_to_my_ideas"), decidim_ideas.ideas_path(filter: { author: "myself", with_any_state: "", with_any_scope: "" }), class: "" %>
-          <%= link_to t(".back_to_ideas"), ideas_path, class: "" %>
         </div>
       </div>
     </div>

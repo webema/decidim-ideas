@@ -98,7 +98,7 @@ de:
       badges:
         ideas:
           conditions:
-            - Gehe zum Teilnehmerbereich von Inspirationen
+            - Gehe zum Bereich Inspirationen
             - Folge diesen Schritten, um eine neue Inspiration zu erstellen
           description: Dieses Abzeichen wird gewährt, wenn du neue Inspirationen erstellst.
           description_another: Diese/r Benutzer:in hat %{score} Inspirationen veröffentlicht.
@@ -248,16 +248,6 @@ de:
           rejected: Zu wenige Unterschriften
         filter_type_values:
           all: Alle
-      committee_requests:
-        approve:
-          success: Anfrage wurde bestätigt.
-        new:
-          continue: Fortsetzen
-          help_text: Du bist dabei, ein Mitglied des Promoter:innen-Komitees dieser Inspiration zu werden
-        revoke:
-          success: Anfrage wurde zurückgezogen.
-        spawn:
-          success: Deine Anfrage wurde an den/die Autor:in der Inspiration gesendet.
       content_blocks:
         highlighted_ideas:
           name: Hervorgehobene Inspirationen
@@ -272,7 +262,6 @@ de:
           select_scope: Wähle ein Thema aus
         finish:
           back: Zurück
-          back_to_ideas: Alle Inspirationen anzeigen
           callout_text: Herzlichen Glückwunsch! Deine Inspiration wurde erfolgreich erstellt.
           confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit_my_idea: Inspirationen bearbeiten
@@ -294,7 +283,7 @@ de:
           select_idea_type_help: Inspirationen sind TODO. Welche Inspiration möchtest du teilen?
         check_duplicates:
           back: Zurück
-          compare_help: Wenn eine der folgenden Inspirationen deiner ähnelt, empfehlen wir dir, sie zu unterstützen. Dein Vorschlag wird mehr Chancen auf Umsetzung haben.
+          compare_help: TODO Wenn eine der folgenden Inspirationen deiner ähnelt, empfehlen wir dir, sie zu unterstützen. Dein Vorschlag wird mehr Chancen auf Umsetzung haben.
           continue: Meine Inspiration ist anders
           more_information: "(Weitere Informationen)"
       edit:
@@ -306,11 +295,6 @@ de:
         title: Inspirationen bearbeiten
         update: Aktualisieren
       events:
-        approve_membership_request:
-          email_intro: "%{author_nickname} hat deine Anfrage fürs Promoter:innen-Komittee der Inspiration %{resource_title} akzeptiert."
-          email_outro: 'Du hast diese Benachrichtigung erhalten, weil du dich bei dieser Inspiration beworben hast: %{resource_title}'
-          email_subject: "%{author_nickname} hat deine Anfrage fürs Promoter:innen-Komittee akzeptiert"
-          notification_title: <a href="%{author_profile_url}">%{author_nickname}</a> hat deine Anfrage fürs Promoter:innen-Komittee der Inspiration <a href="%{resource_url}">%{resource_title}</a> akzeptiert.
         create_idea_event:
           email_intro: "%{author_name} %{author_nickname}, dem du folgst, hat eine neue Inspiration erstellt, sieh sie dir an und beteilige dich:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du %{author_nickname} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
@@ -321,49 +305,12 @@ de:
           email_outro: Du hast diese Benachrichtigung erhalten, weil du %{author_nickname} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Inspiration wurde von %{author_nickname} unterstützt
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
-        revoke_membership_request:
-          email_intro: "%{author_nickname} hat deine Anfrage fürs Promoter:innen-Komittee der Inspiration %{resource_title} abgelehnt."
-          email_outro: 'Du hast diese Benachrichtigung erhalten, weil du dich bei dieser Inspiration beworben hast: %{resource_title}.'
-          email_subject: "%{author_nickname} hat deine Anfrage fürs Promoter:innen-Komittee abgelehnt"
-          notification_title: <a href="%{author_profile_url}">%{author_nickname}</a> hat deine Anfrage für das Promoter:innen-Komittee der Inspiration <a href="%{resource_url}">%{resource_title}</a> abgelehnt.
-        spawn_committee_request_event:
-          email_intro: "%{applicant_nickname} hat sich fürs Promoter:innen-Komittee deiner Inspiration %{resource_title} beworben. Um die Anfrage zu akzeptieren oder abzulehnen, besuche das Bearbeitungsformular deiner Inspiration."
-          email_outro: 'Du hast diese Benachrichtigung erhalten, weil du der/die Autor:in der Inspiration %{resource_title} bist'
-          email_subject: "%{applicant_nickname} möchte deiner Inspiration beitreten"
-          notification_title: <a href="%{applicant_profile_url}">%{applicant_nickname}</a> hat sich für das Promoter:innen-Komittee deiner Inspiration <a href="%{resource_url}">%{resource_title}</a> beworben. Um anzunehmen oder abzulehnen, klicke <a href="%{resource_url}/edit">hier</a>.
       form:
         add_attachments: Dokumente
         attachment_legend: "(Optional) Anhang hinzufügen"
         delete_attachment: Löschen
       index:
         title: Inspirationen
-      idea_signatures:
-        fill_personal_data:
-          continue: Fortsetzen
-          date_select:
-            day: Tag
-            month: Monat
-            year: Jahr
-          help: Bitte fülle die folgenden Felder mit deinen persönlichen Daten aus, um die Inspiration zu unterzeichnen
-        finish:
-          back_to_idea: Zurück zur Inspiration
-        sms_code:
-          continue: Code überprüfen und fortfahren
-          help: Überprüfe die empfangene SMS
-        sms_phone_number:
-          continue: Eine SMS senden
-          help: Fülle das Formular mit deiner bestätigten Telefonnummer aus, um deinen Bestätigungscode anzufordern
-      idea_votes:
-        create:
-          error: Beim Signieren der Inspiration sind Fehler aufgetreten.
-          invalid: Die zur Unterzeichnung der Inspiration bereitgestellten Daten sind nicht gültig
-          success_html: Herzliche Glückwünsche! Die <strong> %{title}</strong> -Inspiration wurde korrekt unterzeichnet
-        personal_data:
-          invalid: Persönliche Daten stimmen nicht mit den zur Autorisierung angegebenen Daten überein.
-        sms_code:
-          invalid: Dein Bestätigungscode stimmt nicht mit unserem überein. Bitte überprüfe noch einmal die SMS, die wir dir gesendet haben.
-        sms_phone:
-          invalid: Die Telefonnummer ist ungültig oder muss noch autorisiert werden. Bitte überprüfe deine Berechtigungen.
       ideas:
         author:
           deleted: Gelöscht
@@ -371,13 +318,6 @@ de:
           hidden_authors_count:
             one: und 1 weitere Person
             other: und %{count} weitere Leute
-        committee_members:
-          approve: Genehmigen
-          confirm_revoke: Bist du dir sicher?
-          invite_to_committee_help: Teile diesen Link, um andere Benutzer:innen zum Promotionskomitee einzuladen
-          no_members_yet: Es gibt keine Mitglieder im Promoter:innen-Ausschuss
-          revoke: Widerrufen
-          title: Ausschussmitglieder
         count:
           title:
             one: "%{count} Inspiration"
@@ -414,7 +354,6 @@ de:
         orders:
           label: 'Inspirationen sortieren nach:'
           most_commented: Am meisten kommentiert
-          most_voted: Am meisten unterzeichnet
           random: Zufällig
           recent: Neueste zuerst
           recently_published: Zuletzt veröffentlicht
@@ -422,36 +361,17 @@ de:
           answer_title: Diese Inspiration wurde beantwortet
           idea_rejected_reason: Diese Inspiration wurde wegen fehlender Unterstützung abgelehnt.
         show:
-          any_vote_method: Diese Inspiration sammelt sowohl online als auch persönlich Unterschriften.
           confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit: Bearbeiten
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
-          offline_method: Diese Inspiration sammelt nur persönliche Unterschriften.
           send_to_technical_validation: Veröffentlichen
-        signatures_count:
-          one: " Unterschrift"
-          other: " Signaturen"
-        vote_cabin:
-          already_voted: Schon unterschrieben
-          supports_required: "%{total_supports} Signaturen erforderlich"
-          verification_required: Bestätige dein Konto, um die Inspiration zu unterzeichnen
-          vote: Signieren
-          votes_blocked: Die Anmeldung ist deaktiviert
-        votes_count:
-          count:
-            one: UNTERSCHRIFT
-            other: Unterschriften
-          most_popular_idea: Populärste Inspiration
-          need_more_votes: Benötigt mehr Unterschriften
       ideas_mailer:
         creation_subject: Deine Inspiration '%{title}' wurde erstellt
         idea_link:
           check_idea_details: Du kannst die Inspirationendetails sehen
           here: Hier
-        more_information: Hier findest du weitere Informationen zum Inspirationenerstellungsprozess.
-        progress_report_body_for: Die Inspiration %{title} hat die %{percentage}% der erforderlichen Unterstützung erreicht.
-        progress_report_for: 'Resume über die Inspiration: %{title}'
-        promotal_committee_help: Denke daran, dass du mindestens %{member_count} Personen zum Promoter:innen-Komitee einladen musst. Leite den folgenden Link weiter, um Personen zum Promoter:innen-Komitee einzuladen
+        more_information: Hier findest du weitere Informationen zum Erstellen von Inspirationen.
+        progress_report_for: 'Infos zur Inspiration: %{title}'
         status_change_body_for: 'Die Inspiration %{title} hat ihren Status geändert in: %{state}'
         status_change_for: Die Inspiration %{title} hat ihren Status geändert
       last_activity:
@@ -469,8 +389,6 @@ de:
           published: Veröffentlicht
           rejected: Zu wenige Unterschriften
           validating: Freigabe angefordert
-      signature_interval:
-        title: Zeitraum der Unterschriftensammlung
       states:
         accepted: Akzeptiert
         expired: Abgelaufen
@@ -505,20 +423,6 @@ de:
       idea_header:
         idea_menu_item: Inspiration
         all_ideas_menu_item: Alle Inspirationen
-      idea_signature_creation_header:
-        back: Zurück
-        fill_personal_data: Ergänze deine Daten
-        finish: Veröffentlichen
-        finished: Inspirationen-Signatur erstellt
-        see_steps: siehe Schritte
-        select_identity: Identität auswählen
-        sms_code: SMS-Code-Bestätigung
-        sms_phone_number: Handynummer
-        step: Schritt %{current} von %{total}
-        title: Zeichen %{idea_title}
       ideas:
-        idea:
-          check: Mehr erfahren
-          check_and_support: Überprüfe es und unterschreibe es
         no_ideas_yet:
-          no_ideas_yet: Keine Inspirationen bisher!
+          no_ideas_yet: Es wurden noch keine Inspirationen veröffentlicht!
