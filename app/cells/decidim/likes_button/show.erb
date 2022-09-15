@@ -1,0 +1,7 @@
+<% if options[:card_m]  %>
+  <span class="icon-wrap">
+      <%= icon "heart", icon_options %>
+      <span aria-hidden="true"><%= 'TBD' %></span>
+      <span class="show-for-sr"><%= t("decidim.followers.followers_count", count: 'TBD') %></span>
+    </span>
+<% end %>

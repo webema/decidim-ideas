@@ -71,6 +71,22 @@ module Decidim
       def resource_image_path
         image.url if has_image?
       end
+
+      def likes_status
+        cell "decidim/likes_button", model, inline: true, card_m: true
+      end
+
+      def statuses
+        [:likes, :follow, :comments_count]
+      end
+
+      # def comments_count_status
+      #   'TODO'
+      # end
+
+      # def creation_date_status
+      #   'TODO'
+      # end
     end
   end
 end
