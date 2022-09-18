@@ -8,11 +8,6 @@ module Decidim
         Decidim::Ideas::IdeasMailer.notify_creation(idea)
       end
 
-      def notify_progress
-        idea = Decidim::Idea.first
-        Decidim::Ideas::IdeasMailer.notify_progress(idea, idea.author)
-      end
-
       def notify_state_change_to_published
         idea = Decidim::Idea.first
         idea.state = "published"

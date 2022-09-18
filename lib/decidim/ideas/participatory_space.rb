@@ -72,8 +72,7 @@ Decidim.register_participatory_space(:ideas) do |participatory_space|
       organization.top_scopes.each do |scope|
         Decidim::IdeasTypeScope.create(
           type: type,
-          scope: scope,
-          # supports_required: (n + 1) * 1000
+          scope: scope
         )
       end
     end

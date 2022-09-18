@@ -132,22 +132,6 @@ module Decidim
           redirect_back(fallback_location: ideas_path)
         end
 
-        # GET /admin/ideas/:id/export_votes
-        def export_votes
-          enforce_permission_to :export_votes, :idea, idea: current_idea
-
-          votes = current_idea.votes.map(&:sha1)
-          csv_data = CSV.generate(headers: false) do |csv|
-            votes.each do |sha1|
-              csv << [sha1]
-            end
-          end
-
-          respond_to do |format|
-            format.csv { send_data csv_data, file_name: "votes.csv" }
-          end
-        end
-
         private
 
         def collection

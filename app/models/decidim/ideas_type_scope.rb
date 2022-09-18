@@ -19,11 +19,6 @@ module Decidim
              inverse_of: :scoped_type
 
     validates :scope, uniqueness: { scope: :type }
-    # validates :supports_required, presence: true
-    # validates :supports_required, numericality: {
-    #   only_integer: true,
-    #   greater_than: 0
-    # }
 
     def global_scope?
       decidim_scopes_id.nil?

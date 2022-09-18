@@ -45,12 +45,6 @@ module Decidim
              dependent: :destroy,
              inverse_of: :idea
 
-    # has_many :committee_members,
-    #          foreign_key: "decidim_ideas_id",
-    #          class_name: "Decidim::IdeasCommitteeMember",
-    #          dependent: :destroy,
-    #          inverse_of: :idea
-
     has_many :components, as: :participatory_space, dependent: :destroy
 
     # This relationship exists only by compatibility reasons.
@@ -61,7 +55,6 @@ module Decidim
              dependent: :destroy,
              as: :participatory_space
 
-    # enum signature_type: [:online, :offline, :any], _suffix: true
     enum state: [:created, :validating, :discarded, :published, :rejected, :accepted]
 
     # enum state: [:created, :validating, :discarded, :published]
@@ -80,22 +73,11 @@ module Decidim
 
     scope_search_multi :with_any_state, [:accepted, :rejected, :answered, :open, :closed]
 
-    # scope :currently_signable, lambda {
-    #   where("signature_start_date <= ?", Date.current)
-    #     .where("signature_end_date >= ?", Date.current)
-    # }
-    # scope :currently_unsignable, lambda {
-    #   where("signature_start_date > ?", Date.current)
-    #     .or(where("signature_end_date < ?", Date.current))
-    # }
-
     scope :answered, -> { where.not(answered_at: nil) }
 
     scope :public_spaces, -> { published }
-    # scope :signature_type_updatable, -> { created }
 
     scope :order_by_most_recent, -> { order(created_at: :desc) }
-    # scope :order_by_supports, -> { order(Arel.sql("(coalesce((online_votes->>'total')::int,0) + coalesce((offline_votes->>'total')::int,0)) DESC")) }
     scope :order_by_most_recently_published, -> { order(published_at: :desc) }
     scope :order_by_most_commented, lambda {
       select("decidim_ideas.*")
@@ -136,7 +118,6 @@ module Decidim
       )
     }
 
-    # before_update :set_offline_votes_total
     after_commit :notify_state_change
     after_create :notify_creation
 
@@ -209,12 +190,6 @@ module Decidim
       user_group&.name || author.name
     end
 
-    # def votes_enabled?
-    #   published? &&
-    #     signature_start_date <= Date.current &&
-    #     signature_end_date >= Date.current
-    # end
-
     # Public: Check if the user has voted the question.
     #
     # Returns Boolean.
@@ -266,114 +241,10 @@ module Decidim
       update(published_at: nil, state: "discarded")
     end
 
-    # Public: Returns wether the signature interval is already defined or not.
-    # def has_signature_interval_defined?
-    #   signature_end_date.present? && signature_start_date.present?
-    # end
-
     # Public: Returns the hashtag for the idea.
     def hashtag
       attributes["hashtag"].to_s.delete("#")
     end
-
-    # Public: Calculates the number of total current supports.
-    #
-    # Returns an Integer.
-    # def supports_count
-    #   online_votes_count + offline_votes_count
-    # end
-
-    # Public: Calculates the number of current supports for a scope.
-    #
-    # Returns an Integer.
-    # def supports_count_for(scope)
-    #   online_votes_count_for(scope) + offline_votes_count_for(scope)
-    # end
-
-    # Public: Calculates the number of supports required to accept the idea for a scope.
-    #
-    # Returns an Integer.
-    # def supports_required_for(scope)
-    #   idea_type_scopes.find_by(decidim_scopes_id: scope&.id).supports_required
-    # end
-
-    # Public: Returns the percentage of required supports reached
-    # def percentage
-    #   [supports_count * 100 / supports_required, 100].min
-    # end
-
-    # Public: Whether the supports required objective has been reached
-    # def supports_goal_reached?
-    #   votable_idea_type_scopes.map(&:scope).all? { |scope| supports_goal_reached_for?(scope) }
-    # end
-
-    # Public: Whether the supports required objective has been reached for a scope
-    # def supports_goal_reached_for?(scope)
-    #   supports_count_for(scope) >= supports_required_for(scope)
-    # end
-
-    # Public: Calculates all the votes across all the scopes.
-    #
-    # Returns an Integer.
-    # def online_votes_count
-    #   return 0 if offline_signature_type?
-
-    #   online_votes["total"].to_i
-    # end
-
-    # def offline_votes_count
-    #   return 0 if online_signature_type?
-
-    #   offline_votes["total"].to_i
-    # end
-
-    # def online_votes_count_for(scope)
-    #   return 0 if offline_signature_type?
-
-    #   scope_key = (scope&.id || "global").to_s
-
-    #   (online_votes || {}).fetch(scope_key, 0).to_i
-    # end
-
-    # def offline_votes_count_for(scope)
-    #   return 0 if online_signature_type?
-
-    #   scope_key = (scope&.id || "global").to_s
-
-    #   (offline_votes || {}).fetch(scope_key, 0).to_i
-    # end
-
-    def update_online_votes_counters
-      online_votes = votes.group(:scope).count.each_with_object({}) do |(scope, count), counters|
-        counters[scope&.id || "global"] = count
-        counters["total"] ||= 0
-        counters["total"] += count
-      end
-
-      # rubocop:disable Rails/SkipsModelValidations
-      update_column("online_votes", online_votes)
-      # rubocop:enable Rails/SkipsModelValidations
-    end
-
-    # def set_offline_votes_total
-    #   return if offline_votes.blank?
-
-    #   offline_votes["total"] = offline_votes[scope&.id.to_s] || offline_votes["global"]
-    # end
-
-    # Public: Finds all the IdeaTypeScopes that are eligible to be voted by a user.
-    # Usually this is only the `scoped_type` but voting on children of the scoped type is
-    # enabled we have to filter all the available scopes in the idea type to select
-    # the ones that are a descendant of the idea type.
-    #
-    # Returns an Array of Decidim::IdeasScopeType.
-    # def votable_idea_type_scopes
-    #   return Array(scoped_type) unless type.child_scope_threshold_enabled?
-
-    #   idea_type_scopes.select do |idea_type_scope|
-    #     idea_type_scope.scope.present? && (scoped_type.global_scope? || scoped_type.scope.ancestor_of?(idea_type_scope.scope))
-    #   end.prepend(scoped_type).uniq
-    # end
 
     # Public: Overrides slug attribute from participatory processes.
     def slug
@@ -400,34 +271,12 @@ module Decidim
     #
     # Returns a Boolean.
     def has_authorship?(user)
-      return true if author.id == user.id
-
-      # committee_members.approved.where(decidim_users_id: user.id).any?
+      author.id == user.id
     end
 
     def author_users
       [author] # .concat(committee_members.excluding_author.map(&:user))
     end
-
-    # def accepts_offline_votes?
-    #   published? && (offline_signature_type? || any_signature_type?)
-    # end
-
-    # def accepts_online_votes?
-    #   votes_enabled? && (online_signature_type? || any_signature_type?)
-    # end
-
-    # def accepts_online_unvotes?
-    #   accepts_online_votes? && type.undo_online_signatures_enabled?
-    # end
-
-    # def minimum_committee_members
-    #   type.minimum_committee_members || Decidim::Ideas.minimum_committee_members
-    # end
-
-    # def enough_committee_members?
-    #   committee_members.approved.count >= minimum_committee_members
-    # end
 
     def component
       nil
@@ -475,13 +324,6 @@ module Decidim
       type.scopes
     end
 
-    # Private: A validator that verifies the signature type is allowed by the IdeaType.
-    # def signature_type_allowed
-    #   return if published?
-
-    #   errors.add(:signature_type, :invalid) if type.allowed_signature_types_for_ideas.exclude?(signature_type)
-    # end
-
     def notify_state_change
       return unless saved_change_to_state?
 
@@ -506,11 +348,6 @@ module Decidim
     ransacker :type_id do
       Arel.sql("decidim_ideas_type_scopes.decidim_ideas_types_id")
     end
-
-    # method for sort_link by number of supports
-    # ransacker :supports_count do
-    #   Arel.sql("(coalesce((online_votes->>'total')::int,0) + coalesce((offline_votes->>'total')::int,0))")
-    # end
 
     ransacker :id_string do
       Arel.sql(%{cast("decidim_ideas"."id" as text)})

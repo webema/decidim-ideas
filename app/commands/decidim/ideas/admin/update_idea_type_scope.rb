@@ -34,7 +34,6 @@ module Decidim
 
         def attributes
           {
-            # supports_required: form.supports_required,
             decidim_scopes_id: form.decidim_scopes_id
           }
         end

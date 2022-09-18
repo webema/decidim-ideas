@@ -24,19 +24,10 @@ module Decidim
              through: :scopes,
              class_name: "Decidim::Idea"
 
-    # enum signature_type: [:online, :offline, :any], _suffix: true
-
     validates :title, :description, presence: true
-    # validates :document_number_authorization_handler, presence: true, if: ->(form) { form.collect_user_extra_fields? }
 
     has_one_attached :banner_image
     validates_upload :banner_image, uploader: Decidim::BannerImageUploader
-
-    # def allowed_signature_types_for_ideas
-    #   return %w(online offline any) if any_signature_type?
-
-    #   Array(signature_type.to_s)
-    # end
 
     def allow_resource_permissions?
       true

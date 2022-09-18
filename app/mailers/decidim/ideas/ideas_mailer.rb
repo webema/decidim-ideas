@@ -50,29 +50,6 @@ module Decidim
           mail(to: "#{user.name} <#{user.email}>", subject: @subject)
         end
       end
-
-      # Notify progress to all idea subscribers.
-      def notify_progress(idea, user)
-        return if user.email.blank?
-
-        @organization = idea.organization
-        @link = idea_url(idea, host: @organization.host)
-
-        with_user(user) do
-          @body = I18n.t(
-            "decidim.ideas.ideas_mailer.progress_report_body_for",
-            title: translated_attribute(idea.title),
-            percentage: idea.percentage
-          )
-
-          @subject = I18n.t(
-            "decidim.ideas.ideas_mailer.progress_report_for",
-            title: translated_attribute(idea.title)
-          )
-
-          mail(to: "#{user.name} <#{user.email}>", subject: @subject)
-        end
-      end
     end
   end
 end
