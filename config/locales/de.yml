@@ -352,7 +352,7 @@ de:
               one: Kommentar
               other: Kommentare
         orders:
-          label: 'Inspirationen sortieren nach:'
+          label: 'Sortieren nach:'
           most_commented: Am meisten kommentiert
           random: Zufällig
           recent: Neueste zuerst

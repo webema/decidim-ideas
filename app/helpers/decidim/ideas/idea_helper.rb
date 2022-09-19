@@ -39,6 +39,10 @@ module Decidim
       def humanize_admin_state(state)
         I18n.t(state, scope: "decidim.ideas.admin_states", default: :created)
       end
+
+      def banner_image_path(idea)
+        idea.attachments.find(&:image?)&.url || idea.type.attached_uploader(:banner_image)&.path
+      end
     end
   end
 end

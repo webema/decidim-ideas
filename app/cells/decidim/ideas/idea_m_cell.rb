@@ -61,7 +61,7 @@ module Decidim
       end
 
       def has_image?
-        image.present?
+        true
       end
 
       def image
@@ -69,7 +69,7 @@ module Decidim
       end
 
       def resource_image_path
-        image.url if has_image?
+        image&.url || model.type.attached_uploader(:banner_image)&.path
       end
 
       def likes_status
