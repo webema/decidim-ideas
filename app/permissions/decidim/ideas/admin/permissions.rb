@@ -64,7 +64,7 @@ module Decidim
         end
 
         def has_ideas?
-          (IdeasCreated.by(user) | IdeasPromoted.by(user)).any?
+          (IdeasCreated.by(user)).any?
         end
 
         def attachment_action?

@@ -25,7 +25,7 @@ module Decidim
         def query
           return Idea.where(organization: @user.organization) if @user.admin?
 
-          Idea.where(id: IdeasCreated.by(@user) + IdeasPromoted.by(@user))
+          Idea.where(id: IdeasCreated.by(@user))
         end
       end
     end
