@@ -1,0 +1,9 @@
+%p
+  = t "decidim.ideas.ideas_mailer.creation_greeting", title: translated_attribute(@idea.title)
+%p
+  = sanitize(t("decidim.ideas.ideas_mailer.creation_info", title: translated_attribute(@idea.title)))
+  = t("check_idea_details", scope: "decidim.ideas.ideas_mailer.idea_link")
+  = link_to t("here",  scope: "decidim.ideas.ideas_mailer.idea_link"), decidim_admin_ideas.idea_url(@idea, host: @organization.host)
+
+%p
+  = t("decidim.ideas.ideas_mailer.moderation_info")

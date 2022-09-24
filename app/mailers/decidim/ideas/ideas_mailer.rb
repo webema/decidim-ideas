@@ -32,12 +32,10 @@ module Decidim
         return if user.email.blank?
 
         @organization = idea.organization
+        @idea = idea
 
         with_user(user) do
-          @subject = I18n.t(
-            "decidim.ideas.ideas_mailer.status_change_for",
-            title: translated_attribute(idea.title)
-          )
+          @subject = I18n.t("decidim.ideas.ideas_mailer.#{idea.state}_subject")
 
           @body = I18n.t(
             "decidim.ideas.ideas_mailer.status_change_body_for",

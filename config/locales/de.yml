@@ -366,10 +366,29 @@ de:
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
           send_to_technical_validation: Veröffentlichen
       ideas_mailer:
-        creation_subject: Deine Inspiration '%{title}' wurde erstellt
+        creation_subject: Danke für deinen Beitrag!
+        creation_greeting: Geschafft!
+        creation_info: Deine Inspiration <strong>%{title}</strong> wurde erstellt und wartet nun auf die Freigabe der Moderation.
+        moderation_info: Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
         idea_link:
-          check_idea_details: Du kannst die Inspirationendetails sehen
-          here: Hier
+          check_idea_details: Eine Ansicht deiner Inspiration findest du
+          here: hier
+        rejected_subject: Es sollte so nicht sein…
+        rejected_greeting: Schade!
+        rejected_info: Deine Inspiration <strong>%{title}</strong> wurde von unserer Moderation verworfen.
+        rejected_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
+        published_subject: "Bahn frei - Kartoffelbrei: Jetzt geht’s los!"
+        published_greeting: Juchuu!
+        published_info: Deine Inspiration <strong>%{title}</strong> wurde von der Moderation veröffentlicht.
+        published_explanation_title: Was geschieht nun?
+        published_explanation_1: Hast du ein Praxisbeispiel beigetragen, so ist es nun im Bereich Inspirationen für andere auffindbar. Solltest du den dringenden Wunsch haben, hier nachträglich etwas zu ergänzen, so kannst du uns diesbezüglich anschreiben.
+        published_explanation_2: Hast du eine Idee geteilt, so kann nun daran weiter gedacht werden. Dies geschieht in den Kommentaren und über die Funktion des "likens".
+        published_explanation_3: Wenn wir merken, dass eine Idee besondere Aufmerksamkeit erhält oder in den Kommentaren weiterentwickelt wurde und eine gewisse Reife erhalten hat, dann soll mehr daraus werden.
+        published_explanation_4: Sollte dies bei deiner Idee der Fall sein, nehmen wir Kontakt mit dir als Autor:in und den aktivsten Kommentator:innen auf, um möglicherweise eine Gruppe zu bilden. Wenn du keine Lust hast, an dem Thema weiter zu arbeiten, ist das in Ordnung, vielleicht findet sich jemand anderes.
+        published_explanation_5: Es kann auch sein, dass deine Idee in der Diskussion eine Form erhalten hat, die es zulässt, dass wir sie an eine dafür zuständige Stelle weiterleiten (z.B. eine Abteilung im Landeskirchenamt). Unser Ziel ist, dass du nach einer Weiterleitung deiner Idee innerhalb von zwei Wochen eine Nachricht bekommst, wie mit ihr weiter verfahren wird.
+        published_explanation_6: Anfang 2023 wird es vermutlich eine Sortierungsphase geben, in der jede Idee einen Status erhält, sodass sichtbar wird, was daraus geworden ist.
+        published_explanation_7: Wir sind gespannt wie ein Flitzebogen, was aus deiner Inspiration entstehen wird!
+
         more_information: Hier findest du weitere Informationen zum Erstellen von Inspirationen.
         progress_report_for: 'Infos zur Inspiration: %{title}'
         status_change_body_for: 'Die Inspiration %{title} hat ihren Status geändert in: %{state}'

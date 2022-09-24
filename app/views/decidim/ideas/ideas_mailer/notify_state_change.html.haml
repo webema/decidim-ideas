@@ -1,0 +1,22 @@
+%p
+  = t "decidim.ideas.ideas_mailer.#{@idea.state}_greeting", title: translated_attribute(@idea.title)
+
+%p
+  = sanitize(t("decidim.ideas.ideas_mailer.#{@idea.state}_info", title: translated_attribute(@idea.title)))
+  = t("check_idea_details", scope: "decidim.ideas.ideas_mailer.idea_link")
+  = link_to t("here",  scope: "decidim.ideas.ideas_mailer.idea_link"), decidim_admin_ideas.idea_url(@idea, host: @organization.host)
+
+- if @idea.rejected?
+  %p
+    = sanitize(t("decidim.ideas.ideas_mailer.#{@idea.state}_explanation", tos_link: link_to('Nutzungsbedingungen', decidim.page_url('terms-and-conditions', host: @organization.host)), mailto_link: mail_to('zukunftsprozess@evlka.de')))
+
+- if @idea.published?
+  %p
+    %strong
+      = t("decidim.ideas.ideas_mailer.#{@idea.state}_explanation_title")
+
+  - i = 1
+  - while I18n.exists? "decidim.ideas.ideas_mailer.#{@idea.state}_explanation_#{i}"
+    %p
+      = t("decidim.ideas.ideas_mailer.#{@idea.state}_explanation_#{i}")
+    - i += 1
