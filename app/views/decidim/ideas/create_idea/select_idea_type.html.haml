@@ -1,0 +1,21 @@
+- default_type = available_idea_types.first
+- content_for :back_link do
+  = link_to ideas_path do
+    = icon "chevron-left", class: "icon--small", role: "img", "aria-hidden": true
+    = t(".back")
+
+.row.column
+  %ul.accordion{ data: { accordion: true } }
+    - idea_types_each do |type|
+      %li.accordion-item{ :class => "#{"is-active" if type == default_type}", data: { accordion_item: true } }
+        = link_to t(".choose_html", title: translated_attribute(type.title)), "#", class: 'accordion-title'
+
+        .accordion-content{ data: { tab_content: true } }
+          %h2.section-heading= translated_attribute(type.title)
+          %div
+            = raw translated_attribute type.description
+
+          %br
+          = decidim_form_for(@form, url: next_wizard_path, method: :put, html: { id: "new_idea_#{type.id}", class: "form select-idea_type-form" }) do |f|
+            = f.hidden_field :type_id, value: type.id, id: "idea_type_id_#{ type.id }"
+            = f.submit t(".select"), class: "button expanded"

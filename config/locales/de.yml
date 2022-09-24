@@ -255,7 +255,7 @@ de:
         additional_data:
           back: Zurück
           continue: Fortsetzen
-          fill_data_help: "<ul> <li>Inhalt deiner Inspiration überprüfen. Ist der Titel leicht verständlich? Ist das Ziel der Inspiration klar?</li> <li>Du musst die Art der Unterschrift wählen. Persönlich, online oder eine Kombination aus beidem</li> <li>Was ist die geografische Reichweite der Inspiration? Stadt, Bezirk?</li> </ul>"
+          fill_data_help: Wie schön, dass du die Plattform um weitere Inspirationen bereicherst! Wähle ein Thema aus und füge ein Bild hinzu, um deinen Beitrag noch auffindbarer zu gestalten. Falls nötig, kannst du jetzt auch noch mal deinen Titel oder die Beschreibung anpassen.
           idea_type: Art der Inspiration
           more_information: "(Weitere Informationen)"
           select_area: Wähle einen Bereich aus
@@ -269,22 +269,24 @@ de:
           more_information: "(Weitere Informationen)"
           send_my_idea: Veröffentlichen
         finish_help:
-          publish_helper_text: "<strong>Bitte beachte:</strong> Noch ist deine Inspiration nicht öffentlich sichtbar. Klicke auf 'Veröffentlichen', um deine Inspiration durch eine/n Moderator:in überprüfen zu lassen. Wenn alles in Ordnung ist, wird er/sie deine Inspiration zeitnah veröffentlichen."
+          publish_helper_text: "<strong>Bitte beachte:</strong> Noch ist dein Beitrag nicht öffentlich sichtbar. Klicke auf <em>Veröffentlichen</em>, um deinen Beitrag durch die Moderation überprüfen zu lassen. Wenn dein Beitrag nicht gegen die Nutzungsbedingungen verstößt, wird er in Kürze veröffentlicht.
+"
         initial_data:
           back: Zurück
           continue: Fortsetzen
-          help: Woraus besteht die Inspiration? Fülle den Titel und die Beschreibung aus. Wir empfehlen einen kurzen und prägnanten Titel und eine Beschreibung der vorgeschlagenen Lösung.
+          help: Nimm dir Zeit, um deinen Beitrag auszuarbeiten. Schau dir in Ruhe an, welche Felder ausgefüllt werden müssen und entwickle, falls notwendig, zuerst einen Entwurf. Sobald du einen Beitrag veröffentlichst, können ihn andere sehen. Wähle einen aussagekräftigen Titel, der deutlich erklärt, was dein Beitrag beinhaltet.
+
           more_information: "(Weitere Informationen)"
         select_idea_type:
           back: Zurück
-          choose_html: Ich möchte eine <strong>%{title}</strong> teilen
+          choose_html: Ich möchte ein <strong>%{title}</strong> teilen
           more_information: "(Weitere Informationen)"
-          select: Inspiration teilen
+          select: Fortsetzen
           select_idea_type_help: Inspirationen sind TODO. Welche Inspiration möchtest du teilen?
         check_duplicates:
           back: Zurück
-          compare_help: TODO Wenn eine der folgenden Inspirationen deiner ähnelt, empfehlen wir dir, sie zu unterstützen. Dein Vorschlag wird mehr Chancen auf Umsetzung haben.
-          continue: Meine Inspiration ist anders
+          compare_help: Gibt es bereits einen vergleichbaren Beitrag? Dann schau ihn dir an und teile deine Erfahrungen direkt in den Kommentaren. Gemeinsam erhöht ihr eure Chance, wahrgenommen zu werden. Wenn sich dein Beitrag von den anderen unterscheidet, wähle unten rechts "Meine Beitrag ist anders".
+          continue: Mein Beitrag ist anders
           more_information: "(Weitere Informationen)"
       edit:
         accept: Inspiration akzeptieren
