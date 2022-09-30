@@ -12,6 +12,7 @@ module Decidim
     include Decidim::Followable
     include Decidim::HasAttachments
     include Decidim::HasAttachmentCollections
+    include Decidim::HasUploadValidations
     include Decidim::Traceable
     include Decidim::Loggable
     include Decidim::Ideas::IdeaSlug
@@ -54,6 +55,9 @@ module Decidim
              foreign_type: "decidim_participatory_space_type",
              dependent: :destroy,
              as: :participatory_space
+
+    has_one_attached :hero_image
+    validates_upload :hero_image, uploader: Decidim::HeroImageUploader
 
     enum state: [:created, :validating, :discarded, :published, :rejected, :accepted]
 

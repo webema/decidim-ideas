@@ -6,6 +6,7 @@ module Decidim
     # existing idea.
     class UpdateIdea < Decidim::Command
       include ::Decidim::MultipleAttachmentsMethods
+      include ::Decidim::AttachmentAttributesMethods
       include ::Decidim::GalleryMethods
       include CurrentLocale
 
@@ -58,8 +59,10 @@ module Decidim
           title: form.title,
           description: form.description,
           hashtag: form.hashtag
-        }
-        
+        }.merge(
+          attachment_attributes(:hero_image)
+        )
+
         if idea.created?
           attrs[:scoped_type_id] = form.scoped_type_id if form.scoped_type_id
         end

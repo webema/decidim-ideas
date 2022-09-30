@@ -6,6 +6,7 @@ module Decidim
     class CreateIdea < Decidim::Command
       include CurrentLocale
       include ::Decidim::MultipleAttachmentsMethods
+      include ::Decidim::AttachmentAttributesMethods
 
       # Public: Initializes the command.
       #
@@ -63,13 +64,17 @@ module Decidim
 
       def build_idea
         Idea.new(
-          organization: form.current_organization,
-          title: { current_locale => form.title },
-          description: { current_locale => form.description },
-          author: current_user,
-          decidim_user_group_id: form.decidim_user_group_id,
-          scoped_type: scoped_type,
-          state: "created"
+          {
+            organization: form.current_organization,
+            title: { current_locale => form.title },
+            description: { current_locale => form.description },
+            author: current_user,
+            decidim_user_group_id: form.decidim_user_group_id,
+            scoped_type: scoped_type,
+            state: "created"
+          }.merge(
+            attachment_attributes(:hero_image)
+          )
         )
       end
 

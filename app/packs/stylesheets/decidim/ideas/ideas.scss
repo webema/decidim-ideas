@@ -60,3 +60,19 @@ fieldset{
   padding: .5em;
   margin-bottom: 1em;
 }
+
+fieldset.attachments_container{
+  padding: .5em 0;
+  margin: 1em 0 0;
+
+  legend {
+    margin-bottom: 0;
+  }
+}
+
+
+form.edit_idea {
+  .preview {
+    margin-bottom: 1rem;
+  }
+}

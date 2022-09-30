@@ -12,7 +12,6 @@ module Decidim
       attribute :description, String
       attribute :type_id, Integer
       attribute :scope_id, Integer
-      # attribute :area_id, Integer
       attribute :decidim_user_group_id, Integer
       attribute :state, String
       attribute :attachment, AttachmentForm
@@ -21,12 +20,16 @@ module Decidim
       attachments_attribute :photos
       attachments_attribute :documents
 
+      attribute :hero_image
+      attribute :remove_hero_image, Boolean, default: false
+
       validates :title, :description, presence: true
       validates :title, length: { maximum: 150 }
       validates :type_id, presence: true
       validate :scope_exists
       validate :notify_missing_attachment_if_errored
       validate :trigger_attachment_errors
+      validates :hero_image, passthru: { to: Decidim::Idea }
 
       def map_model(model)
         self.type_id = model.type.id
@@ -58,6 +61,8 @@ module Decidim
 
         type.scopes.find_by(decidim_scopes_id: scope_id.presence).id
       end
+
+      alias organization current_organization
 
       private
 

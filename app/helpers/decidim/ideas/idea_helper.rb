@@ -41,7 +41,7 @@ module Decidim
       end
 
       def banner_image_path(idea)
-        idea.attachments.find(&:image?)&.url || idea.type.attached_uploader(:banner_image)&.path
+        idea.attached_uploader(:hero_image)&.variant_path(:large) || idea.type.attached_uploader(:banner_image)&.path
       end
     end
   end

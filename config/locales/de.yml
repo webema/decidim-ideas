@@ -10,6 +10,7 @@ de:
         type_id: Typ
         decidim_scope_id: Thema
         title: Titel
+        hero_image: Titelbild
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
@@ -28,6 +29,12 @@ de:
       decidim/idea:
         one: Inspiration
         other: Inspirationen
+    errors:
+      models:
+        decidim/idea:
+          attributes:
+            hero_image:
+              allowed_file_content_types: Kein erlaubtes Dateiformat
   decidim:
     admin:
       actions:
@@ -155,7 +162,7 @@ de:
             preview: Vorschau
             print: Drucken
           idea_attachments:
-            documents: Dockumente
+            documents: Dokumente
             edit: Bearbeiten
             new: Neu
             photos: Fotos
@@ -308,8 +315,8 @@ de:
           email_subject: Inspiration wurde von %{author_nickname} unterstützt
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
       form:
-        add_attachments: Dokumente
-        attachment_legend: "(Optional) Anhang hinzufügen"
+        add_attachments: Anhänge
+        attachment_legend: "Anhänge (Optional)"
         delete_attachment: Löschen
       index:
         title: Inspirationen
