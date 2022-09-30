@@ -23,6 +23,8 @@ module Decidim
             title: translated_attribute(idea.title)
           )
 
+          @link = decidim_ideas.idea_url(idea, host: @organization.host)
+
           mail(to: "#{idea.author.name} <#{idea.author.email}>", subject: @subject)
         end
       end
@@ -43,7 +45,7 @@ module Decidim
             state: I18n.t(idea.state, scope: "decidim.ideas.admin_states")
           )
 
-          @link = idea_url(idea, host: @organization.host)
+          @link = decidim_ideas.idea_url(idea, host: @organization.host)
 
           mail(to: "#{user.name} <#{user.email}>", subject: @subject)
         end
