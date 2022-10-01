@@ -5,7 +5,7 @@
     = t(".back")
 
 .row.column
-  %ul.accordion{ data: { accordion: true } }
+  %ul.accordion{ data: { accordion: true, allow_all_closed: 'true' } }
     - idea_types_each do |type|
       %li.accordion-item{ data: { accordion_item: true } }
         = link_to t(".choose_html", title: translated_attribute(type.title)), "#", class: 'accordion-title'
