@@ -7,6 +7,7 @@ module Decidim
       # existing idea.
       class UpdateIdea < Decidim::Command
         include Decidim::Ideas::AttachmentMethods
+        include ::Decidim::AttachmentAttributesMethods
 
         # Public: Initializes the command.
         #
@@ -55,8 +56,10 @@ module Decidim
             title: form.title,
             description: form.description,
             hashtag: form.hashtag
-          }
-          
+          }.merge(
+            attachment_attributes(:hero_image)
+          )
+
           add_admin_accessible_attrs(attrs) if current_user.admin?
 
           attrs

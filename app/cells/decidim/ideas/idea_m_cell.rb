@@ -69,7 +69,7 @@ module Decidim
       end
 
       def resource_image_path
-        image&.url || model.type.attached_uploader(:banner_image)&.path
+        model.attached_uploader(:hero_image)&.variant_path(:large) || model.type.attached_uploader(:banner_image)&.path
       end
 
       def likes_status

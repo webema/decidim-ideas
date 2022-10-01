@@ -18,8 +18,12 @@ module Decidim
         attribute :state, String
         attribute :attachment, AttachmentForm
 
+        attribute :hero_image
+        attribute :remove_hero_image, Boolean, default: false
+
         validates :title, :description, translatable_presence: true
         validate :notify_missing_attachment_if_errored
+        validates :hero_image, passthru: { to: Decidim::Idea }
 
         def map_model(model)
           self.type_id = model.type.id
@@ -43,6 +47,8 @@ module Decidim
         def available_scopes
           @available_scopes ||= idea_type.scopes
         end
+
+        alias organization current_organization
 
         private
 
