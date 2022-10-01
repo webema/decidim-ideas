@@ -1,0 +1,24 @@
+- content_for :back_link do
+  = link_to :back do
+    = icon "chevron-left", class: "icon--small", role: "img", "aria-hidden": true
+    = t(".back")
+.row.column
+  .medium-centered
+    .callout.secondary
+      = t ".help"
+%br
+
+.row.column
+  .medium-centered
+    .card
+      .card__content
+        = decidim_form_for(@form, url: next_wizard_path, method: :put, html: { class: "form new_idea_previous_form" }) do |f|
+          = form_required_explanation
+          = f.hidden_field :type_id
+          .field
+            = f.text_field :title, autofocus: true
+          .field
+            = f.editor :description, lines: 8, toolbar: :full
+          .actions
+            = f.submit t(".continue"), class: "button expanded"
+

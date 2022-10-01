@@ -29,7 +29,7 @@ module Decidim
 
       def show
         enforce_permission_to :create, :idea
-        send("#{step}_step", idea: session_idea)
+        send("#{step}_step", idea: cached_idea)
       end
 
       def update
@@ -41,7 +41,8 @@ module Decidim
 
       def select_idea_type_step(_parameters)
         @form = form(Decidim::Ideas::SelectIdeaTypeForm).instance
-        session[:idea] = {}
+        # session[:idea] = {}
+        delete_cached_idea
 
         return redirect_to next_wizard_path if single_idea_type?
 
@@ -58,7 +59,7 @@ module Decidim
 
         return redirect_to previous_wizard_path(validate_form: true) unless @form.valid?
         return redirect_to next_wizard_path if similar_ideas.empty?
-        
+
         render_wizard unless performed?
       end
 
@@ -72,11 +73,13 @@ module Decidim
       def finish_step(parameters)
         @form = build_form(Decidim::Ideas::IdeaForm, parameters)
         return redirect_to previous_wizard_path(validate_form: true) unless @form.valid?
-        return render_wizard if session_idea.has_key?(:id)
+        # return render_wizard if session_idea.has_key?(:id)
+        return render_wizard if cached_idea.has_key?(:id)
 
         CreateIdea.call(@form, current_user) do
           on(:ok) do |idea|
-            session[:idea][:id] = idea.id
+            update_cached_idea({id: idea.id})
+            # session[:idea][:id] = idea.id
             render_wizard
           end
 
@@ -99,7 +102,8 @@ module Decidim
                 end
 
         attributes = @form.attributes_with_values
-        session[:idea] = session_idea.merge(attributes)
+        update_cached_idea(attributes)
+        # session[:idea] = session_idea.merge(attributes)
         @form.valid? if params[:validate_form]
 
         @form
@@ -116,7 +120,8 @@ module Decidim
       end
 
       def current_idea
-        Idea.find(session_idea[:id]) if session_idea.has_key?(:id)
+        # Idea.find(session_idea[:id]) if session_idea.has_key?(:id)
+        Idea.find(cached_idea[:id]) if cached_idea.has_key?(:id)
       end
 
       def idea_type
@@ -124,12 +129,32 @@ module Decidim
       end
 
       def idea_type_id
-        session_idea[:type_id] || @form&.type_id
+        # session_idea[:type_id] || @form&.type_id
+        cached_idea[:type_id] || @form&.type_id
       end
 
       def session_idea
         session[:idea] ||= {}
         session[:idea].with_indifferent_access
+      end
+
+      def cached_idea
+        Rails.cache.fetch("ideas/#{session_id}", expires_in: 12.hours) do
+          {}
+        end.with_indifferent_access
+      end
+
+      def delete_cached_idea
+        Rails.cache.delete("ideas/#{session_id}")
+      end
+
+      def update_cached_idea(attributes)
+        idea = cached_idea.merge(attributes)
+        Rails.cache.write("ideas/#{session_id}", idea)
+      end
+
+      def session_id
+        session[:session_id]
       end
     end
   end
