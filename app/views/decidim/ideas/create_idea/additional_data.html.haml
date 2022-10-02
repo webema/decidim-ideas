@@ -30,7 +30,12 @@
                 = f.select :scope_id,                                                                |
                   scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id] }, |
                   required: true,                                                                    |
-                  include_blank: t(".select_scope")                                                  |
+                  include_blank: t(".select_scope")
+
+            .row.columns
+              .field
+                = f.text_field :hashtag
+
             - if Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.any?
               .field
                 = f.select :decidim_user_group_id,                                                                 |
@@ -40,7 +45,6 @@
             .row.columns
               .field
                 = f.upload :hero_image, button_label: 'Titelbild hinzufügen', help_i18n_scope: 'decidim.forms.file_help.image', extension_allowlist: current_organization.attached_uploader(:official_img_header).extension_allowlist
-
 
             - if idea_type.attachments_enabled?
               .row.columns

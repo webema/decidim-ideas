@@ -21,13 +21,15 @@ edit_link(
 <div class="row">
   <div class="columns section view-side mediumlarge-4 mediumlarge-push-8 large-3 large-push-9">
     <% if current_user %>
-      <div id="likes-button">
-        <% if current_idea.get_upvotes.where(voter: current_user).any? %>
-          <%= render partial: 'like' %>
-        <% else %>
-        <%= render partial: 'unlike' %>
+       <% if current_idea.published? %>
+        <div id="likes-button">
+          <% if current_idea.get_upvotes.where(voter: current_user).any? %>
+            <%= render partial: 'like' %>
+          <% else %>
+          <%= render partial: 'unlike' %>
+          <% end %>
+        </div>
         <% end %>
-      </div>
     <% end %>
 
         <% if current_idea.published? || current_idea.rejected? || current_idea.accepted? %>

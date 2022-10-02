@@ -10,11 +10,12 @@
   .field
     = form.editor :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.description)
 .field
-  = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
-.field
   = form.select :scope_id,                                                                             |
     @form.available_scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id] }, |
     { disabled: !@form.state_updatable? }
+
+.field
+  = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
 
 .preview
   .field

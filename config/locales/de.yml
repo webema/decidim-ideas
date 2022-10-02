@@ -289,10 +289,9 @@ de:
           more_information: "(Weitere Informationen)"
         select_idea_type:
           back: Zurück
-          choose_html: Ich möchte ein <strong>%{title}</strong> teilen
           more_information: "(Weitere Informationen)"
           select: Fortsetzen
-          select_idea_type_help: Inspirationen sind TODO. Welche Inspiration möchtest du teilen?
+          select_idea_type_help: Wähle bitte zunächst die Art der Inspiration, die du teilen möchtest.
         check_duplicates:
           back: Zurück
           compare_help: Gibt es bereits einen vergleichbaren Beitrag? Dann schau ihn dir an und teile deine Erfahrungen direkt in den Kommentaren. Gemeinsam erhöht ihr eure Chance, wahrgenommen zu werden. Wenn sich dein Beitrag von den anderen unterscheidet, wähle unten rechts "Meine Beitrag ist anders".

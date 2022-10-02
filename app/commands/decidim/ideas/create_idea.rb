@@ -71,7 +71,8 @@ module Decidim
             author: current_user,
             decidim_user_group_id: form.decidim_user_group_id,
             scoped_type: scoped_type,
-            state: "created"
+            state: "created",
+            hashtag: form.hashtag
           }.merge(
             attachment_attributes(:hero_image)
           )

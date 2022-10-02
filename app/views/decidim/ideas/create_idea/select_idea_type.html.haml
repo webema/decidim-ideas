@@ -5,13 +5,15 @@
     = t(".back")
 
 .row.column
+  .callout.secondary
+    = t(".select_idea_type_help")
   %ul.accordion{ data: { accordion: true, allow_all_closed: 'true' } }
     - idea_types_each do |type|
       %li.accordion-item{ data: { accordion_item: true } }
-        = link_to t(".choose_html", title: translated_attribute(type.title)), "#", class: 'accordion-title'
+        = link_to translated_attribute(type.title), "#", class: 'accordion-title'
 
         .accordion-content{ data: { tab_content: true } }
-          %h2.section-heading= translated_attribute(type.title)
+          -# %h2.section-heading= translated_attribute(type.title)
           %div
             = raw translated_attribute type.description
 
