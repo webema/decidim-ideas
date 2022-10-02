@@ -26,6 +26,9 @@ module Decidim
     include Decidim::HasArea
     include Decidim::FilterableResource
 
+    require "acts_as_votable"
+    acts_as_votable cacheable_strategy: :update_columns
+
     translatable_fields :title, :description, :answer
 
     belongs_to :organization,

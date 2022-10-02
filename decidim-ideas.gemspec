@@ -21,8 +21,10 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-admin", Decidim::Ideas::DECIDIM_VERSION
   s.add_dependency "decidim-comments", Decidim::Ideas::DECIDIM_VERSION
   s.add_dependency "decidim-core", Decidim::Ideas::DECIDIM_VERSION
+  s.add_dependency "acts_as_votable"
 
   s.add_dependency "wicked", "~> 1.3"
 
   s.add_development_dependency "decidim-dev", Decidim::Ideas::DECIDIM_VERSION
+  s.add_development_dependency "decidim-meetings", Decidim::Ideas::DECIDIM_VERSION
 end

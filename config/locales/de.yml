@@ -36,6 +36,8 @@ de:
             hero_image:
               allowed_file_content_types: Kein erlaubtes Dateiformat
   decidim:
+    likes:
+      likes_count: "%{count} Likes"
     admin:
       actions:
         new_idea_type: Neue Art

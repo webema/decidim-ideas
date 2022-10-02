@@ -15,6 +15,10 @@ module Decidim
 
     private
 
+    def likes_count
+      model.get_upvotes.count
+    end
+
     # def followers_count
     #   if model.respond_to?(:followers_count)
     #     model.followers_count

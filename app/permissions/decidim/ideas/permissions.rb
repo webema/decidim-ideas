@@ -23,6 +23,8 @@ module Decidim
 
         send_to_technical_validation?
 
+        like_idea?
+
         permission_action
       end
 
@@ -51,12 +53,17 @@ module Decidim
         disallow!
       end
 
+      def like_idea?
+        return allow! if idea&.published?
+      end
+
       def search_idea_types_and_scopes?
         return unless permission_action.action == :search
         return unless [:idea_type, :idea_type_scope].include?(permission_action.subject)
 
         allow!
       end
+
 
       def create_idea?
         return unless permission_action.subject == :idea &&
@@ -88,7 +95,7 @@ module Decidim
       end
 
       def access_request_without_user?
-        Decidim::Ideas.do_not_require_authorization # (!idea.published? && idea.promoting_committee_enabled?) || 
+        Decidim::Ideas.do_not_require_authorization # (!idea.published? && idea.promoting_committee_enabled?) ||
       end
 
       def authorized?(permission_action, resource: nil, permissions_holder: nil)

@@ -1,0 +1,5 @@
+= link_to like_idea_path(current_idea), method: 'put', remote: 'true', class: 'button like-button expanded' do
+  = icon 'heart'
+  %span.likes-count
+    = current_idea.get_upvotes.size
+  liken

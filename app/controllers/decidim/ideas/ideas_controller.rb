@@ -102,6 +102,20 @@ module Decidim
         end
       end
 
+      def like
+        enforce_permission_to :like, :idea, idea: current_idea
+
+        current_idea.liked_by current_user
+        render layout: false
+      end
+
+      def unlike
+        enforce_permission_to :like, :idea, idea: current_idea
+
+        current_idea.unliked_by current_user
+        render layout: false
+      end
+
       private
 
       alias current_idea current_participatory_space
