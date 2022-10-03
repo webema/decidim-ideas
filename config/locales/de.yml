@@ -25,7 +25,7 @@ de:
               needs_to_be_reattached: Der Anhang muss erneut angehängt werden
               title: Der Titel sollte nicht leer sein
     models:
-      decidim/idea_sent_to_technical_validation_event: Inspiration wartet auf Moderation
+      decidim/ideas/idea_sent_to_technical_validation_event: Inspiration an Moderation gesendet
   activerecord:
     models:
       decidim/idea:
