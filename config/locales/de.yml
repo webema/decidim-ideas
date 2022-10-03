@@ -24,6 +24,8 @@ de:
               file: Datei ist ungültig
               needs_to_be_reattached: Der Anhang muss erneut angehängt werden
               title: Der Titel sollte nicht leer sein
+    models:
+      decidim/idea_sent_to_technical_validation_event: Inspiration wartet auf Moderation
   activerecord:
     models:
       decidim/idea:
@@ -94,15 +96,15 @@ de:
       ideas:
         admin:
           idea_sent_to_technical_validation:
-            email_intro: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+            email_intro: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-            email_subject: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet.
-            notification_title: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+            email_subject: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet.
+            notification_title: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
         idea_sent_to_technical_validation:
-          email_intro: Die Inspiration „%{resource_title}“ wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+          email_intro: Die Inspiration „%{resource_title}“ wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-          email_subject: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet.
-          notification_title: Die Inspiration "%{resource_title}" wurde zur technischen Validierung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+          email_subject: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet.
+          notification_title: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
     gamification:
       badges:
         ideas:
@@ -228,7 +230,7 @@ de:
       admin_log:
         idea:
           publish: "%{user_name} hat die Inspiration %{resource_name} veröffentlicht"
-          send_to_technical_validation: "%{user_name} hat die Inspiration %{resource_name} zur technischen Validierung gesendet"
+          send_to_technical_validation: "%{user_name} hat die Inspiration %{resource_name} an ein/e Moderator:in zur Veröffentlichung gesendet"
           unpublish: "%{user_name} hat die Inspiration %{resource_name} verworfen"
           update: "%{user_name} hat die Inspiration %{resource_name} aktualisiert"
         ideas_settings:
