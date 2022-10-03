@@ -401,7 +401,10 @@ de:
         published_explanation_5: Es kann auch sein, dass deine Idee in der Diskussion eine Form erhalten hat, die es zulässt, dass wir sie an eine dafür zuständige Stelle weiterleiten (z.B. eine Abteilung im Landeskirchenamt). Unser Ziel ist, dass du nach einer Weiterleitung deiner Idee innerhalb von zwei Wochen eine Nachricht bekommst, wie mit ihr weiter verfahren wird.
         published_explanation_6: Anfang 2023 wird es vermutlich eine Sortierungsphase geben, in der jede Idee einen Status erhält, sodass sichtbar wird, was daraus geworden ist.
         published_explanation_7: Wir sind gespannt wie ein Flitzebogen, was aus deiner Inspiration entstehen wird!
-
+        discarded_subject: Es sollte so nicht sein…
+        discarded_greeting: Schade!
+        discarded_info: Deine Inspiration <strong>%{title}</strong> wurde von unserer Moderation verworfen.
+        discarded_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
         more_information: Hier findest du weitere Informationen zum Erstellen von Inspirationen.
         progress_report_for: 'Infos zur Inspiration: %{title}'
         status_change_body_for: 'Die Inspiration %{title} hat ihren Status geändert in: %{state}'

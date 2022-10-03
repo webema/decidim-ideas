@@ -14,8 +14,8 @@
     @form.available_scopes.map { |scope| [translated_attribute(scope.scope_name), scope&.scope&.id] }, |
     { disabled: !@form.state_updatable? }
 
-.field
-  = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
+-# .field
+-#   = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
 
 .preview
   .field

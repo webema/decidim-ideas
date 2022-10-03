@@ -24,6 +24,11 @@ module Decidim
         true
       end
 
+      # TODO: remove to show publication state
+      def has_badge?
+        false
+      end
+
       # Explicitely commenting the used I18n keys so their are not flagged as unused
       # i18n-tasks-use t('decidim.ideas.show.badge_name.accepted')
       # i18n-tasks-use t('decidim.ideas.show.badge_name.created')

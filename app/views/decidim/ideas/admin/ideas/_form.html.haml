@@ -6,9 +6,9 @@
       = form.translated :text_field, :title, autofocus: true, disabled: !allowed_to?(:update, :idea, idea: current_idea)
     .row.column
       = form.translated :editor, :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea)
-    .row.column
-      .columns.xlarge-6
-        = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
+    -# .row.column
+    -#   .columns.xlarge-6
+    -#     = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
 .card
   .card-divider
     %h2.card-title= t ".settings"

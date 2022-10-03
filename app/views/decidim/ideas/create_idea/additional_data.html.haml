@@ -32,9 +32,9 @@
                   required: true,                                                                    |
                   include_blank: t(".select_scope")
 
-            .row.columns
-              .field
-                = f.text_field :hashtag
+            -# .row.columns
+            -#   .field
+            -#     = f.text_field :hashtag
 
             - if Decidim::UserGroups::ManageableUserGroups.for(current_user).verified.any?
               .field
