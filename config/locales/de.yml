@@ -266,7 +266,7 @@ de:
       create_idea:
         additional_data:
           back: Zurück
-          continue: Fortsetzen
+          continue: Speichern
           fill_data_help: Wie schön, dass du die Plattform um weitere Inspirationen bereicherst! Wähle ein Thema aus und füge ein Bild hinzu, um deinen Beitrag noch auffindbarer zu gestalten. Falls nötig, kannst du jetzt auch noch mal deinen Titel oder die Beschreibung anpassen.
           idea_type: Art der Inspiration
           more_information: "(Weitere Informationen)"
