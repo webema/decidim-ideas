@@ -39,7 +39,7 @@ edit_link(
         <% else %>
           <%= link_to t(".edit"),
               edit_idea_path(current_idea),
-              class: "button expanded" %>
+              class: "button secondary expanded" %>
           <%= render partial: "send_to_technical_validation", locals: {
                                                                 title: t(".send_to_technical_validation"),
                                                                 confirm: t(".confirm")

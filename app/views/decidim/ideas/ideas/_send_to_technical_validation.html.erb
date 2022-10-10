@@ -1,8 +1,8 @@
 <% if allowed_to? :send_to_technical_validation, :idea, idea: current_idea %>
   <%= link_to title,
               send_to_technical_validation_idea_path(current_idea),
-              class: "button expanded",
+              class: "button secondary expanded",
               data: { confirm: confirm } %>
 <% else %>
-  <%= link_to title, "#", class: "button expanded disabled" %>
+  <%= link_to title, "#", class: "button secondary expanded disabled" %>
 <% end %>
