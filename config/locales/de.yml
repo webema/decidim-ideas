@@ -96,15 +96,15 @@ de:
       ideas:
         admin:
           idea_sent_to_technical_validation:
-            email_intro: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+            email_intro: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-            email_subject: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet.
-            notification_title: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+            email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
+            notification_title: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
         idea_sent_to_technical_validation:
-          email_intro: Die Inspiration „%{resource_title}“ wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+          email_intro: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-          email_subject: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet.
-          notification_title: Die Inspiration "%{resource_title}" wurde an ein/e Moderator:in zur Veröffentlichung gesendet. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+          email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
+          notification_title: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
     gamification:
       badges:
         ideas:
@@ -380,9 +380,11 @@ de:
           send_to_technical_validation: Veröffentlichen
       ideas_mailer:
         creation_subject: Danke für deinen Beitrag!
-        creation_greeting: Geschafft!
-        creation_info: Deine Inspiration <strong>%{title}</strong> wurde erstellt und wartet nun auf die Freigabe der Moderation.
-        moderation_info: Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
+        creation_greeting: Fast geschafft!
+        creation_info: Deine Inspiration <strong>%{title}</strong> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
+        validating_subject: Wir kümmern uns!
+        validating_greeting: Nur noch einen kurzen Moment!
+        validating_info: Deine Inspiration <strong>%{title}</strong> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
         idea_link:
           check_idea_details: Eine Ansicht deiner Inspiration findest du
           here: hier
@@ -390,7 +392,7 @@ de:
         rejected_greeting: Schade!
         rejected_info: Deine Inspiration <strong>%{title}</strong> wurde von unserer Moderation verworfen.
         rejected_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
-        published_subject: "Bahn frei - Kartoffelbrei: Jetzt geht’s los!"
+        published_subject: "Bahn frei - Kartoffelbrei: Jetzt geht's los!"
         published_greeting: Juchuu!
         published_info: Deine Inspiration <strong>%{title}</strong> wurde von der Moderation veröffentlicht.
         published_explanation_title: Was geschieht nun?

@@ -43,6 +43,11 @@ module Decidim
         # It has been moved into SendIdeaToTechnicalValidation command as a standard notification
         # It would be great to move the functionality of this class, which is invoked on Idea#after_save,
         # to the corresponding commands to follow the architecture of Decidim.
+
+        # send notification to author
+        Decidim::Ideas::IdeasMailer
+          .notify_state_change(idea, idea.author)
+          .deliver_later
       end
 
       def notify_validating_result
