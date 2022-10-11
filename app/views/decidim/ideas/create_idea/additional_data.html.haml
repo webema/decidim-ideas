@@ -43,7 +43,7 @@
                   include_blank: current_user.name
 
             .row.columns
-              .field
+              .field.hero-image
                 = f.upload :hero_image, button_label: 'Titelbild hinzufügen', help_i18n_scope: 'decidim.forms.file_help.image', extension_allowlist: current_organization.attached_uploader(:official_img_header).extension_allowlist
 
             - if idea_type.attachments_enabled?
