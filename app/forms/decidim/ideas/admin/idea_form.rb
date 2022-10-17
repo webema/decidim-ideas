@@ -12,6 +12,8 @@ module Decidim
 
         translatable_attribute :title, String
         translatable_attribute :description, String
+        translatable_attribute :source, String
+
         attribute :type_id, Integer
         attribute :decidim_scope_id, Integer
         attribute :hashtag, String

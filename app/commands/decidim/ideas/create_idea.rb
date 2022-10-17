@@ -68,6 +68,7 @@ module Decidim
             organization: form.current_organization,
             title: { current_locale => form.title },
             description: { current_locale => form.description },
+            source: { current_locale => form.source },
             author: current_user,
             decidim_user_group_id: form.decidim_user_group_id,
             scoped_type: scoped_type,

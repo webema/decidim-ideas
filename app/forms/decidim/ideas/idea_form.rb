@@ -10,6 +10,7 @@ module Decidim
 
       attribute :title, String
       attribute :description, String
+      attribute :source, String
       attribute :type_id, Integer
       attribute :scope_id, Integer
       attribute :decidim_user_group_id, Integer

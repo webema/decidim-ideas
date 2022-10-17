@@ -72,6 +72,9 @@ edit_link(
       <br>
       <div class="row column">
         <%= render partial: "idea_badge", locals: { idea: current_idea } %>
+        <% if translated_attribute(current_idea.source).present? %>
+          <p><strong><%= t('.source') %>: <%= strip_tags(translated_attribute(current_idea.source)) %></strong></p>
+        <% end %>
         <%= decidim_sanitize_editor translated_attribute(current_idea.description) %>
         <%= render partial: "tags", locals: { resource: current_idea } %>
       </div>

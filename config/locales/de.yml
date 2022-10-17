@@ -1,5 +1,10 @@
 ---
 de:
+  helpers:
+    placeholder:
+      idea:
+        source: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen…
+        source_de: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen…
   activemodel:
     attributes:
       idea:
@@ -10,6 +15,7 @@ de:
         type_id: Typ
         decidim_scope_id: Thema
         title: Titel
+        source: Woher kommt deine Inspiration?
         hero_image: Titelbild
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
@@ -378,6 +384,7 @@ de:
           edit: Bearbeiten
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
           send_to_technical_validation: Veröffentlichen
+          source: Quelle
       ideas_mailer:
         creation_subject: Danke für deinen Beitrag!
         creation_greeting: Fast geschafft!

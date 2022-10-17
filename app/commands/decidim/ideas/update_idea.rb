@@ -58,6 +58,7 @@ module Decidim
         attrs = {
           title: form.title,
           description: form.description,
+          source: form.source,
           hashtag: form.hashtag
         }.merge(
           attachment_attributes(:hero_image)

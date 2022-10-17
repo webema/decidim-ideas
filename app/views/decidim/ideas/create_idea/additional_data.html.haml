@@ -23,6 +23,9 @@
               = f.text_field :title, autofocus: true
             .field
               = f.editor :description, lines: 8, toolbar: :full
+            .field
+              = f.text_area :source, autofocus: true, placeholder: true, rows: 3
+
             - if scopes.length == 1
               = f.hidden_field :scope_id, value: scopes.first.scope&.id
             - else
