@@ -102,15 +102,15 @@ de:
       ideas:
         admin:
           idea_sent_to_technical_validation:
-            email_intro: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+            email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
             email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-            notification_title: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+            notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
         idea_sent_to_technical_validation:
-          email_intro: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+          email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
           email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-          notification_title: Die Inspiration "%{resource_title}" wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+          notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
     gamification:
       badges:
         ideas:
@@ -316,12 +316,12 @@ de:
       events:
         create_idea_event:
           email_intro: "%{author_name} %{author_nickname}, dem du folgst, hat eine neue Inspiration erstellt, sieh sie dir an und beteilige dich:"
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du %{author_nickname} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
+          email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Neue Inspiration von %{author_nickname}
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> erstellt.
         endorse_idea_event:
           email_intro: "%{author_name} %{author_nickname}, dem du folgst, hat die folgende Inspiration unterstützt, vielleicht möchtest du mitreden:"
-          email_outro: Du hast diese Benachrichtigung erhalten, weil du %{author_nickname} folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
+          email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Inspiration wurde von %{author_nickname} unterstützt
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
       form:
@@ -388,20 +388,20 @@ de:
       ideas_mailer:
         creation_subject: Danke für deinen Beitrag!
         creation_greeting: Fast geschafft!
-        creation_info: Deine Inspiration <strong>%{title}</strong> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
+        creation_info: Deine Inspiration <em>%{title}</em> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
         validating_subject: Wir kümmern uns!
         validating_greeting: Nur noch einen kurzen Moment!
-        validating_info: Deine Inspiration <strong>%{title}</strong> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
+        validating_info: Deine Inspiration <em>%{title}</em> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
         idea_link:
           check_idea_details: Eine Ansicht deiner Inspiration findest du
           here: hier
         rejected_subject: Es sollte so nicht sein…
         rejected_greeting: Schade!
-        rejected_info: Deine Inspiration <strong>%{title}</strong> wurde von unserer Moderation verworfen.
+        rejected_info: Deine Inspiration <em>%{title}</em> wurde von unserer Moderation verworfen.
         rejected_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
         published_subject: "Bahn frei - Kartoffelbrei: Jetzt geht's los!"
         published_greeting: Juchuu!
-        published_info: Deine Inspiration <strong>%{title}</strong> wurde von der Moderation veröffentlicht.
+        published_info: Deine Inspiration <em>%{title}</em> wurde von der Moderation veröffentlicht.
         published_explanation_title: Was geschieht nun?
         published_explanation_1: Hast du ein Praxisbeispiel beigetragen, so ist es nun im Bereich Inspirationen für andere auffindbar. Solltest du den dringenden Wunsch haben, hier nachträglich etwas zu ergänzen, so kannst du uns diesbezüglich anschreiben.
         published_explanation_2: Hast du eine Idee geteilt, so kann nun daran weiter gedacht werden. Dies geschieht in den Kommentaren und über die Funktion des "likens".
@@ -412,11 +412,11 @@ de:
         published_explanation_7: Wir sind gespannt wie ein Flitzebogen, was aus deiner Inspiration entstehen wird!
         discarded_subject: Es sollte so nicht sein…
         discarded_greeting: Schade!
-        discarded_info: Deine Inspiration <strong>%{title}</strong> wurde von unserer Moderation verworfen.
+        discarded_info: Deine Inspiration <em>%{title}</em> wurde von unserer Moderation verworfen.
         discarded_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
         more_information: Hier findest du weitere Informationen zum Erstellen von Inspirationen.
         progress_report_for: 'Infos zur Inspiration: %{title}'
-        status_change_body_for: 'Die Inspiration %{title} hat ihren Status geändert in: %{state}'
+        status_change_body_for: 'Die Inspiration <em>%{title}</em> hat ihren Status geändert in: %{state}'
         status_change_for: Die Inspiration %{title} hat ihren Status geändert
       last_activity:
         new_idea: Neue Inspiration
