@@ -3,8 +3,8 @@ de:
   helpers:
     placeholder:
       idea:
-        source: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen…
-        source_de: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen…
+        source: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen oder bei einer Reise entdeckt
+        source_de: Von mir erprobtes Praxisbeispiel, Diskussion mit kirchenfernen Freund:innen oder bei einer Reise entdeckt
   activemodel:
     attributes:
       idea:
@@ -18,7 +18,7 @@ de:
         source: Woher kommt deine Inspiration?
         hero_image: Titelbild
       ideas_type:
-        attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
+        attachments_enabled: Autor:innen können Anhänge hochladen
         banner_image: Banner-Bild
         comments_enabled: Nutzer:innen können Inspirationen kommentieren
         description: Beschreibung
@@ -102,15 +102,15 @@ de:
       ideas:
         admin:
           idea_sent_to_technical_validation:
-            email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+            email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
             email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-            notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+            notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
         idea_sent_to_technical_validation:
-          email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen
+          email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
           email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-          notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen
+          notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
     gamification:
       badges:
         ideas:
@@ -122,8 +122,8 @@ de:
           description_own: Du hast %{score} Inspirationen veröffentlicht.
           name: Veröffentlichte Inspirationen
           next_level_in: Veröffentliche %{score} weitere Inspirationen, um das nächste Level zu erreichen!
-          unearned_another: Diese/r Benutzer:in hat noch keine Inspirationen veröffentlicht.
-          unearned_own: Du hast noch keine Inspirationen veröffentlicht.
+          unearned_another: Diese/r Benutzer:in hat noch keine Inspiration veröffentlicht.
+          unearned_own: Du hast noch keine Inspiration veröffentlicht.
     help:
       participatory_spaces:
         ideas:
@@ -185,26 +185,26 @@ de:
             update: Aktualisieren
           form:
             comments: Am meisten kommentiert
-            date: Neuste TODO
+            date: Chronologisch
             publication_date: Zuletzt veröffentlicht
             random: Zufällig
             title: Einstellungen für Inspirationen
         ideas_type_scopes:
           create:
             error: Ein Fehler ist aufgetreten
-            success: Ein neues Thema für den Inspirationen-Typ wurde erstellt
+            success: Ein neues Thema für die Inspirationen-Art wurde erstellt
           destroy:
             success: Das Thema wurde erfolgreich entfernt
           edit:
             back: Zurück
             confirm_destroy: Bist du sicher?
             destroy: Löschen
-            title: Thema für Inspirationen-Typ bearbeiten
+            title: Thema für Inspirationen-Art bearbeiten
             update: Aktualisieren
           new:
             back: Zurück
             create: Erstellen
-            title: Thema für Inspirationen-Typ erstellen
+            title: Thema für Inspirationen-Art erstellen
           update:
             error: Ein Fehler ist aufgetreten
             success: Der Bereich wurde erfolgreich aktualisiert
@@ -213,7 +213,7 @@ de:
             error: Ein Fehler ist aufgetreten
             success: Ein neuer Inspirationen-Typ wurde erfolgreich erstellt
           destroy:
-            success: Der Inspirationen-Typ wurde erfolgreich entfernt
+            success: Die Inspirationen-Art wurde erfolgreich entfernt
           edit:
             confirm_destroy: Bist du sicher?
             destroy: Löschen
@@ -229,9 +229,9 @@ de:
             title: Neue Art
           update:
             error: Ein Fehler ist aufgetreten
-            success: Der Inspirationen-Typ wurde erfolgreich aktualisiert
+            success: Die Inspirationen-Art wurde erfolgreich aktualisiert
           form:
-            title: Inspirationen-Typ bearbeiten
+            title: Inspirationen-Art bearbeiten
             options: Optionen
       admin_log:
         idea:
@@ -242,9 +242,9 @@ de:
         ideas_settings:
           update: "%{user_name} hat die Einstellungen für Inspirationen aktualisiert"
         ideas_type:
-          create: "%{user_name} hat den Inspirationen-Typ %{resource_name} erstellt"
-          delete: "%{user_name} hat den Inspirationen-Typ %{resource_name} gelöscht"
-          update: "%{user_name} hat den Inspirationen-Typ %{resource_name} aktualisiert"
+          create: "%{user_name} hat die Inspirationen-Art %{resource_name} erstellt"
+          delete: "%{user_name} hat die Inspirationen-Art %{resource_name} gelöscht"
+          update: "%{user_name} hat die Inspirationen-Art %{resource_name} aktualisiert"
       admin_states:
         accepted: Ausreichende Unterschriften
         created: Erstellt
@@ -281,9 +281,9 @@ de:
         finish:
           back: Zurück
           callout_text: Herzlichen Glückwunsch! Deine Inspiration wurde erfolgreich erstellt.
-          confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald sie veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit_my_idea: Inspiration bearbeiten
-          go_to_my_ideas: Meine Inspirationen anzeigen
+          go_to_my_ideas: Meine Inspiration anzeigen
           more_information: "(Weitere Informationen)"
           send_my_idea: Veröffentlichen
         finish_help:
@@ -292,7 +292,7 @@ de:
         initial_data:
           back: Zurück
           continue: Fortsetzen
-          help: Nimm dir Zeit, um deinen Beitrag auszuarbeiten. Schau dir in Ruhe an, welche Felder ausgefüllt werden müssen und entwickle, falls notwendig, zuerst einen Entwurf. Sobald du einen Beitrag veröffentlichst, können ihn andere sehen. Wähle einen aussagekräftigen Titel, der deutlich erklärt, was dein Beitrag beinhaltet.
+          help: Nimm dir Zeit, um deinen Beitrag auszuarbeiten. Schau dir in Ruhe an, welche Felder ausgefüllt werden müssen und entwickele, falls notwendig, zuerst einen Entwurf. Sobald du einen Beitrag veröffentlichst, können ihn andere sehen. Wähle einen aussagekräftigen Titel, der deutlich erklärt, was dein Beitrag beinhaltet.
 
           more_information: "(Weitere Informationen)"
         select_idea_type:
@@ -315,12 +315,12 @@ de:
         update: Aktualisieren
       events:
         create_idea_event:
-          email_intro: "%{author_name} %{author_nickname}, dem du folgst, hat eine neue Inspiration erstellt, sieh sie dir an und beteilige dich:"
+          email_intro: "%{author_name} %{author_nickname} hat eine neue Inspiration erstellt, sieh sie dir an und beteilige dich:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Neue Inspiration von %{author_nickname}
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> erstellt.
         endorse_idea_event:
-          email_intro: "%{author_name} %{author_nickname}, dem du folgst, hat die folgende Inspiration unterstützt, vielleicht möchtest du mitreden:"
+          email_intro: "%{author_name} %{author_nickname} hat die folgende Inspiration unterstützt, vielleicht möchtest du mitreden:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Inspiration wurde von %{author_nickname} unterstützt
           notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
@@ -372,15 +372,15 @@ de:
               other: Kommentare
         orders:
           label: 'Sortieren nach:'
-          most_commented: Am meisten kommentiert
+          most_commented: Meist kommentiert
           random: Zufällig
           recent: Neueste zuerst
-          recently_published: Zuletzt veröffentlicht
+          recently_published: Kürzlich veröffentlicht
         result:
           answer_title: Diese Inspiration wurde beantwortet
           idea_rejected_reason: Diese Inspiration wurde wegen fehlender Unterstützung abgelehnt.
         show:
-          confirm: Hiermit sendest du Deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald Deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit: Bearbeiten
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
           send_to_technical_validation: Veröffentlichen
@@ -404,7 +404,7 @@ de:
         published_info: Deine Inspiration <em>%{title}</em> wurde von der Moderation veröffentlicht.
         published_explanation_title: Was geschieht nun?
         published_explanation_1: Hast du ein Praxisbeispiel beigetragen, so ist es nun im Bereich Inspirationen für andere auffindbar. Solltest du den dringenden Wunsch haben, hier nachträglich etwas zu ergänzen, so kannst du uns diesbezüglich anschreiben.
-        published_explanation_2: Hast du eine Idee geteilt, so kann nun daran weiter gedacht werden. Dies geschieht in den Kommentaren und über die Funktion des "likens".
+        published_explanation_2: Hast du eine Idee geteilt, so kann nun daran weiter gedacht werden. Dies geschieht in den Kommentaren und über die Funktion des "Likens".
         published_explanation_3: Wenn wir merken, dass eine Idee besondere Aufmerksamkeit erhält oder in den Kommentaren weiterentwickelt wurde und eine gewisse Reife erhalten hat, dann soll mehr daraus werden.
         published_explanation_4: Sollte dies bei deiner Idee der Fall sein, nehmen wir Kontakt mit dir als Autor:in und den aktivsten Kommentator:innen auf, um möglicherweise eine Gruppe zu bilden. Wenn du keine Lust hast, an dem Thema weiter zu arbeiten, ist das in Ordnung, vielleicht findet sich jemand anderes.
         published_explanation_5: Es kann auch sein, dass deine Idee in der Diskussion eine Form erhalten hat, die es zulässt, dass wir sie an eine dafür zuständige Stelle weiterleiten (z.B. eine Abteilung im Landeskirchenamt). Unser Ziel ist, dass du nach einer Weiterleitung deiner Idee innerhalb von zwei Wochen eine Nachricht bekommst, wie mit ihr weiter verfahren wird.
