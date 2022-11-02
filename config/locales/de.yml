@@ -391,7 +391,7 @@ de:
         creation_info: Deine Inspiration <em>%{title}</em> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
         validating_subject: Wir kümmern uns!
         validating_greeting: Nur noch einen kurzen Moment!
-        validating_info: Deine Inspiration <em>%{title}</em> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
+        validating_info: Deine Inspiration <em>%{title}</em> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden (an Werktagen) zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
         idea_link:
           check_idea_details: Eine Ansicht deiner Inspiration findest du
           here: hier
