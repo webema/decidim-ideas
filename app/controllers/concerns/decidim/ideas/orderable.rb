@@ -14,7 +14,7 @@ module Decidim
         # Available orders based on enabled settings
         def available_orders
           @available_orders ||= begin
-            available_orders = %w(random recently_published most_commented)
+            available_orders = %w(random recently_published most_voted most_commented)
             available_orders
           end
         end
@@ -27,6 +27,8 @@ module Decidim
           case order
           when "most_commented"
             ideas.order_by_most_commented
+          when "most_voted"
+            ideas.order_by_most_voted
           when "recently_published"
             ideas.order_by_most_recently_published
           else

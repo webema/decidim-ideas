@@ -373,6 +373,7 @@ de:
         orders:
           label: 'Sortieren nach:'
           most_commented: Meist kommentiert
+          most_voted: Meist geliked
           random: Zufällig
           recent: Neueste zuerst
           recently_published: Kürzlich veröffentlicht
