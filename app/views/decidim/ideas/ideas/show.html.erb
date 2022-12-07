@@ -36,15 +36,19 @@ edit_link(
           <% if current_idea.commentable? %>
             <%= render partial: "interactions" %>
           <% end %>
-        <% else %>
+        <% end %>
+        <% if current_idea.created? || current_idea.validating? || current_idea.published? %>
           <%= link_to t(".edit"),
               edit_idea_path(current_idea),
               class: "button secondary expanded" %>
+        <% end %>
+        <% if current_idea.created? %>
           <%= render partial: "send_to_technical_validation", locals: {
                                                                 title: t(".send_to_technical_validation"),
                                                                 confirm: t(".confirm")
                                                               } %>
         <% end %>
+
 
 
     <% if current_user %>

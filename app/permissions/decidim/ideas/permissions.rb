@@ -76,14 +76,14 @@ module Decidim
         return unless permission_action.subject == :idea &&
                       permission_action.action == :edit
 
-        toggle_allow(idea&.created? && authorship_or_admin?)
+        toggle_allow(editable_state? && authorship_or_admin?)
       end
 
       def update_public_idea?
         return unless permission_action.subject == :idea &&
                       permission_action.action == :update
 
-        toggle_allow(idea&.created? && authorship_or_admin?)
+        toggle_allow(editable_state? && authorship_or_admin?)
       end
 
       def creation_enabled?
@@ -128,6 +128,10 @@ module Decidim
 
       def authorship_or_admin?
         idea&.has_authorship?(user) || user.admin?
+      end
+
+      def editable_state?
+        idea&.created? || idea&.validating? || idea&.published?
       end
     end
   end
