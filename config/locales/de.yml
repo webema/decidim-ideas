@@ -281,7 +281,7 @@ de:
         finish:
           back: Zurück
           callout_text: Herzlichen Glückwunsch! Deine Inspiration wurde erfolgreich erstellt.
-          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald sie veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Bist du sicher?
           edit_my_idea: Inspiration bearbeiten
           go_to_my_ideas: Meine Inspiration anzeigen
           more_information: "(Weitere Informationen)"
