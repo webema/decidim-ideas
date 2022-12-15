@@ -21,6 +21,10 @@
       </button>
     <% end %>
   <% end %>
+  <% if Decidim::Idea.where(author: current_user).any? %>
+    &nbsp;
+    <a class="title-action__action button small" href="<%= ideas_path(filter: { author: 'myself', with_any_state: 'filter' }) %>">Eigene Inspirationen</a>
+  <% end %>
 </div>
 
 <div class="reveal not-authorized-reveal" id="not-authorized-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="not-authorized-modal-title" data-reveal data-multiple-opened="true">
