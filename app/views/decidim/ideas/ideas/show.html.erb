@@ -37,10 +37,17 @@ edit_link(
             <%= render partial: "interactions" %>
           <% end %>
         <% end %>
-        <% if current_idea.created? || current_idea.validating? || current_idea.published? %>
-          <%= link_to t(".edit"),
-              edit_idea_path(current_idea),
-              class: "button secondary expanded" %>
+        <% if allowed_to? :edit, :idea, idea: current_idea %>
+          <% if current_idea.created? || current_idea.validating? %>
+            <%= link_to t(".edit"),
+                edit_idea_path(current_idea),
+                class: "button secondary expanded" %>
+          <% elsif current_idea.published? %>
+            <%= link_to t(".edit"),
+                edit_idea_path(current_idea),
+                class: "button secondary expanded",
+                data: { confirm: t(".confirm_edit") }  %>
+          <% end %>
         <% end %>
         <% if current_idea.created? %>
           <%= render partial: "send_to_technical_validation", locals: {
