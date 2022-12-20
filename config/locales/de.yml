@@ -383,7 +383,7 @@ de:
         show:
           confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit: Bearbeiten
-          confirm_edit: Achtung, du bist im Begriff deinen Beitrag zu verändern. Beachte bitte, dass dadurch manche Kommentare von Nutzer:innen ihren Sinn verlieren könnten. Um das zu umgehen, beantworte die betreffenden Kommentare und füge deiner Änderung ggf. einen Hinweis hinzu.
+          confirm_edit: Achtung, du bist im Begriff, deinen Beitrag zu verändern. Beachte bitte, dass dadurch manche Kommentare von Nutzer:innen ihren Sinn verlieren könnten. Um das zu umgehen, beantworte die betreffenden Kommentare und füge deiner Änderung ggf. einen Hinweis hinzu.
           follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
           send_to_technical_validation: Veröffentlichen
           source: Quelle
