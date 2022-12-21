@@ -38,7 +38,7 @@ edit_link(
           <% end %>
         <% end %>
 
-        <% if current_idea&.has_authorship?(current_user) || current_user.admin? %>
+        <% if current_user && (current_idea&.has_authorship?(current_user) || current_user.admin?) %>
           <% if current_idea.created? || current_idea.validating? %>
             <%= link_to t(".edit"),
                 edit_idea_path(current_idea),
