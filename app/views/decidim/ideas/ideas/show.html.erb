@@ -37,7 +37,8 @@ edit_link(
             <%= render partial: "interactions" %>
           <% end %>
         <% end %>
-        <% if allowed_to? :edit, :idea, idea: current_idea %>
+
+        <% if current_idea&.has_authorship?(current_user) || current_user.admin? %>
           <% if current_idea.created? || current_idea.validating? %>
             <%= link_to t(".edit"),
                 edit_idea_path(current_idea),
