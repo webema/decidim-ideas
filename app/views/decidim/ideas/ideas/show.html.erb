@@ -89,6 +89,13 @@ edit_link(
         <% end %>
         <%= decidim_sanitize_editor translated_attribute(current_idea.description) %>
         <%= render partial: "tags", locals: { resource: current_idea } %>
+
+        <% if @last_content_edit.present? %>
+          <p>
+            <%= t(".last_content_edit_info", updated_at: l(@last_content_edit.created_at, format: :short)) %>
+            <%= link_to t(".last_content_edit_link"), idea_version_path(current_idea, @last_content_edit.index + 1) %>
+          </p>
+        <% end %>
       </div>
 
       <%= render partial: "result", locals: { idea: current_idea } %>

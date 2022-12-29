@@ -49,6 +49,8 @@ module Decidim
       # GET /ideas/:id
       def show
         enforce_permission_to :read, :idea, idea: current_idea
+
+        set_last_content_edit
       end
 
       # GET /ideas/:id/send_to_technical_validation
@@ -168,6 +170,15 @@ module Decidim
 
       def stats
         @stats ||= IdeaStatsPresenter.new(idea: current_idea)
+      end
+
+      def set_last_content_edit
+        object_changes = PaperTrail::Version.arel_table[:object_changes]
+        versions = current_participatory_space.versions.where(event: 'update')
+        @last_content_edit = versions.where(object_changes.matches("%#{"title:"}%"))
+                                     .or(versions.where(object_changes.matches("%#{"description:"}%")))
+                                     .or(versions.where(object_changes.matches("%#{"source:"}%")))
+                                     .order(created_at: :desc).last
       end
     end
   end
