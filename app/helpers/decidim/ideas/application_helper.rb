@@ -12,14 +12,11 @@ module Decidim
           TreePoint.new("", t("decidim.ideas.application_helper.filter_state_values.all")),
           [
             TreePoint.new("open", t("decidim.ideas.application_helper.filter_state_values.open")),
-            TreeNode.new(
-              TreePoint.new("closed", t("decidim.ideas.application_helper.filter_state_values.closed")),
-              [
-                TreePoint.new("accepted", t("decidim.ideas.application_helper.filter_state_values.accepted")),
-                TreePoint.new("rejected", t("decidim.ideas.application_helper.filter_state_values.rejected"))
-              ]
-            ),
-            TreePoint.new("answered", t("decidim.ideas.application_helper.filter_state_values.answered"))
+            TreePoint.new("forwarded", t("decidim.ideas.application_helper.filter_state_values.forwarded")),
+            TreePoint.new("pilotified", t("decidim.ideas.application_helper.filter_state_values.pilotified")),
+            TreePoint.new("assemblified", t("decidim.ideas.application_helper.filter_state_values.assemblified")),
+            TreePoint.new("processified", t("decidim.ideas.application_helper.filter_state_values.processified")),
+            TreePoint.new("rejected", t("decidim.ideas.application_helper.filter_state_values.rejected")),
           ]
         )
       end

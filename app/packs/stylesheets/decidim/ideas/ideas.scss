@@ -1,5 +1,15 @@
 @import "stylesheets/decidim/ideas/admin";
 
+$zp_gray: #DEE2E6;
+$zp_gray_medium: lighten($zp_gray, 3%);
+$zp_gray_light: lighten($zp_gray, 7%);
+
+$zp_blue: #00b5e5;
+$zp_purple: #551285;
+$zp_pink: #de007e;
+$zp_green: #76b82a;
+$zp_yellow: #ffe900;
+
 .ql-formats{
   .ql-video{
     margin: 0;
@@ -84,3 +94,117 @@ form.edit_idea {
 .tags.tags--idea {
   margin-top: 1rem;
 }
+
+.callout {
+  padding-bottom: .01rem;
+
+  &.success {
+    border-color: $zp_green;
+    background-color: lighten($zp_green, 50%);
+
+    a.button {
+      background-color: $zp_green;
+      color: $black !important;
+    }
+    // &.forwarded {
+    //   border-color: $zp_pink;
+    //   background-color: lighten($zp_pink, 53%);
+
+    //   a.button {
+    //     background-color: $zp_pink;
+    //     color: $white !important;
+    //   }
+    // }
+
+    // &.processified  {
+    //   border-color: $zp_purple;
+    //   background-color: lighten($zp_purple, 58%);
+
+    //   a.button {
+    //     background-color: $zp_purple;
+    //     color: $white !important;
+    //   }
+    // }
+
+    // &.assemblified  {
+    //   border-color: $zp_green;
+    //   background-color: lighten($zp_green, 50%);
+
+    //   a.button {
+    //     background-color: $zp_green;
+    //     color: $black !important;
+    //   }
+    // }
+
+    // &.rejected  {
+    //   border-color: $zp_gray;
+    //   background-color: lighten($zp_gray, 9%);
+
+    //   a.button {
+    //     background-color: $zp_gray;
+    //     color: $black !important;
+    //   }
+    // }
+  }
+}
+
+.tags {
+  .state {
+    a {
+      border: 1px solid transparent;
+    }
+
+    &.published {
+      background-color: $zp_blue;
+      a {
+        color: $black;
+      }
+    }
+
+    &.rejected, &.discarded {
+      background-color: $zp_gray;
+      a {
+        color: $black;
+      }
+    }
+
+    &.forwarded {
+      background-color: $zp_pink;
+      a {
+        color: $white;
+      }
+    }
+
+    &.assemblified {
+      background-color: $zp_green;
+      a {
+        color: $black;
+      }
+    }
+
+    &.processified {
+      background-color: $zp_purple;
+      a {
+        color: $white;
+      }
+    }
+
+    &.pilotified {
+      background-color: $zp_yellow;
+      a {
+        color: $black;
+      }
+    }
+  }
+}
+
+
+// - offen (schwarz auf blau #00b5e5)
+
+// - nicht weitergeführt (schwarz auf grau)
+
+// - weiter geleitet (weiß auf pink #de007e)
+
+// - Weiterarbeit als Machwerk  (mit Link zum Machwerk) (schwarz auf grün #76b82a)
+
+// - Weiterarbeit als konKreation (mit Link zur konKreation) (weiß auf violett #551285)

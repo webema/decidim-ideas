@@ -4,4 +4,7 @@
   <% if resource.area %>
     <li><%= link_to translated_attribute(resource.area_name), ideas_path(filter: { area_id: [resource.area.id] }) %></li>
   <% end %>
+  <% if resource.state # if Decidim::Idea.states.keys.last(5).include?  %>
+    <li class="state <%= resource.state %>"><%= link_to I18n.t(resource.state, scope: "decidim.ideas.admin_states"), ideas_path(filter: { with_any_state: [resource.state] }) %></li>
+  <% end %>
 </ul>

@@ -41,16 +41,17 @@ module Decidim
       end
 
       def state_classes
-        case state
-        when "accepted", "published"
-          ["success"]
-        when "rejected", "discarded"
-          ["alert"]
-        when "validating"
-          ["warning"]
-        else
-          ["muted"]
-        end
+        # case state
+        # when "accepted", "published"
+        #   ["success"]
+        # when "rejected", "discarded"
+        #   ["alert"]
+        # when "validating"
+        #   ["warning"]
+        # else
+        #   ["muted"]
+        # end
+        []
       end
 
       def resource_path

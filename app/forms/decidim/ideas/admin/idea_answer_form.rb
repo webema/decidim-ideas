@@ -12,16 +12,18 @@ module Decidim
 
         translatable_attribute :answer, String
         attribute :answer_url, String
-        attribute :signature_start_date, Decidim::Attributes::LocalizedDate
-        attribute :signature_end_date, Decidim::Attributes::LocalizedDate
-
-        validates :signature_start_date, :signature_end_date, presence: true, if: :signature_dates_required?
-        validates :signature_end_date, date: { after: :signature_start_date }, if: lambda { |form|
-          form.signature_start_date.present? && form.signature_end_date.present?
-        }
+        attribute :state, String
 
         def signature_dates_required?
           @signature_dates_required ||= context.idea.state == "published"
+        end
+
+        def available_states
+          ([current_state] + Decidim::Idea.states.keys.last(5)).compact.map { |state| [I18n.t(state, scope: "decidim.ideas.admin_states"), state] }
+        end
+
+        def current_state
+          context.idea.state unless Decidim::Idea.states.keys.last(5).include? context.idea.state
         end
       end
     end

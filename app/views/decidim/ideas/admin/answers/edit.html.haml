@@ -1,0 +1,14 @@
+= render partial: "info_idea", locals: { idea: current_idea }
+= decidim_form_for(@form, url: idea_answer_path(current_idea), html: { class: "form edit_idea_answer" }) do |f|
+  .card
+    .card-divider
+      %h2.card-title= t ".title", title: translated_attribute(current_idea.title)
+    .card-section
+      .row.column
+        = f.select :state, @form.available_states, {}
+      .row.column
+        = f.translated :editor, :answer, autofocus: true, rows: 15
+      .row.column
+        = f.text_field :answer_url
+  .button--double.form-general-submit
+    = f.submit t(".answer")

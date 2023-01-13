@@ -26,6 +26,8 @@ module Decidim
         def call
           return broadcast(:invalid) if form.invalid?
 
+
+
           @idea = Decidim.traceability.update!(
             idea,
             current_user,
@@ -43,7 +45,8 @@ module Decidim
         def attributes
           attrs = {
             answer: form.answer,
-            answer_url: form.answer_url
+            answer_url: form.answer_url,
+            state: form.state
           }
 
           attrs[:answered_at] = Time.current if form.answer.present?
