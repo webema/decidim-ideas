@@ -33,17 +33,6 @@ module Decidim
       # GET /ideas
       def index
         enforce_permission_to :list, :idea
-        return unless search.result.blank? && params.dig("filter", "with_any_state") != %w(closed)
-
-        @closed_ideas ||= search_with(filter_params.merge(with_any_state: %w(closed)))
-
-        if @closed_ideas.result.present?
-          params[:filter] ||= {}
-          params[:filter][:with_any_state] = %w(closed)
-          @forced_closed_ideas = true
-
-          @search = @closed_ideas
-        end
       end
 
       # GET /ideas/:id
@@ -148,7 +137,7 @@ module Decidim
       def default_filter_params
         {
           search_text_cont: "",
-          with_any_state: %w(open),
+          with_any_state: default_filter_state_params,
           with_any_type: default_filter_type_params,
           author: "any",
           with_any_scope: default_filter_scope_params,
@@ -166,6 +155,10 @@ module Decidim
 
       def default_filter_area_params
         %w(all) + current_organization.areas.pluck(:id).map(&:to_s)
+      end
+
+      def default_filter_state_params
+        %w(open) + Decidim::Idea.states.keys.last(5)
       end
 
       def stats

@@ -17,6 +17,8 @@ de:
         title: Titel
         source: Woher kommt deine Inspiration?
         hero_image: Titelbild
+        answer: Antwort
+        answer_url: Weiterführende URL
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
@@ -56,12 +58,15 @@ de:
           state_eq:
             label: Status
             values:
-              accepted: Ausreichende Unterschriften
               created: Erstellt
               discarded: Verworfen
               published: Veröffentlicht
-              rejected: Zu wenige Unterschriften
               validating: Freigabe angefordert
+              forwarded: Weitergeleitet
+              assemblified: Weiterarbeit als Werkraum
+              processified: Weiterarbeit als konKreation
+              pilotified: In Erprobung
+              rejected: Nicht weitergeführt
           type_id_eq:
             label: Typ
         search_placeholder:
@@ -246,24 +251,34 @@ de:
           delete: "%{user_name} hat die Inspirationen-Art %{resource_name} gelöscht"
           update: "%{user_name} hat die Inspirationen-Art %{resource_name} aktualisiert"
       admin_states:
-        accepted: Ausreichende Unterschriften
         created: Erstellt
         discarded: Verworfen
         published: Veröffentlicht
-        rejected: Zu wenige Unterschriften
         validating: Freigabe angefordert
+        rejected: Nicht weitergeführt
+        forwarded: Weitergeleitet
+        assemblified: Weiterarbeit als Werkraum
+        processified: Weiterarbeit als konKreation
+        pilotified: In Erprobung
+      answered_link_button:
+        rejected: Weitere Infos
+        forwarded: Weitere Infos
+        assemblified: Zum Werkraum
+        processified: Zur konKreation
+        pilotified: Weitere Infos
       application_helper:
         filter_area_values:
           all: Alle
         filter_scope_values:
           all: Alle
         filter_state_values:
-          accepted: Ausreichende Unterschriften
           all: Alle
-          answered: Beantwortet
-          closed: Geschlossen
+          rejected: Nicht weitergeführt
           open: Offen
-          rejected: Zu wenige Unterschriften
+          forwarded: Weitergeleitet
+          assemblified: Weiterarbeit als Werkraum
+          processified: Weiterarbeit als konKreation
+          pilotified: In Erprobung
         filter_type_values:
           all: Alle
       content_blocks:

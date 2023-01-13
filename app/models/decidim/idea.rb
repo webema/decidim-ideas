@@ -62,23 +62,21 @@ module Decidim
     has_one_attached :hero_image
     validates_upload :hero_image, uploader: Decidim::HeroImageUploader
 
-    enum state: [:created, :validating, :discarded, :published, :rejected, :accepted]
-
-    # enum state: [:created, :validating, :discarded, :published]
+    enum state: [:created, :validating, :discarded, :published, :rejected, :forwarded, :assemblified, :processified, :pilotified]
 
     validates :title, :description, :state, presence: true
     validates :hashtag, uniqueness: { allow_blank: true, case_sensitive: false }
 
     scope :open, lambda {
-      where.not(state: [:discarded, :rejected, :accepted, :created])
+      where(state: [:validating, :published])
     }
     scope :closed, lambda {
-      where(state: [:discarded, :rejected, :accepted])
+      where(state: [:discarded, :rejected, :forwarded, :assemblified, :processified, pilotified])
     }
     scope :published, -> { where.not(published_at: nil) }
     scope :with_state, ->(state) { where(state: state) if state.present? }
 
-    scope_search_multi :with_any_state, [:accepted, :rejected, :answered, :open, :closed]
+    scope_search_multi :with_any_state, [:open, :validating, :published, :rejected, :forwarded, :assemblified, :processified, :pilotified]
 
     scope :answered, -> { where.not(answered_at: nil) }
 
@@ -189,7 +187,7 @@ module Decidim
     #
     # Returns a Boolean
     def closed?
-      discarded? || rejected? || accepted?
+      discarded? || rejected? || forwarded? || assemblified? || processified? || pilotified?
     end
 
     # Public: Returns the author name. If it has been created by an organization it will
@@ -212,6 +210,10 @@ module Decidim
     # Returns a Boolean.
     def answered?
       answered_at.present?
+    end
+
+    def accepted?
+      forwarded? || assemblified? || processified? || pilotified?
     end
 
     # Public: Overrides scopes enabled flag available in other models like

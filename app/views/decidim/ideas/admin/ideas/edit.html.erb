@@ -28,22 +28,6 @@
                   data: { confirm: t(".confirm") } %>
     <% end %>
 
-    <% if allowed_to? :accept, :idea, idea: current_idea %>
-        <%= link_to t(".accept"),
-                    accept_idea_path(current_idea),
-                    method: :post,
-                    class: "button hollow",
-                    data: { confirm: t(".confirm") } %>
-    <% end %>
-
-    <% if allowed_to? :reject, :idea, idea: current_idea %>
-        <%= link_to t(".reject"),
-                    reject_idea_path(current_idea),
-                    method: :delete,
-                    class: "button alert",
-                    data: { confirm: t(".confirm") } %>
-    <% end %>
-
     <% if allowed_to? :discard, :idea, idea: current_idea %>
       <%= link_to t(".discard"),
                   discard_idea_path(current_idea),

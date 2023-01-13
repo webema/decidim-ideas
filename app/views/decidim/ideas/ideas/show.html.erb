@@ -83,12 +83,10 @@ edit_link(
       </div>
       <br>
       <div class="row column">
-        <%= render partial: "idea_badge", locals: { idea: current_idea } %>
         <% if translated_attribute(current_idea.source).present? %>
           <p><strong><%= t('.source') %>: <%= strip_tags(translated_attribute(current_idea.source)) %></strong></p>
         <% end %>
         <%= decidim_sanitize_editor translated_attribute(current_idea.description) %>
-        <%= render partial: "tags", locals: { resource: current_idea } %>
 
         <% if @last_content_edit.present? %>
           <p>
@@ -96,6 +94,8 @@ edit_link(
             <%= link_to t(".last_content_edit_link"), idea_version_path(current_idea, @last_content_edit.index + 1) %>
           </p>
         <% end %>
+
+        <%= render partial: "tags", locals: { resource: current_idea } %>
       </div>
 
       <%= render partial: "result", locals: { idea: current_idea } %>
