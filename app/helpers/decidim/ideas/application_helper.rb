@@ -44,7 +44,7 @@ module Decidim
 
         scope.children.includes(:scope_type, :children).flat_map do |child|
           TreeNode.new(
-            TreePoint.new(child.id.to_s, translated_attribute(child.name, current_organization)),
+            TreePoint.new("", translated_attribute(child.name, current_organization)),
             scope_children_to_tree(child)
           )
         end

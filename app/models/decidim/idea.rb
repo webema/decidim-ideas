@@ -76,7 +76,7 @@ module Decidim
     scope :published, -> { where.not(published_at: nil) }
     scope :with_state, ->(state) { where(state: state) if state.present? }
 
-    scope_search_multi :with_any_state, [:validating, :published, :rejected, :forwarded, :assemblified, :processified, :pilotified]
+    scope_search_multi :with_any_state, [:open, :validating, :published, :rejected, :forwarded, :assemblified, :processified, :pilotified]
 
     scope :answered, -> { where.not(answered_at: nil) }
 

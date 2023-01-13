@@ -1,10 +1,12 @@
 <ul class="tags tags--idea">
-  <li><%= link_to translated_attribute(resource.type.title), ideas_path(filter: { type: [resource.type.id] }) %></li>
-  <li><%= link_to translated_attribute(resource.scope_name), ideas_path(filter: { scope_id: [resource.scope&.id] }) %></li>
+  <li><%= link_to translated_attribute(resource.type.title), ideas_path(filter: { with_any_type: [resource.type.id] }) %></li>
+  <li><%= link_to translated_attribute(resource.scope_name), ideas_path(filter: { with_any_scope: [resource.scope&.id] }) %></li>
   <% if resource.area %>
     <li><%= link_to translated_attribute(resource.area_name), ideas_path(filter: { area_id: [resource.area.id] }) %></li>
   <% end %>
-  <% if resource.state # if Decidim::Idea.states.keys.last(5).include?  %>
+  <% if %w[published rejected forwarded assemblified processified pilotified].include? resource.state %>
     <li class="state <%= resource.state %>"><%= link_to I18n.t(resource.state, scope: "decidim.ideas.admin_states"), ideas_path(filter: { with_any_state: [resource.state] }) %></li>
+  <% else %>
+    <li class="state <%= resource.state %>"><span><%= I18n.t(resource.state, scope: "decidim.ideas.admin_states") %></span></li>
   <% end %>
 </ul>

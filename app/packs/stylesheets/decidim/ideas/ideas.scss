@@ -150,8 +150,9 @@ form.edit_idea {
 
 .tags {
   .state {
-    a {
+    a, span {
       border: 1px solid transparent;
+      padding: 0 0.5rem;
     }
 
     &.published {
@@ -161,7 +162,7 @@ form.edit_idea {
       }
     }
 
-    &.rejected, &.discarded {
+    &.rejected, &.discarded, &.created {
       background-color: $zp_gray;
       a {
         color: $black;
