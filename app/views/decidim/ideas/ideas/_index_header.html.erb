@@ -23,7 +23,11 @@
   <% end %>
   <% if Decidim::Idea.where(author: current_user).any? %>
     &nbsp;
-    <a class="title-action__action button small" href="<%= ideas_path(filter: { author: 'myself', with_any_state: 'filter' }) %>">Eigene Inspirationen</a>
+    <% if filter.author == 'any' %>
+      <a class="title-action__action button small" href="<%= ideas_path(filter: { author: 'myself', with_any_state: 'filter' }) %>">Eigene Inspirationen</a>
+    <% else %>
+      <a class="title-action__action button small" href="<%= ideas_path(filter: { author: 'any', with_any_state: 'filter' }) %>">Alle Inspirationen</a>
+    <% end %>
   <% end %>
 </div>
 

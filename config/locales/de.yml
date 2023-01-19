@@ -60,9 +60,9 @@ de:
             values:
               created: Erstellt
               discarded: Verworfen
-              published: Veröffentlicht
+              published: Offen
               validating: Freigabe angefordert
-              forwarded: Weitergeleitet
+              forwarded: In Bearbeitung
               assemblified: Weiterarbeit als Werkraum
               processified: Weiterarbeit als konKreation
               pilotified: In Erprobung
@@ -253,10 +253,10 @@ de:
       admin_states:
         created: Erstellt
         discarded: Verworfen
-        published: Veröffentlicht
+        published: Offen
         validating: Freigabe angefordert
         rejected: Nicht weitergeführt
-        forwarded: Weitergeleitet
+        forwarded: In Bearbeitung
         assemblified: Weiterarbeit als Werkraum
         processified: Weiterarbeit als konKreation
         pilotified: In Erprobung
@@ -275,7 +275,7 @@ de:
           all: Alle
           rejected: Nicht weitergeführt
           open: Offen
-          forwarded: Weitergeleitet
+          forwarded: In Bearbeitung
           assemblified: Weiterarbeit als Werkraum
           processified: Weiterarbeit als konKreation
           pilotified: In Erprobung
@@ -449,7 +449,7 @@ de:
           accepted: Ausreichende Unterschriften
           created: Erstellt
           discarded: Verworfen
-          published: Veröffentlicht
+          published: Offen
           rejected: Zu wenige Unterschriften
           validating: Freigabe angefordert
       states:

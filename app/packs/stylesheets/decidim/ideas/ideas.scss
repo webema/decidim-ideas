@@ -99,13 +99,14 @@ form.edit_idea {
   padding-bottom: .01rem;
 
   &.success {
-    border-color: $zp_green;
-    background-color: lighten($zp_green, 50%);
+    border-color: $zp_purple;
+    background-color: lighten($zp_purple, 65%);
 
     a.button {
-      background-color: $zp_green;
-      color: $black !important;
+      background-color: $zp_purple;
+      color: $white !important;
     }
+
     // &.forwarded {
     //   border-color: $zp_pink;
     //   background-color: lighten($zp_pink, 53%);
@@ -162,7 +163,7 @@ form.edit_idea {
       }
     }
 
-    &.rejected, &.discarded, &.created {
+    &.rejected, &.discarded, &.created, &.validating {
       background-color: $zp_gray;
       a {
         color: $black;
@@ -209,3 +210,21 @@ form.edit_idea {
 // - Weiterarbeit als Machwerk  (mit Link zum Machwerk) (schwarz auf grün #76b82a)
 
 // - Weiterarbeit als konKreation (mit Link zur konKreation) (weiß auf violett #551285)
+
+.card--idea {
+  position: relative;
+}
+
+.badge.idea-type {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: .3rem .5rem;
+  font-size: 1em;
+  background-color: $zp_yellow;
+  color: $black;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
