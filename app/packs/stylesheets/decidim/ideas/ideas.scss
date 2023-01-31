@@ -221,8 +221,9 @@ form.edit_idea {
   right: 1rem;
   padding: .3rem .5rem;
   font-size: 1em;
-  background-color: $zp_yellow;
-  color: $black;
+  background-color: $white;
+  color: $zp_purple;
+  font-family: 'Literata', sans-serif;
 
   &:hover {
     text-decoration: none;
