@@ -323,6 +323,11 @@ module Decidim
       Ideas::IdeaSearch.new(self, params, options)
     end
 
+    # Public: Override Commentable concern method `users_to_notify_on_comment_created`
+    def users_to_notify_on_comment_created
+      followers
+    end
+
     private
 
     # Private: This is just an alias because the naming on IdeaTypeScope
