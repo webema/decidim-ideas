@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "decidim-comments", Decidim::Ideas::DECIDIM_VERSION
   s.add_dependency "decidim-core", Decidim::Ideas::DECIDIM_VERSION
   s.add_dependency "acts_as_votable"
+  s.add_dependency "validate_url"
 
   s.add_dependency "wicked", "~> 1.3"
 

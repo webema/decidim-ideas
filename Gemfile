@@ -21,6 +21,8 @@ gem 'puma', '>= 5.0.0'
 # Hack?
 gem 'rexml', '~> 3.2.5'
 
+gem 'validate_url'
+
 group :development, :test do
   gem 'byebug', '~> 11.0', platform: :mri
   gem 'brakeman'

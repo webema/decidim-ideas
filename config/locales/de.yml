@@ -266,6 +266,7 @@ de:
         assemblified: Zum Werkraum
         processified: Zur konKreation
         pilotified: Weitere Infos
+        discarded: Weitere Infos
       application_helper:
         filter_area_values:
           all: Alle

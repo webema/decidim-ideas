@@ -66,6 +66,7 @@ module Decidim
 
     validates :title, :description, :state, presence: true
     validates :hashtag, uniqueness: { allow_blank: true, case_sensitive: false }
+    validates :answer_url, url: { allow_blank: true }
 
     scope :open, lambda {
       where(state: [:validating, :published])
