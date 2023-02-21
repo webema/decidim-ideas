@@ -46,6 +46,7 @@ module Decidim
             comments_enabled: form.comments_enabled,
             attachments_enabled: form.attachments_enabled,
             banner_image: form.banner_image,
+            active: form.active
           )
 
           return idea_type unless idea_type.valid?

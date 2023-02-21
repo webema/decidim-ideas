@@ -21,6 +21,8 @@ module Decidim
 
         resources :create_idea
 
+        get "ideas/archived", to: "ideas#archived", as: :archived_ideas
+
         get "ideas/:idea_id", to: redirect { |params, _request|
           idea = Decidim::Idea.find(params[:idea_id])
           idea ? "/ideas/#{idea.slug}" : "/404"
@@ -33,7 +35,6 @@ module Decidim
 
         resources :ideas, param: :slug, only: [:index, :show, :edit, :update], path: "ideas" do
           # resources :idea_signatures
-
           member do
             get :authorization_sign_modal, to: "authorization_sign_modals#show"
             get :print, to: "ideas#print", as: "print"

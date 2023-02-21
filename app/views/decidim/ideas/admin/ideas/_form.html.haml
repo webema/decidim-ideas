@@ -22,7 +22,7 @@
           {},                                                                                                    |
           { disabled: !@form.state_updatable? }                                                                  |
     .row
-      - unless single_idea_type?
+      - unless single_active_idea_type?
         .columns.xlarge-6
           = form.select :type_id,                                                |
             idea_type_options,                                                   |

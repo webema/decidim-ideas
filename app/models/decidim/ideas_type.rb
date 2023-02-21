@@ -29,6 +29,9 @@ module Decidim
     has_one_attached :banner_image
     validates_upload :banner_image, uploader: Decidim::BannerImageUploader
 
+    scope :active, -> { where(active: true) }
+    scope :inactive, -> { where(active: false) }
+
     def allow_resource_permissions?
       true
     end

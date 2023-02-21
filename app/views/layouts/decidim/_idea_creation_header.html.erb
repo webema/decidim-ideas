@@ -8,7 +8,7 @@
     <ol class="wizard__steps">
       <% wizard_steps.each do |wizard_step| %>
         <% next if wizard_step.to_s == "promotal_committee" %>
-        <% next if wizard_step.to_s == "select_idea_type" && single_idea_type? %>
+        <% next if wizard_step.to_s == "select_idea_type" && single_active_idea_type? %>
         <% if step == wizard_step %>
           <li class="step--active">
             <%= t(".#{wizard_step}") %>

@@ -9,7 +9,7 @@ module Decidim
       extend ActiveSupport::Concern
 
       included do
-        helper_method :single_idea_type?
+        helper_method :single_idea_type?, :single_active_idea_type?
 
         private
 
@@ -19,6 +19,10 @@ module Decidim
 
         def single_idea_type?
           current_organization_ideas_type.count == 1
+        end
+
+        def single_active_idea_type?
+          current_organization_ideas_type.active.count == 1
         end
       end
     end

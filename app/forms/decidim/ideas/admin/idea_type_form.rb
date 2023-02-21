@@ -15,6 +15,7 @@ module Decidim
         attribute :banner_image
         attribute :attachments_enabled, Boolean
         attribute :comments_enabled, Boolean
+        attribute :active, Boolean
 
         validates :title, :description, translatable_presence: true
         validates :attachments_enabled, inclusion: { in: [true, false] }

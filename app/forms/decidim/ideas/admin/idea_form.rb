@@ -43,7 +43,7 @@ module Decidim
         end
 
         def idea_type
-          @idea_type ||= type_id ? IdeasType.find(type_id) : context.idea.type
+          @idea_type ||= type_id ? IdeasType.active.find(type_id) : context.idea.type
         end
 
         def available_scopes

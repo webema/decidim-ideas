@@ -44,7 +44,7 @@ module Decidim
         # session[:idea] = {}
         delete_cached_idea
 
-        return redirect_to next_wizard_path if single_idea_type?
+        return redirect_to next_wizard_path if single_active_idea_type?
 
         render_wizard unless performed?
       end
@@ -125,7 +125,7 @@ module Decidim
       end
 
       def idea_type
-        @idea_type ||= IdeasType.find(idea_type_id)
+        @idea_type ||= IdeasType.active.find(idea_type_id)
       end
 
       def idea_type_id

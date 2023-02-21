@@ -15,15 +15,16 @@ de:
         type_id: Typ
         decidim_scope_id: Thema
         title: Titel
-        source: Woher kommt deine Inspiration?
+        source: Woher kommt dein Praxisbeispiel?
         hero_image: Titelbild
         answer: Antwort
         answer_url: Weiterführende URL
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
-        comments_enabled: Nutzer:innen können Inspirationen kommentieren
+        comments_enabled: Nutzer:innen können Praxisbeispiele kommentieren
         description: Beschreibung
+        active: Nutzer:innen können neue Praxisbeispiele diesen Typs erstellen
     errors:
       models:
         idea:
@@ -33,12 +34,12 @@ de:
               needs_to_be_reattached: Der Anhang muss erneut angehängt werden
               title: Der Titel sollte nicht leer sein
     models:
-      decidim/ideas/idea_sent_to_technical_validation_event: Inspiration an Moderation gesendet
+      decidim/ideas/idea_sent_to_technical_validation_event: Praxisbeispiel an Moderation gesendet
   activerecord:
     models:
       decidim/idea:
-        one: Inspiration
-        other: Inspirationen
+        one: Praxisbeispiel
+        other: Praxisbeispiele
     errors:
       models:
         decidim/idea:
@@ -74,14 +75,14 @@ de:
       ideas_settings:
         update:
           error: Ein Fehler ist aufgetreten
-          success: Die Einstellungen für Inspirationen wurden erfolgreich aktualisiert
+          success: Die Einstellungen für Praxisbeispiele wurden erfolgreich aktualisiert
       menu:
         attachments: Anhänge
         components: Komponenten
         information: Information
-        ideas: Inspirationen
+        ideas: Praxisbeispiele
         ideas_settings: Einstellungen
-        ideas_types: Arten von Inspirationen
+        ideas_types: Arten von Praxisbeispielen
         moderations: Moderation
       models:
         ideas:
@@ -90,7 +91,7 @@ de:
             id: ID
             published_at: Veröffentlicht am
             state: Status
-            title: Inspirationen
+            title: Praxisbeispiele
         ideas_type_scope:
           fields:
             scope: Thema
@@ -98,43 +99,43 @@ de:
         ideas_types:
           fields:
             created_at: Erstellt am
-            title: Arten von Inspirationen
-          name: Art der Inspiration
+            title: Arten von Praxisbeispielen
+          name: Art des Praxisbeispiels
       titles:
-        ideas: Inspirationen
-        ideas_types: Arten von Inspirationen
+        ideas: Praxisbeispiele
+        ideas_types: Arten von Praxisbeispielen
     events:
       ideas:
         admin:
           idea_sent_to_technical_validation:
-            email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
+            email_intro: Das Praxisbeispiel <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
             email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-            email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-            notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
+            email_subject: Praxisbeispiel "%{resource_title}" wartet auf Veröffentlichung
+            notification_title: Das Praxisbeispiel <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
         idea_sent_to_technical_validation:
-          email_intro: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
+          email_intro: Das Praxisbeispiel <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_url}">Admin-Panel</a> kannst du sie aufrufen.
           email_outro: Du hast diese Benachrichtigung erhalten, weil du ein/e Administrator:in der Plattform bist.
-          email_subject: Inspiration "%{resource_title}" wartet auf Veröffentlichung
-          notification_title: Die Inspiration <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
+          email_subject: Praxisbeispiel "%{resource_title}" wartet auf Veröffentlichung
+          notification_title: Das Praxisbeispiel <em>%{resource_title}</em> wartet auf Veröffentlichung. Über das <a href="%{admin_idea_path}">Admin-Panel</a> kannst du sie aufrufen.
     gamification:
       badges:
         ideas:
           conditions:
-            - Gehe zum Bereich Inspirationen
-            - Folge diesen Schritten, um eine neue Inspiration zu erstellen
-          description: Dieses Abzeichen wird gewährt, wenn du neue Inspirationen erstellst.
-          description_another: Diese/r Benutzer:in hat %{score} Inspirationen veröffentlicht.
-          description_own: Du hast %{score} Inspirationen veröffentlicht.
-          name: Veröffentlichte Inspirationen
-          next_level_in: Veröffentliche %{score} weitere Inspirationen, um das nächste Level zu erreichen!
-          unearned_another: Diese/r Benutzer:in hat noch keine Inspiration veröffentlicht.
-          unearned_own: Du hast noch keine Inspiration veröffentlicht.
+            - Gehe zum Bereich Praxisbeispiele
+            - Folge diesen Schritten, um ein neues Praxisbeispiel zu erstellen
+          description: Dieses Abzeichen wird gewährt, wenn du neue Praxisbeispiele erstellst.
+          description_another: Diese/r Benutzer:in hat %{score} Praxisbeispiele veröffentlicht.
+          description_own: Du hast %{score} Praxisbeispiele veröffentlicht.
+          name: Veröffentlichte Praxisbeispiele
+          next_level_in: Veröffentliche %{score} weitere Praxisbeispiele, um das nächste Level zu erreichen!
+          unearned_another: Diese/r Benutzer:in hat noch kein Praxisbeispiel veröffentlicht.
+          unearned_own: Du hast noch kein Praxisbeispiel veröffentlicht.
     help:
       participatory_spaces:
         ideas:
-          contextual: "TODO<p>Eine Inspiration ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren einer Inspiration können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Eine Inspiration kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
-          page: "<p>Eine Inspiration ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren einer Inspiration können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Eine Inspiration kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
-          title: Was sind Inspirationen?
+          contextual: "TODO<p>Ein Praxisbeispiel ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren eines Praxisbeispiels können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Ein Praxisbeispiel kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
+          page: "<p>Ein Praxisbeispiel ist ein Vorschlag, der von jedermann aus eigener idea (unabhängig von anderen Kanälen oder Beteiligungsräumen) durch die Sammlung von (digitalen) Unterschriften für die Organisation zur Durchführung einer bestimmten Aktion (Änderung einer Verordnung, Initiierung eines Projekts) gefördert werden kann , ändere den Namen einer Abteilung oder einer Straße usw.).</p> <p>Die Initiatoren eines Praxisbeispiels können ihre Ziele festlegen, Unterstützung sammeln, diskutieren, verbreiten und Treffpunkte definieren, an denen Unterschriften der Teilnehmenden oder Debatten gesammelt werden können, die für andere Teilnehmende offen sind.</p> <p>Beispiele: Ein Praxisbeispiel kann Unterschriften sammeln, um eine Konsultation unter allen Mitarbeitern einer Organisation einzuberufen, ein Machwerk zu gründen oder einzuberufen oder eine konKreation zur Aufstockung des Budgets für ein Gebiet oder einen Bereich der Organisation einzuleiten. Während des Sammelns von Unterschriften können mehr Personen zu diesem Bedarf beitragen und ihn in der Organisation vorantreiben.</p>\n"
+          title: Was sind Praxisbeispiele?
     ideas:
       actions:
         answer: Antworten
@@ -146,7 +147,7 @@ de:
           info_idea:
             created_at: Erstellt am
             description: Beschreibung
-            ideas: Inspirationen
+            ideas: Praxisbeispiele
             state: Status
         content_blocks:
           highlighted_ideas:
@@ -156,17 +157,17 @@ de:
               label: 'Einträge ordnen nach:'
               most_recent: Neueste zuerst
         exports:
-          ideas: Inspirationen
+          ideas: Praxisbeispiele
         ideas:
           edit:
-            accept: Inspiration akzeptieren
+            accept: Praxisbeispiel akzeptieren
             confirm: Bist du sicher?
             confirm_send_to_technical_validation: Bist du sicher?
-            discard: Die Inspiration verwerfen
+            discard: Das Praxisbeispiel verwerfen
             export_votes: Export unterstützt
-            reject: Inspiration ablehnen
+            reject: Praxisbeispiel ablehnen
             send_to_technical_validation: Freigabe beantragen
-            success: Die Inspiration wurde an die Moderation gesendet
+            success: Das Praxisbeispiel wurde an die Moderation gesendet
             update: Aktualisieren
           form:
             attachments: Anhänge
@@ -184,7 +185,7 @@ de:
             photos: Fotos
           update:
             error: Ein Fehler ist aufgetreten
-            success: Die Inspiration wurde erfolgreich aktualisiert
+            success: Das Praxisbeispiel wurde erfolgreich aktualisiert
         ideas_settings:
           edit:
             update: Aktualisieren
@@ -193,32 +194,32 @@ de:
             date: Chronologisch
             publication_date: Zuletzt veröffentlicht
             random: Zufällig
-            title: Einstellungen für Inspirationen
+            title: Einstellungen für Praxisbeispiele
         ideas_type_scopes:
           create:
             error: Ein Fehler ist aufgetreten
-            success: Ein neues Thema für die Inspirationen-Art wurde erstellt
+            success: Ein neues Thema für die Praxisbeispiele-Art wurde erstellt
           destroy:
             success: Das Thema wurde erfolgreich entfernt
           edit:
             back: Zurück
             confirm_destroy: Bist du sicher?
             destroy: Löschen
-            title: Thema für Inspirationen-Art bearbeiten
+            title: Thema für Praxisbeispiele-Art bearbeiten
             update: Aktualisieren
           new:
             back: Zurück
             create: Erstellen
-            title: Thema für Inspirationen-Art erstellen
+            title: Thema für Praxisbeispiele-Art erstellen
           update:
             error: Ein Fehler ist aufgetreten
             success: Der Bereich wurde erfolgreich aktualisiert
         ideas_types:
           create:
             error: Ein Fehler ist aufgetreten
-            success: Ein neuer Inspirationen-Typ wurde erfolgreich erstellt
+            success: Ein neuer Praxisbeispiele-Typ wurde erfolgreich erstellt
           destroy:
-            success: Die Inspirationen-Art wurde erfolgreich entfernt
+            success: Die Praxisbeispiele-Art wurde erfolgreich entfernt
           edit:
             confirm_destroy: Bist du sicher?
             destroy: Löschen
@@ -234,22 +235,22 @@ de:
             title: Neue Art
           update:
             error: Ein Fehler ist aufgetreten
-            success: Die Inspirationen-Art wurde erfolgreich aktualisiert
+            success: Die Praxisbeispiele-Art wurde erfolgreich aktualisiert
           form:
-            title: Inspirationen-Art bearbeiten
+            title: Praxisbeispiele-Art bearbeiten
             options: Optionen
       admin_log:
         idea:
-          publish: "%{user_name} hat die Inspiration %{resource_name} veröffentlicht"
-          send_to_technical_validation: "%{user_name} hat die Inspiration %{resource_name} an ein/e Moderator:in zur Veröffentlichung gesendet"
-          unpublish: "%{user_name} hat die Inspiration %{resource_name} verworfen"
-          update: "%{user_name} hat die Inspiration %{resource_name} aktualisiert"
+          publish: "%{user_name} hat das Praxisbeispiel %{resource_name} veröffentlicht"
+          send_to_technical_validation: "%{user_name} hat das Praxisbeispiel %{resource_name} an ein/e Moderator:in zur Veröffentlichung gesendet"
+          unpublish: "%{user_name} hat das Praxisbeispiel %{resource_name} verworfen"
+          update: "%{user_name} hat das Praxisbeispiel %{resource_name} aktualisiert"
         ideas_settings:
-          update: "%{user_name} hat die Einstellungen für Inspirationen aktualisiert"
+          update: "%{user_name} hat die Einstellungen für Praxisbeispiele aktualisiert"
         ideas_type:
-          create: "%{user_name} hat die Inspirationen-Art %{resource_name} erstellt"
-          delete: "%{user_name} hat die Inspirationen-Art %{resource_name} gelöscht"
-          update: "%{user_name} hat die Inspirationen-Art %{resource_name} aktualisiert"
+          create: "%{user_name} hat die Praxisbeispiele-Art %{resource_name} erstellt"
+          delete: "%{user_name} hat die Praxisbeispiele-Art %{resource_name} gelöscht"
+          update: "%{user_name} hat die Praxisbeispiele-Art %{resource_name} aktualisiert"
       admin_states:
         created: Erstellt
         discarded: Verworfen
@@ -284,22 +285,22 @@ de:
           all: Alle
       content_blocks:
         highlighted_ideas:
-          name: Hervorgehobene Inspirationen
+          name: Hervorgehobene Praxisbeispiele
       create_idea:
         additional_data:
           back: Zurück
           continue: Speichern
-          fill_data_help: Wie schön, dass du die Plattform um weitere Inspirationen bereicherst! Wähle ein Thema aus und füge ein Bild hinzu, um deinen Beitrag noch auffindbarer zu gestalten. Falls nötig, kannst du jetzt auch noch mal deinen Titel oder die Beschreibung anpassen.
-          idea_type: Art der Inspiration
+          fill_data_help: Wie schön, dass du die Plattform um weitere Praxisbeispiele bereicherst! Wähle ein Thema aus und füge ein Bild hinzu, um deinen Beitrag noch auffindbarer zu gestalten. Falls nötig, kannst du jetzt auch noch mal deinen Titel oder die Beschreibung anpassen.
+          idea_type: Art des Praxisbeispiels
           more_information: "(Weitere Informationen)"
           select_area: Wähle einen Bereich aus
           select_scope: Wähle ein Thema aus
         finish:
           back: Zurück
-          callout_text: Herzlichen Glückwunsch! Deine Inspiration wurde erfolgreich erstellt.
-          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Bist du sicher?
-          edit_my_idea: Inspiration bearbeiten
-          go_to_my_ideas: Meine Inspiration anzeigen
+          callout_text: Herzlichen Glückwunsch! Dein Praxisbeispiel wurde erfolgreich erstellt.
+          confirm: Hiermit sendest du dein Praxisbeispiel an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Bist du sicher?
+          edit_my_idea: Praxisbeispiel bearbeiten
+          go_to_my_ideas: Mein Praxisbeispiel anzeigen
           more_information: "(Weitere Informationen)"
           send_my_idea: Veröffentlichen
         finish_help:
@@ -315,37 +316,37 @@ de:
           back: Zurück
           more_information: "(Weitere Informationen)"
           select: Fortsetzen
-          select_idea_type_help: Wähle bitte zunächst die Art der Inspiration, die du teilen möchtest.
+          select_idea_type_help: Wähle bitte zunächst die Art des Praxisbeispiels, die du teilen möchtest.
         check_duplicates:
           back: Zurück
           compare_help: Gibt es bereits einen vergleichbaren Beitrag? Dann schau ihn dir an und teile deine Erfahrungen direkt in den Kommentaren. Gemeinsam erhöht ihr eure Chance, wahrgenommen zu werden. Wenn sich dein Beitrag von den anderen unterscheidet, wähle unten rechts "Mein Beitrag ist anders".
           continue: Mein Beitrag ist anders
           more_information: "(Weitere Informationen)"
       edit:
-        accept: Inspiration akzeptieren
+        accept: Praxisbeispiel akzeptieren
         back: Zurück
         confirm: Bist du dir sicher?
-        discard: Inspiration verwerfen
-        reject: Inspiration ablehnen
-        title: Inspiration bearbeiten
+        discard: Praxisbeispiel verwerfen
+        reject: Praxisbeispiel ablehnen
+        title: Praxisbeispiel bearbeiten
         update: Aktualisieren
       events:
         create_idea_event:
-          email_intro: "%{author_name} %{author_nickname} hat eine neue Inspiration erstellt, sieh sie dir an und beteilige dich:"
+          email_intro: "%{author_name} %{author_nickname} hat ein neues Praxisbeispiel erstellt, sieh sie dir an und beteilige dich:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
-          email_subject: Neue Inspiration von %{author_nickname}
-          notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> erstellt.
+          email_subject: Neues Praxisbeispiel von %{author_nickname}
+          notification_title: Das Praxisbeispiel <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> erstellt.
         endorse_idea_event:
-          email_intro: "%{author_name} %{author_nickname} hat die folgende Inspiration unterstützt, vielleicht möchtest du mitreden:"
+          email_intro: "%{author_name} %{author_nickname} hat das folgende Praxisbeispiel unterstützt, vielleicht möchtest du mitreden:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
-          email_subject: Inspiration wurde von %{author_nickname} unterstützt
-          notification_title: Die Inspiration <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
+          email_subject: Praxisbeispiel wurde von %{author_nickname} unterstützt
+          notification_title: Das Praxisbeispiel <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> unterstützt.
       form:
         add_attachments: Anhänge
         attachment_legend: "Anhänge (Optional)"
         delete_attachment: Löschen
       index:
-        title: Inspirationen
+        title: Praxisbeispiele
       ideas:
         author:
           deleted: Gelöscht
@@ -355,8 +356,8 @@ de:
             other: und %{count} weitere Leute
         count:
           title:
-            one: "%{count} Inspiration"
-            other: "%{count} Inspirationen"
+            one: "%{count} Praxisbeispiel"
+            other: "%{count} Praxisbeispiele"
         filters:
           any: Alle
           area: Bereich
@@ -372,15 +373,15 @@ de:
           filter_by: Filtern nach
           unfold: Entfalten
         index_header:
-          new_idea: Neue Inspiration
+          new_idea: Neues Praxisbeispiel
           not_authorized:
             authorizations_page: Autorisierungen anzeigen
             close: Schließen
-            explanation: Du musst authorisiert werden, bevor du eine neue Inspiration erstellen kannst.
+            explanation: Du musst authorisiert werden, bevor du ein neues Praxisbeispiel erstellen kannst.
             title: Autorisierung erforderlich
         ideas:
-          closed_ideas_warning: Derzeit gibt es keine offenen Inspirationen, aber hier findest du alle abgeschlossenen Inspirationen aufgelistet.
-          no_ideas_warning: Keine Inspirationen entsprechen deinen Suchkriterien.
+          closed_ideas_warning: Derzeit gibt es keine offenen Praxisbeispiele, aber hier findest du alle abgeschlossenen Praxisbeispiele aufgelistet.
+          no_ideas_warning: Keine Praxisbeispiele entsprechen deinen Suchkriterien.
         interactions:
           comments_count:
             count:
@@ -394,57 +395,57 @@ de:
           recent: Neueste zuerst
           recently_published: Kürzlich veröffentlicht
         result:
-          answer_title: Diese Inspiration wurde beantwortet
-          idea_rejected_reason: Diese Inspiration wurde wegen fehlender Unterstützung abgelehnt.
+          answer_title: Dieses Praxisbeispiel wurde beantwortet
+          idea_rejected_reason: Dieses Praxisbeispiel wurde wegen fehlender Unterstützung abgelehnt.
         show:
-          confirm: Hiermit sendest du deine Inspiration an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald deine Inspiration veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
+          confirm: Hiermit sendest du dein Praxisbeispiel an eine/n Moderator:in, welcher sie überprüft und veröffentlicht. Sobald dein Praxisbeispiel veröffentlicht ist, kannst du sie nicht mehr bearbeiten. Bist du sicher?
           edit: Bearbeiten
           confirm_edit: Achtung, du bist im Begriff, deinen Beitrag zu verändern. Beachte bitte, dass dadurch manche Kommentare von Nutzer:innen ihren Sinn verlieren könnten. Um das zu umgehen, beantworte die betreffenden Kommentare und füge deiner Änderung ggf. einen Hinweis hinzu.
-          follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu dieser Inspiration gibt
-          last_content_edit_info: Der Inhalt dieser Inspiration wurde am %{updated_at} geändert.
+          follow_description: Erhalte eine Benachrichtigung, wenn es Neuigkeiten zu diesem Praxisbeispiel gibt
+          last_content_edit_info: Der Inhalt dieses Praxisbeispiels wurde am %{updated_at} geändert.
           last_content_edit_link: Änderungen ansehen...
           send_to_technical_validation: Veröffentlichen
           source: Quelle
       ideas_mailer:
         creation_subject: Danke für deinen Beitrag!
         creation_greeting: Fast geschafft!
-        creation_info: Deine Inspiration <em>%{title}</em> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
+        creation_info: Dein Praxisbeispiel <em>%{title}</em> wurde erfolgreich gespeichert. Nun musst du sie nur noch veröffentlichen, damit sie auch alle sehen können.
         validating_subject: Wir kümmern uns!
         validating_greeting: Nur noch einen kurzen Moment!
-        validating_info: Deine Inspiration <em>%{title}</em> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Inspirationen innerhalb von 24 Stunden (an Werktagen) zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
+        validating_info: Dein Praxisbeispiel <em>%{title}</em> wartet nun auf die Freigabe der Moderation. Wir bemühen uns, Praxisbeispiele innerhalb von 24 Stunden (an Werktagen) zu bearbeiten. Sobald sie veröffentlicht wurde, erhältst du eine weitere E-Mail von uns.
         idea_link:
-          check_idea_details: Eine Ansicht deiner Inspiration findest du
+          check_idea_details: Eine Ansicht deines Praxisbeispiels findest du
           here: hier
         rejected_subject: Es sollte so nicht sein…
         rejected_greeting: Schade!
-        rejected_info: Deine Inspiration <em>%{title}</em> wurde von unserer Moderation verworfen.
-        rejected_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
+        rejected_info: Dein Praxisbeispiel <em>%{title}</em> wurde von unserer Moderation verworfen.
+        rejected_explanation: Es tut uns leid, dein Praxisbeispiel war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb dein Praxisbeispiel verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
         published_subject: "Bahn frei - Kartoffelbrei: Jetzt geht's los!"
         published_greeting: Juchuu!
-        published_info: Deine Inspiration <em>%{title}</em> wurde von der Moderation veröffentlicht.
+        published_info: Dein Praxisbeispiel <em>%{title}</em> wurde von der Moderation veröffentlicht.
         published_explanation_title: Was geschieht nun?
-        published_explanation_1: Deine Inspiration ist nun im Bereich Inspirationen für andere auffindbar. Solltest du den dringenden Wunsch haben, hier nachträglich etwas zu ergänzen, so kannst du dies über den Bearbeiten-Button tun. Achte dabei darauf, dass manche Kommentare durch deine Ergänzung ggf. ihren Sinn verlieren. Idealerweise machst du eine nachträgliche Änderung durch einen Vermerk sichtbar und reagierst auch auf Kommentare, die dich zur Bearbeitung veranlasst haben.
+        published_explanation_1: Dein Praxisbeispiel ist nun im Bereich Praxisbeispiele für andere auffindbar. Solltest du den dringenden Wunsch haben, hier nachträglich etwas zu ergänzen, so kannst du dies über den Bearbeiten-Button tun. Achte dabei darauf, dass manche Kommentare durch deine Ergänzung ggf. ihren Sinn verlieren. Idealerweise machst du eine nachträgliche Änderung durch einen Vermerk sichtbar und reagierst auch auf Kommentare, die dich zur Bearbeitung veranlasst haben.
         published_explanation_2: Praxisbeispiele sollten nach dem Motto “sharing is caring” so informativ sein, dass andere davon profitieren können. Hast du Hintergrundinformationen hochgeladen? Wenn nicht, hole es einfach nach. Praxisbeispiele behalten stets den Status “offen”.
         published_explanation_3: Ideen, die älter als 30 Tage sind, werden von uns überprüft. Wenn wir merken, dass eine Idee besondere Aufmerksamkeit erhält oder in den Kommentaren weiterentwickelt wurde und eine gewisse Reife erhalten hat, dann soll mehr daraus werden.
         published_explanation_4: Sollte dies bei deiner Idee der Fall sein, nehmen wir Kontakt mit dir als Autor:in und den aktivsten Kommentator:innen auf, um möglicherweise eine Gruppe zu bilden. Wenn du keine Lust hast, an dem Thema weiterzuarbeiten, ist das in Ordnung, vielleicht findet sich jemand anderes.
         published_explanation_5: Es kann auch sein, dass deine Idee in der Diskussion eine Form erhalten hat, die es zulässt, dass wir sie an eine dafür zuständige Stelle weiterleiten (z.B. eine Abteilung im Landeskirchenamt).
         published_explanation_6: Ideen, die von uns bearbeitet wurden, erhalten einen Status, sodass sichtbar wird, was daraus geworden ist.
-        published_explanation_7: Wir sind gespannt wie ein Flitzebogen, was aus deiner Inspiration entstehen wird!
+        published_explanation_7: Wir sind gespannt wie ein Flitzebogen, was aus deinem Praxisbeispiel entstehen wird!
         discarded_subject: Es sollte so nicht sein…
         discarded_greeting: Schade!
-        discarded_info: Deine Inspiration <em>%{title}</em> wurde von unserer Moderation verworfen.
-        discarded_explanation: Es tut uns leid, deine Inspiration war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb deine Inspiration verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
-        more_information: Hier findest du weitere Informationen zum Erstellen von Inspirationen.
-        progress_report_for: 'Infos zur Inspiration: %{title}'
-        status_change_body_for: 'Die Inspiration <em>%{title}</em> hat ihren Status geändert in: %{state}'
-        status_change_for: Die Inspiration %{title} hat ihren Status geändert
+        discarded_info: Dein Praxisbeispiel <em>%{title}</em> wurde von unserer Moderation verworfen.
+        discarded_explanation: Es tut uns leid, dein Praxisbeispiel war vermutlich fehlerhaft abgespeichert, oder sie entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb dein Praxisbeispiel verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
+        more_information: Hier findest du weitere Informationen zum Erstellen von Praxisbeispiele.
+        progress_report_for: 'Infos zum Praxisbeispiel: %{title}'
+        status_change_body_for: 'Das Praxisbeispiel <em>%{title}</em> hat ihren Status geändert in: %{state}'
+        status_change_for: Das Praxisbeispiel %{title} hat ihren Status geändert
       last_activity:
-        new_idea: Neue Inspiration
+        new_idea: Neue Praxisbeispiel
       pages:
         home:
           highlighted_ideas:
-            active_ideas: Aktive Inspirationen
-            see_all_ideas: Alle Inspirationen anzeigen
+            active_ideas: Aktive Praxisbeispiele
+            see_all_ideas: Alle Praxisbeispiele anzeigen
       show:
         badge_name:
           accepted: Ausreichende Unterschriften
@@ -459,12 +460,12 @@ de:
       unavailable_scope: Thema nicht verfügbar
       update:
         error: Ein Fehler ist aufgetreten
-        success: Die Inspiration wurde erfolgreich aktualisiert
+        success: Das Praxisbeispiel wurde erfolgreich aktualisiert
       versions:
         shared:
-          back_to_resource: Zurück zur Inspiration
+          back_to_resource: Zurück zum Praxisbeispiel
     menu:
-      ideas: Inspirationen
+      ideas: Praxisbeispiele
     resources:
       idea:
         actions:
@@ -480,13 +481,13 @@ de:
         additional_data: Ergänzende Infos
         finish: Veröffentlichen
         initial_data: Allgemeine Infos
-        select_idea_type: Art der Inspiration
+        select_idea_type: Art des Praxisbeispiels
         check_duplicates: Doublettenprüfung
         step: Schritt %{current} von %{total}
-        title: Neue Inspiration erstellen
+        title: Neues Praxisbeispiel erstellen
       idea_header:
-        idea_menu_item: Inspiration
-        all_ideas_menu_item: Alle Inspirationen
+        idea_menu_item: Praxisbeispiel
+        all_ideas_menu_item: Alle Praxisbeispiele
       ideas:
         no_ideas_yet:
-          no_ideas_yet: Es wurden noch keine Inspirationen veröffentlicht!
+          no_ideas_yet: Es wurden noch keine Praxisbeispiele veröffentlicht!

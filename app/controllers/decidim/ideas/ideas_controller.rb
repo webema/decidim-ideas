@@ -35,6 +35,11 @@ module Decidim
         enforce_permission_to :list, :idea
       end
 
+      # GET /ideas/archived
+      def archived
+        enforce_permission_to :list, :idea
+      end
+
       # GET /ideas/:id
       def show
         enforce_permission_to :read, :idea, idea: current_idea
@@ -146,7 +151,11 @@ module Decidim
       end
 
       def default_filter_type_params
-        %w(all) + Decidim::IdeasType.where(organization: current_organization).pluck(:id).map(&:to_s)
+        if action_name == 'index'
+          Decidim::IdeasType.where(organization: current_organization).active.pluck(:id).map(&:to_s)
+        elsif action_name = 'archived'
+          Decidim::IdeasType.where(organization: current_organization).inactive.pluck(:id).map(&:to_s)
+        end
       end
 
       def default_filter_scope_params

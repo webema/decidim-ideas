@@ -14,7 +14,7 @@
       .card__content
         = decidim_form_for(@form, url: next_wizard_path, method: :put, html: { class: "form new_idea_previous_form" }) do |f|
           = form_required_explanation
-          = f.hidden_field :type_id
+          = f.hidden_field :type_id, value: Decidim::IdeasType.active.first.id
           .field
             = f.text_field :title, autofocus: true
           .field

@@ -24,9 +24,9 @@
   <% if Decidim::Idea.where(author: current_user).any? %>
     &nbsp;
     <% if filter.author == 'any' %>
-      <a class="title-action__action button small button-primary-white" href="<%= ideas_path(filter: { author: 'myself', with_any_state: 'filter' }) %>">Eigene Inspirationen</a>
+      <a class="title-action__action button small button-primary-white" href="<%= ideas_path(filter: { author: 'myself', with_any_state: 'filter' }) %>">Eigene Praxisbeispiele</a>
     <% else %>
-      <a class="title-action__action button small button-primary-white" href="<%= ideas_path(filter: { author: 'any', with_any_state: 'filter' }) %>"><%="#{icon('chevron-left', class: 'inline')} Alle Inspirationen".html_safe %></a>
+      <a class="title-action__action button small button-primary-white" href="<%= ideas_path(filter: { author: 'any', with_any_state: 'filter' }) %>"><%="#{icon('chevron-left', class: 'inline')} Alle Praxisbeispiele".html_safe %></a>
     <% end %>
   <% end %>
 </div>

@@ -49,6 +49,7 @@ module Decidim
             description: form.description,
             attachments_enabled: form.attachments_enabled,
             comments_enabled: form.comments_enabled,
+            active: form.active
           }.merge(
             attachment_attributes(:banner_image)
           )

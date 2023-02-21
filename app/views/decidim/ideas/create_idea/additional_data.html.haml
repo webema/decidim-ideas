@@ -15,7 +15,7 @@
           = form_required_explanation
           = f.hidden_field :type_id
           .section
-            - unless single_idea_type?
+            - unless single_active_idea_type?
               .field
                 %label{:for => "type_description"}= t ".idea_type"
                 = text_field_tag :type_description, strip_tags(translated_attribute(idea_type.title)), readonly: true
