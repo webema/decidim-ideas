@@ -1,13 +1,5 @@
 = ideas_filter_form_for filter do |form|
   .filters__section
-    - if action_name == 'index'
-      %p
-        Ideen findest du
-        = link_to 'im Archiv', archived_ideas_path
-    - elsif action_name == 'archived'
-      %p
-        Zurück zu den
-        = link_to 'Praxisbeispielen', ideas_path
     .filters__search
       .input-group
         = form.search_field :search_text_cont, label: false, class: "input-group-field", placeholder: t(".search"), title: t(".search"), "aria-label": t(".search")
@@ -20,3 +12,7 @@
   -# = form.check_boxes_tree :with_any_state, filter_states_values, legend_title: t(".state")
   = hidden_field_tag :order, order, id: nil, class: "order_filter"
 
+  - if action_name == 'index'
+    .filters__section
+      Ideen aus der ersten Beteiligungsphase findest du
+      = link_to 'im Archiv', archived_ideas_path
