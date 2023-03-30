@@ -332,7 +332,7 @@ de:
         update: Aktualisieren
       events:
         create_idea_event:
-          email_intro: "%{author_name} %{author_nickname} hat ein neues Praxisbeispiel erstellt, sieh sie dir an und beteilige dich:"
+          email_intro: "%{author_name} %{author_nickname} hat ein neues Praxisbeispiel erstellt, sieh es dir an und beteilige dich:"
           email_outro: Du hast diese Benachrichtigung erhalten, weil du <em>%{author_nickname}</em> folgst. Falls du keine solchen Benachrichtigungen mehr erhalten möchtest, folge dem obigen Link.
           email_subject: Neues Praxisbeispiel von %{author_nickname}
           notification_title: Das Praxisbeispiel <a href="%{resource_path}">%{resource_title}</a> wurde von <a href="%{author_path}">%{author_name} %{author_nickname}</a> erstellt.
@@ -434,10 +434,10 @@ de:
         discarded_explanation: Es tut uns leid, dein Praxisbeispiel war vermutlich fehlerhaft abgespeichert, oder es entsprach nicht unseren %{tos_link}. Wenn du mehr darüber erfahren willst, weshalb dein Praxisbeispiel verworfen wurde, dann kontaktiere das Zukunftsprozess-Team über %{mailto_link}.
         more_information: Hier findest du weitere Informationen zum Erstellen von Praxisbeispiele.
         progress_report_for: 'Infos zum Praxisbeispiel: %{title}'
-        status_change_body_for: 'Das Praxisbeispiel <em>%{title}</em> hat ihren Status geändert in: %{state}'
-        status_change_for: Das Praxisbeispiel %{title} hat ihren Status geändert
+        status_change_body_for: 'Das Praxisbeispiel <em>%{title}</em> hat seinen Status geändert in: %{state}'
+        status_change_for: Das Praxisbeispiel %{title} hat seinen Status geändert
       last_activity:
-        new_idea: Neue Praxisbeispiel
+        new_idea: Neues Praxisbeispiel
       pages:
         home:
           highlighted_ideas:
