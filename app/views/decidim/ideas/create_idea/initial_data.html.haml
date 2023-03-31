@@ -19,6 +19,12 @@
             = f.text_field :title, autofocus: true
           .field
             = f.editor :description, lines: 8, toolbar: :full
+          .field
+            = f.text_area :problem, rows: 2
+          .field
+            = f.text_area :current_state, rows: 2
+          .field
+            = f.text_area :info, rows: 2, placeholder: 'Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer, Adresse'
           .actions
             = f.submit t(".continue"), class: "button expanded"
 

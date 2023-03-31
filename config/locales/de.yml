@@ -19,6 +19,18 @@ de:
         hero_image: Titelbild
         answer: Antwort
         answer_url: Weiterführende URL
+        problem: Welches Problem löst dieses Praxisbeispiel / Auf welche Herausforderung reagiert das Praxisbeispiel
+        current_state: Beschreibe den aktuellen Stand des Praxisbeispiels in 3- 5 Sätzen
+        steps: Beschreibe die notwenigen Schritte von der ersten Idee bis zur Umsetzung möglichst detailliert
+        boards: Welche kirchlichen Gremien waren in die Umsetzung des Praxisbeispiels eingebunden?
+        obstacles: Welche Hindernisse hat es auf dem Weg zur Umsetzung gegeben?
+        time: Wie viel Zeit ist von der ersten Ideen bis zur Umsetzung vergangen?
+        hours: Wie viele Arbeitsstunden sind von der ersten Idee bis zur Umsetzung hineingeflossen?
+        cooperations: Welche Partnerschaften wurden für dieses Praxisbeispiel eingegangen?
+        staff: Wie viele ehrenamtlich oder hauptamtlich Mitarbeitende sind in das Projekt involviert?
+        working_hours: Wieviel Arbeitszeit wird von den Mitarbeitenden für dieses Praxisbeispiel aufgewendet?
+        costs: Was kostet die Unterhaltung dieses Praxisbeispiels?
+        info: Wie können wir mehr über dieses Praxisbeispiel erfahren?
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
@@ -174,6 +186,7 @@ de:
             hero_image: Titelbild
             settings: Einstellungen
             title: Allgemeine Information
+            optional: Optionale Informationen
           index:
             actions_title: Aktion
             preview: Vorschau

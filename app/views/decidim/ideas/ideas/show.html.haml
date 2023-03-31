@@ -1,0 +1,151 @@
+- add_decidim_meta_tags({ image_url: current_idea.type.attached_uploader(:banner_image).path, description: translated_attribute(current_idea.description), title: translated_attribute(current_idea.title), url: idea_url(current_idea.id), twitter_handler: current_organization.twitter_handler})
+- edit_link(resource_locator(current_participatory_space).edit, :read, :idea)
+= participatory_space_floating_help
+- add_decidim_page_title(translated_attribute(current_idea.title))
+- provide :meta_image_url, current_idea.type.attached_uploader(:banner_image).path
+.row
+  .columns.section.view-side.mediumlarge-4.mediumlarge-push-8.large-3.large-push-9
+    - if current_user
+      - if current_idea.published?
+        #likes-button
+          - if current_idea.get_upvotes.where(voter: current_user).any?
+            = render partial: 'like'
+          - else
+            = render partial: 'unlike'
+    - if current_idea.published? || current_idea.rejected? || current_idea.accepted?
+      - if current_idea.commentable?
+        = render partial: "interactions"
+    - if current_user && (current_idea&.has_authorship?(current_user) || current_user.admin?)
+      - if current_idea.created? || current_idea.validating?
+        = link_to t(".edit"),                |
+          edit_idea_path(current_idea),      |
+          class: "button secondary expanded" |
+      - elsif current_idea.published?
+        = link_to t(".edit"),                   |
+          edit_idea_path(current_idea),         |
+          class: "button secondary expanded",   |
+          data: { confirm: t(".confirm_edit") } |
+    - if current_idea.created?
+      = render partial: "send_to_technical_validation", locals: { |
+          title: t(".send_to_technical_validation"),              |
+          confirm: t(".confirm")                                  |
+        }                                                         |
+    - if current_user
+      .card.text-center
+        .card__content
+          = cell "decidim/follow_button", current_participatory_space, inline: false, large: true
+          %small= t(".follow_description")
+    = render partial: "decidim/shared/share_modal"
+    = embed_modal_for idea_widget_url(current_idea, format: :js)
+    = resource_reference(current_idea)
+    = resource_version(current_idea, versions_path: idea_versions_path(current_idea))
+  .columns.mediumlarge-8.mediumlarge-pull-4
+    .section
+      .row.column
+        %h2.heading2
+          = translated_attribute(current_idea.title)
+
+        = render partial: "author", locals: { idea: current_idea }
+
+      .row.column.margin-top-1
+        = decidim_sanitize_editor translated_attribute(current_idea.description)
+
+      .row.column
+        - if translated_attribute(current_idea.source).present?
+          %p
+            %strong
+              = t('.source')
+            #{strip_tags(translated_attribute(current_idea.source))}
+
+      .row.column
+        - if translated_attribute(current_idea.problem).present?
+          %h5.small
+            = t('activemodel.attributes.idea.problem')
+          %p
+            = translated_attribute(current_idea.problem)
+
+      .row.column
+        - if translated_attribute(current_idea.current_state).present?
+          %h5.small
+            = t('activemodel.attributes.idea.current_state')
+          %p
+            = translated_attribute(current_idea.current_state)
+
+      .row.column
+        - if translated_attribute(current_idea.info).present?
+          %h5.small
+            = t('activemodel.attributes.idea.info')
+          %p
+            = translated_attribute(current_idea.info)
+
+      .row.column
+        - if translated_attribute(current_idea.steps).present?
+          %h5.small
+            = t('activemodel.attributes.idea.steps')
+          %p
+            = translated_attribute(current_idea.steps)
+
+      .row.column
+        - if translated_attribute(current_idea.boards).present?
+          %h5.small
+            = t('activemodel.attributes.idea.boards')
+          %p
+            = translated_attribute(current_idea.boards)
+
+      .row.column
+        - if translated_attribute(current_idea.obstacles).present?
+          %h5.small
+            = t('activemodel.attributes.idea.obstacles')
+          %p
+            = translated_attribute(current_idea.obstacles)
+
+      .row.column
+        - if translated_attribute(current_idea.time).present?
+          %h5.small
+            = t('activemodel.attributes.idea.time')
+          %p
+            = translated_attribute(current_idea.time)
+
+      .row.column
+        - if translated_attribute(current_idea.hours).present?
+          %h5.small
+            = t('activemodel.attributes.idea.hours')
+          %p
+            = translated_attribute(current_idea.hours)
+
+      .row.column
+        - if translated_attribute(current_idea.cooperations).present?
+          %h5.small
+            = t('activemodel.attributes.idea.cooperations')
+          %p
+            = translated_attribute(current_idea.cooperations)
+
+      .row.column
+        - if translated_attribute(current_idea.staff).present?
+          %h5.small
+            = t('activemodel.attributes.idea.staff')
+          %p
+            = translated_attribute(current_idea.staff)
+
+      .row.column
+        - if translated_attribute(current_idea.working_hours).present?
+          %h5.small
+            = t('activemodel.attributes.idea.working_hours')
+          %p
+            = translated_attribute(current_idea.working_hours)
+
+      .row.column
+        - if translated_attribute(current_idea.costs).present?
+          %h5.small
+            = t('activemodel.attributes.idea.costs')
+          %p
+            = translated_attribute(current_idea.costs)
+
+        - if @last_content_edit.present?
+          %p
+            = t(".last_content_edit_info", updated_at: l(@last_content_edit.created_at, format: :short))
+            = link_to t(".last_content_edit_link"), idea_version_path(current_idea, @last_content_edit.index + 1)
+        = render partial: "tags", locals: { resource: current_idea }
+      = render partial: "result", locals: { idea: current_idea }
+    = attachments_for current_idea
+= comments_for current_idea if current_idea.commentable? && current_idea.published?

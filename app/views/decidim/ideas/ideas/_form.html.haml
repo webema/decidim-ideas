@@ -5,14 +5,16 @@
   .field
     = form.translated :editor, :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.description)
   .field
-    = form.translated :text_area, :source, autofocus: true, placeholder: true, rows: 3
+    = form.translated :text_area, :problem, rows: 2
+  .field
+    = form.translated :text_area, :current_state, rows: 2
+  .field
+    = form.translated :text_area, :info, rows: 2, placeholder: 'Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer, Adresse'
 - else
   .field
     = form.text_field :title, autofocus: true, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.title)
   .field
     = form.editor :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea), value: translated_attribute(@form.description)
-  .field
-    = form.text_area :source, autofocus: true, placeholder: true, rows: 3
 
 .field
   = form.select :scope_id,                                                                             |
@@ -48,6 +50,32 @@
             %span{"aria-hidden" => "true"} ×
     .row.column
       = form.file_field :add_documents, multiple: true, label: t("add_attachments", scope: "decidim.ideas.form")
+
+%fieldset
+  %legend
+    Optionale Angaben
+
+  .field
+    = form.translated :text_area, :source, placeholder: true, rows: 2
+  .field
+    = form.translated :text_area, :steps, rows: 2
+  .field
+    = form.translated :text_area, :boards, rows: 2
+  .field
+    = form.translated :text_area, :obstacles, rows: 2
+  .field
+    = form.translated :text_area, :time, rows: 2
+  .field
+    = form.translated :text_area, :hours, rows: 2
+  .field
+    = form.translated :text_area, :cooperations, rows: 2
+  .field
+    = form.translated :text_area, :staff, rows: 2
+  .field
+    = form.translated :text_area, :working_hours, rows: 2
+  .field
+    = form.translated :text_area, :costs, rows: 2
+
 - content_for :js_content do
   = javascript_pack_tag "decidim_ideas"
 

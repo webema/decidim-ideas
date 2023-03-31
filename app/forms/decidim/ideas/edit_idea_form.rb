@@ -11,6 +11,9 @@ module Decidim
 
       translatable_attribute :title, String
       translatable_attribute :description, String
+      translatable_attribute :problem, String
+      translatable_attribute :current_state, String
+      translatable_attribute :info, String
       translatable_attribute :source, String
 
       attribute :type_id, Integer
@@ -19,6 +22,16 @@ module Decidim
       attribute :state, String
       attribute :attachment, AttachmentForm
       attribute :hashtag, String
+
+      translatable_attribute :steps, String
+      translatable_attribute :boards, String
+      translatable_attribute :obstacles, String
+      translatable_attribute :time, String
+      translatable_attribute :hours, String
+      translatable_attribute :cooperations, String
+      translatable_attribute :staff, String
+      translatable_attribute :working_hours, String
+      translatable_attribute :costs, String
 
       attribute :hero_image
       attribute :remove_hero_image, Boolean, default: false

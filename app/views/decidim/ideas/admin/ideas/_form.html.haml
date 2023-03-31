@@ -7,10 +7,44 @@
     .row.column
       = form.translated :editor, :description, toolbar: :full, lines: 8, disabled: !allowed_to?(:update, :idea, idea: current_idea)
     .row.column
-      = form.translated :text_area, :source, autofocus: true, placeholder: true, rows: 3
+      = form.translated :text_area, :problem, placeholder: true, rows: 3
+    .row.column
+      = form.translated :text_area, :current_state, placeholder: true, rows: 3
+    .row.column
+      = form.translated :text_area, :info, placeholder: true, rows: 3
+
+
+
     -# .row.column
     -#   .columns.xlarge-6
     -#     = form.text_field :hashtag, disabled: !allowed_to?(:update, :idea, idea: current_idea)
+
+.card
+  .card-divider
+    %h2.card-title= t ".optional"
+  .card-section
+    .row.column
+      = form.translated :text_area, :source, placeholder: true, rows: 3
+
+    .row.column
+      = form.translated :text_area, :steps, rows: 3
+    .row.column
+      = form.translated :text_area, :boards, rows: 3
+    .row.column
+      = form.translated :text_area, :obstacles, rows: 3
+    .row.column
+      = form.translated :text_area, :time, rows: 3
+    .row.column
+      = form.translated :text_area, :hours, rows: 3
+    .row.column
+      = form.translated :text_area, :cooperations, rows: 3
+    .row.column
+      = form.translated :text_area, :staff, rows: 3
+    .row.column
+      = form.translated :text_area, :working_hours, rows: 3
+    .row.column
+      = form.translated :text_area, :costs, rows: 3
+
 .card
   .card-divider
     %h2.card-title= t ".settings"

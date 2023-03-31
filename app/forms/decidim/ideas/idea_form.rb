@@ -10,6 +10,9 @@ module Decidim
 
       attribute :title, String
       attribute :description, String
+      attribute :problem, String
+      attribute :current_state, String
+      attribute :info, String
       attribute :source, String
       attribute :type_id, Integer
       attribute :scope_id, Integer
@@ -17,6 +20,15 @@ module Decidim
       attribute :state, String
       attribute :attachment, AttachmentForm
       attribute :hashtag, String
+      attribute :steps, String
+      attribute :boards, String
+      attribute :obstacles, String
+      attribute :time, String
+      attribute :hours, String
+      attribute :cooperations, String
+      attribute :staff, String
+      attribute :working_hours, String
+      attribute :costs, String
 
       attachments_attribute :photos
       attachments_attribute :documents
@@ -24,7 +36,7 @@ module Decidim
       attribute :hero_image
       attribute :remove_hero_image, Boolean, default: false
 
-      validates :title, :description, presence: true
+      validates :title, :description, :problem, :current_state, :info, presence: true
       validates :title, length: { maximum: 150 }
       validates :type_id, presence: true
       validate :scope_exists

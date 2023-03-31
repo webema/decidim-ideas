@@ -177,11 +177,16 @@ module Decidim
       def set_last_content_edit
         object_changes = PaperTrail::Version.arel_table[:object_changes]
         versions = current_participatory_space.versions.where(event: 'update')
-        @last_content_edit = versions.where(object_changes.matches("%#{"title:"}%"))
-                                     .or(versions.where(object_changes.matches("%#{"description:"}%")))
-                                     .or(versions.where(object_changes.matches("%#{"source:"}%")))
-                                     .order(created_at: :desc).last
+
+        relevant_versions = versions.where(object_changes.matches("%title:%"))
+
+        %w[description problem current_state info steps boards obstacles time hours cooperations staff working_hours costs source ].each do |attribute|
+          relevant_versions = relevant_versions.or(versions.where(object_changes.matches("%#{attribute}:%")))
+        end
+
+        @last_content_edit = relevant_versions.order(created_at: :desc).last
       end
     end
   end
 end
+

@@ -14,6 +14,19 @@ module Decidim
         translatable_attribute :description, String
         translatable_attribute :source, String
 
+        translatable_attribute :problem, String
+        translatable_attribute :current_state, String
+        translatable_attribute :info, String
+        translatable_attribute :steps, String
+        translatable_attribute :boards, String
+        translatable_attribute :obstacles, String
+        translatable_attribute :time, String
+        translatable_attribute :hours, String
+        translatable_attribute :cooperations, String
+        translatable_attribute :staff, String
+        translatable_attribute :working_hours, String
+        translatable_attribute :costs, String
+
         attribute :type_id, Integer
         attribute :decidim_scope_id, Integer
         attribute :hashtag, String

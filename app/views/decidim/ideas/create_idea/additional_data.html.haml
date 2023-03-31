@@ -24,6 +24,12 @@
             .field
               = f.editor :description, lines: 8, toolbar: :full
             .field
+              = f.text_area :problem, rows: 2
+            .field
+              = f.text_area :current_state, rows: 2
+            .field
+              = f.text_area :info, rows: 2, placeholder: 'Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer, Adresse'
+            .field
               = f.text_area :source, autofocus: true, placeholder: true, rows: 3
 
             - if scopes.length == 1
@@ -54,5 +60,30 @@
                 %fieldset.attachments_container
                   %legend= t("attachment_legend", scope: "decidim.ideas.form")
                   = f.attachment :documents, multiple: true, label: t("add_attachments", scope: "decidim.ideas.form")
+
+
+            %fieldset
+              %legend
+                Weitere Angaben
+
+              .field
+                = f.text_area :steps, rows: 2
+              .field
+                = f.text_area :boards, rows: 2
+              .field
+                = f.text_area :obstacles, rows: 2
+              .field
+                = f.text_area :time, rows: 2
+              .field
+                = f.text_area :hours, rows: 2
+              .field
+                = f.text_area :cooperations, rows: 2
+              .field
+                = f.text_area :staff, rows: 2
+              .field
+                = f.text_area :working_hours, rows: 2
+              .field
+                = f.text_area :costs, rows: 2
+
           .actions
             = f.submit t(".continue"), class: "button expanded", data: { disable_with: true }

@@ -67,8 +67,12 @@ $zp_yellow: #ffe900;
 }
 
 fieldset{
-  padding: .5em;
+  padding: .5em 0;
   margin-bottom: 1em;
+
+  legend {
+    font-weight: 600;
+  }
 }
 
 fieldset.attachments_container{
@@ -96,7 +100,7 @@ form.edit_idea {
 }
 
 .callout {
-  padding-bottom: .01rem;
+  // padding-bottom: .01rem;
 
   &.success {
     border-color: $zp_purple;
@@ -228,4 +232,8 @@ form.edit_idea {
   &:hover {
     text-decoration: none;
   }
+}
+h5.small {
+  font-size: 1em;
+  margin: 0;
 }
