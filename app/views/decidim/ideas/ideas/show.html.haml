@@ -65,13 +65,6 @@
             = translated_attribute(current_idea.problem)
 
       .row.column
-        - if translated_attribute(current_idea.current_state).present?
-          %h5.small
-            = t('activemodel.attributes.idea.current_state')
-          %p
-            = translated_attribute(current_idea.current_state)
-
-      .row.column
         - if translated_attribute(current_idea.info).present?
           %h5.small
             = t('activemodel.attributes.idea.info')
@@ -86,39 +79,11 @@
             = translated_attribute(current_idea.steps)
 
       .row.column
-        - if translated_attribute(current_idea.boards).present?
-          %h5.small
-            = t('activemodel.attributes.idea.boards')
-          %p
-            = translated_attribute(current_idea.boards)
-
-      .row.column
         - if translated_attribute(current_idea.obstacles).present?
           %h5.small
             = t('activemodel.attributes.idea.obstacles')
           %p
             = translated_attribute(current_idea.obstacles)
-
-      .row.column
-        - if translated_attribute(current_idea.time).present?
-          %h5.small
-            = t('activemodel.attributes.idea.time')
-          %p
-            = translated_attribute(current_idea.time)
-
-      .row.column
-        - if translated_attribute(current_idea.hours).present?
-          %h5.small
-            = t('activemodel.attributes.idea.hours')
-          %p
-            = translated_attribute(current_idea.hours)
-
-      .row.column
-        - if translated_attribute(current_idea.cooperations).present?
-          %h5.small
-            = t('activemodel.attributes.idea.cooperations')
-          %p
-            = translated_attribute(current_idea.cooperations)
 
       .row.column
         - if translated_attribute(current_idea.staff).present?
@@ -128,18 +93,11 @@
             = translated_attribute(current_idea.staff)
 
       .row.column
-        - if translated_attribute(current_idea.working_hours).present?
+        - if translated_attribute(current_idea.miscellaneous).present?
           %h5.small
-            = t('activemodel.attributes.idea.working_hours')
+            = t('activemodel.attributes.idea.miscellaneous')
           %p
-            = translated_attribute(current_idea.working_hours)
-
-      .row.column
-        - if translated_attribute(current_idea.costs).present?
-          %h5.small
-            = t('activemodel.attributes.idea.costs')
-          %p
-            = translated_attribute(current_idea.costs)
+            = translated_attribute(current_idea.miscellaneous)
 
         - if @last_content_edit.present?
           %p

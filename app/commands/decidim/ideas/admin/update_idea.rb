@@ -57,17 +57,11 @@ module Decidim
             description: form.description,
             source: form.source,
             problem: form.problem,
-            current_state: form.current_state,
             info: form.info,
             steps: form.steps,
-            boards: form.boards,
             obstacles: form.obstacles,
-            time: form.time,
-            hours: form.hours,
-            cooperations: form.cooperations,
             staff: form.staff,
-            working_hours: form.working_hours,
-            costs: form.costs,
+            miscellaneous: form.miscellaneous,
             hashtag: form.hashtag
           }.merge(
             attachment_attributes(:hero_image)

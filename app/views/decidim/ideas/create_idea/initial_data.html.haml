@@ -20,11 +20,15 @@
           .field
             = f.editor :description, lines: 8, toolbar: :full
           .field
-            = f.text_area :problem, rows: 2
+            = f.text_area :problem, rows: 3, placeholder: true
           .field
-            = f.text_area :current_state, rows: 2
+            = f.text_area :steps, rows: 3, placeholder: true
           .field
-            = f.text_area :info, rows: 2, placeholder: 'Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer, Adresse'
+            = f.text_area :obstacles, rows: 3, placeholder: true
+          .field
+            = f.text_area :staff, rows: 3, placeholder: true
+          .field
+            = f.text_area :info, rows: 3, placeholder: true
           .actions
             = f.submit t(".continue"), class: "button expanded"
 

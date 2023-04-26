@@ -15,17 +15,11 @@ module Decidim
         translatable_attribute :source, String
 
         translatable_attribute :problem, String
-        translatable_attribute :current_state, String
         translatable_attribute :info, String
         translatable_attribute :steps, String
-        translatable_attribute :boards, String
         translatable_attribute :obstacles, String
-        translatable_attribute :time, String
-        translatable_attribute :hours, String
-        translatable_attribute :cooperations, String
         translatable_attribute :staff, String
-        translatable_attribute :working_hours, String
-        translatable_attribute :costs, String
+        translatable_attribute :miscellaneous, String
 
         attribute :type_id, Integer
         attribute :decidim_scope_id, Integer
@@ -36,7 +30,7 @@ module Decidim
         attribute :hero_image
         attribute :remove_hero_image, Boolean, default: false
 
-        validates :title, :description, translatable_presence: true
+        validates :title, :description, :info, translatable_presence: true
         validate :notify_missing_attachment_if_errored
         validates :hero_image, passthru: { to: Decidim::Idea }
 

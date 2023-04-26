@@ -24,13 +24,15 @@
             .field
               = f.editor :description, lines: 8, toolbar: :full
             .field
-              = f.text_area :problem, rows: 2
+              = f.text_area :problem, rows: 3, placeholder: true
             .field
-              = f.text_area :current_state, rows: 2
+              = f.text_area :steps, rows: 3, placeholder: true
             .field
-              = f.text_area :info, rows: 2, placeholder: 'Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer, Adresse'
+              = f.text_area :obstacles, rows: 3, placeholder: true
             .field
-              = f.text_area :source, autofocus: true, placeholder: true, rows: 3
+              = f.text_area :staff, rows: 3, placeholder: true
+            .field
+              = f.text_area :info, rows: 3, placeholder: true
 
             - if scopes.length == 1
               = f.hidden_field :scope_id, value: scopes.first.scope&.id
@@ -67,23 +69,7 @@
                 Weitere Angaben
 
               .field
-                = f.text_area :steps, rows: 2
-              .field
-                = f.text_area :boards, rows: 2
-              .field
-                = f.text_area :obstacles, rows: 2
-              .field
-                = f.text_area :time, rows: 2
-              .field
-                = f.text_area :hours, rows: 2
-              .field
-                = f.text_area :cooperations, rows: 2
-              .field
-                = f.text_area :staff, rows: 2
-              .field
-                = f.text_area :working_hours, rows: 2
-              .field
-                = f.text_area :costs, rows: 2
+                = f.text_area :miscellaneous, rows: 8, placeholder: true
 
           .actions
             = f.submit t(".continue"), class: "button expanded", data: { disable_with: true }

@@ -5,6 +5,20 @@ de:
       idea:
         source: Hast du dieses Praxisbeispiel selbst erprobt und bist vielleicht Ansprechperson dafür? Oder hast du es irgendwo entdeckt und willst diese gute Idee weitersagen? … oder?
         source_de: Hast du dieses Praxisbeispiel selbst erprobt und bist vielleicht Ansprechperson dafür? Oder hast du es irgendwo entdeckt und willst diese gute Idee weitersagen? … oder?
+        problem: Welches Problem löst dieses Praxisbeispiel? Auf welche Herausforderung reagiert das Praxisbeispiel?
+        problem_de: Welches Problem löst dieses Praxisbeispiel? Auf welche Herausforderung reagiert das Praxisbeispiel?
+        steps: Beschreibe die notwenigen Schritte von der ersten Idee bis zur Umsetzung möglichst kompakt
+        steps_de: Beschreibe die notwenigen Schritte von der ersten Idee bis zur Umsetzung möglichst kompakt
+        obstacles: Welche Hindernisse hat es auf dem Weg zur Umsetzung gegeben? Was hätte die Umsetzung fast zum Scheitern gebracht?
+        obstacles_de: Welche Hindernisse hat es auf dem Weg zur Umsetzung gegeben? Was hätte die Umsetzung fast zum Scheitern gebracht?
+        staff: Wie viele ehrenamtlich oder hauptamtlich Mitarbeitende sind in das Projekt involviert? Wie viele Wochenstunden wendet jede Person für ihre Arbeit auf?
+        staff_de: Wie viele ehrenamtlich oder hauptamtlich Mitarbeitende sind in das Projekt involviert? Wie viele Wochenstunden wendet jede Person für ihre Arbeit auf?
+        info: Bitte nenn uns eine Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer oder eine Adresse für weitere Infos zu diesem Praxisbeispiel
+        info_de: Bitte nenn uns eine Internetseite, Mailadresse von Ansprechpersonen, Telefonnummer oder eine Adresse für weitere Infos zu diesem Praxisbeispiel
+        miscellaneous: Wie viel Zeit ist von der ersten Ideen bis zur Umsetzung des Praxisbeispiels vergangen? Wie viele Arbeitsstunden sind von der ersten Idee bis zur Umsetzung hineingeflossen? Wurden Partnerschaften mit außerkirchlichen Akteur:innen für dieses Praxisbeispiel eingegangen? Welche kirchlichen Gremien musste in die Umsetzung des Praxisbeispiels eingebunden werden? Was kostet die Unterhaltung dieses Praxisbeispiels?
+        miscellaneous_de: Wie viel Zeit ist von der ersten Ideen bis zur Umsetzung des Praxisbeispiels vergangen? Wie viele Arbeitsstunden sind von der ersten Idee bis zur Umsetzung hineingeflossen? Wurden Partnerschaften mit außerkirchlichen Akteur:innen für dieses Praxisbeispiel eingegangen? Welche kirchlichen Gremien musste in die Umsetzung des Praxisbeispiels eingebunden werden? Was kostet die Unterhaltung dieses Praxisbeispiels?
+
+
   activemodel:
     attributes:
       idea:
@@ -19,18 +33,13 @@ de:
         hero_image: Titelbild
         answer: Antwort
         answer_url: Weiterführende URL
-        problem: Welches Problem löst dieses Praxisbeispiel / Auf welche Herausforderung reagiert das Praxisbeispiel
+        problem: Grundlage des Praxisbeispiels
         current_state: Beschreibe den aktuellen Stand des Praxisbeispiels in 3- 5 Sätzen
-        steps: Beschreibe die notwenigen Schritte von der ersten Idee bis zur Umsetzung möglichst detailliert
-        boards: Welche kirchlichen Gremien waren in die Umsetzung des Praxisbeispiels eingebunden?
-        obstacles: Welche Hindernisse hat es auf dem Weg zur Umsetzung gegeben?
-        time: Wie viel Zeit ist von der ersten Ideen bis zur Umsetzung vergangen?
-        hours: Wie viele Arbeitsstunden sind von der ersten Idee bis zur Umsetzung hineingeflossen?
-        cooperations: Welche Partnerschaften wurden für dieses Praxisbeispiel eingegangen?
-        staff: Wie viele ehrenamtlich oder hauptamtlich Mitarbeitende sind in das Projekt involviert?
-        working_hours: Wieviel Arbeitszeit wird von den Mitarbeitenden für dieses Praxisbeispiel aufgewendet?
-        costs: Was kostet die Unterhaltung dieses Praxisbeispiels?
+        steps: Von der ersten Idee bis zum fertigen Praxisbeispiel
+        obstacles: Hindernisse auf dem Weg zur Umsetzung
+        staff: Diese engagierten Menschen braucht es
         info: Wie können wir mehr über dieses Praxisbeispiel erfahren?
+        miscellaneous: Weitere wichtige Informationen zu deinem Praxisbeispiel
       ideas_type:
         attachments_enabled: Autoren bzw. Autorinnen können Anhänge hochladen
         banner_image: Banner-Bild
